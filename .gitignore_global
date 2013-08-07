@@ -1,0 +1,6 @@
+*~
+.DS_Store
+.idea
+.tags
+.tags_sorted_by_file
+ruleset.xml

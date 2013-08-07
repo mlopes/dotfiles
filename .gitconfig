@@ -1,0 +1,37 @@
+[alias]
+co = checkout
+ci = commit
+rb = rebase
+	sb = status -sb 
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+	name = Marco Lopes
+	email = marco.paulo.lopes@gmail.com
+[github]
+	user = mlopes
+	token = aa0e635d01aef7dd9c3716efdf58c505
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
+[core]
+	excludesfile = /home/mlopes/.gitignore_global
+[diff]
+	mnemonicprefix = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	trustExitCode = true
+[mergetool "kdiff3"]
+	trustExitCode = false
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+		cmd = /usr/local/bin/extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[achievement]
+	upload = true
+[push]
+	default = simple
