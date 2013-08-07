@@ -1,0 +1,91 @@
+
+! Xft settings --------------------------------
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+!-----------------------------------
+!
+!	U R X V T - Settings
+!
+!-----------------------------------
+URxvt*geometry:					100x35
+URxvt*borderLess:				false
+URxvt*depth:					32
+URxvt*scrollBar_right:				true
+URxvt*cursorBlink:				false
+URxvt*cursorUnderline:				true
+URxvt*scrollColor:				#111111
+URxvt*perl-ext-common:				default,matcher,clipboard,font-size
+! URxvt*perl-ext-common:				default,clipboard,tabbed,matcher
+URxvt.scrollBar:				off
+! URxvt.iconFile:					~/icons/Terminal.svg
+URxvt.tabbed.tabbar-fg:			 	7
+URxvt.tabbed.tabbar-bg: 			0
+URxvt.tabbed.tab-fg:    			4
+URxvt.tabbed.tab-bg:    			0	
+URxvt*termName:				 	rxvt-256color
+! URxvt*termName:				 	rxvt
+URxvt.urlLauncher:				/usr/bin/xdg-open
+URxvt.matcher.button:				1
+
+URxvt*loginShell:true
+URxvt*transparent:true
+URxvt*shading:15
+
+! how many lines you want it to save per session
+URxvt*saveLines:32767
+! URxvt*troughColor:#000000
+URxvt*letterSpace: -1
+URxvt*font: xft:Ubuntu Mono:pixelsize=16
+
+! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
+URxvt*urgentOnBell: true
+
+! dont forget to change this to your favorite browser
+URxvt*urlLauncher: chromium-browser
+
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+ 
+URxvt.iso14755: False
+
+!-----------------------------------
+!
+!	U R X V T - Colors
+!
+!-----------------------------------
+!black
+URxvt.color0:  #000000
+URxvt.color8:  #2B2B2B
+!red
+URxvt.color1:  #A5372E
+URxvt.color9:  #E06C5C
+!green
+URxvt.color2:  #4A663C
+URxvt.color10: #7B996C
+!yellow
+URxvt.color3:  #7C5618
+URxvt.color11: #B38849
+!blue
+URxvt.color4:  #465080
+URxvt.color12: #7883b3
+!magenta
+URxvt.color5:  #8E4948
+URxvt.color13: #C67C78
+!cyan
+URxvt.color6:  #6D5B42
+URxvt.color14: #A28D73
+!white
+URxvt.color7:  #8D8D8D
+URxvt.color15: #C6C6C6
+
+URxvt.background: [70]#101010
+URxvt.foreground: 15
+
