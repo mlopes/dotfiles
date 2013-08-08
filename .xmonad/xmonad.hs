@@ -60,6 +60,9 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 --
 myManageHook = composeAll
     [ className =? "Google-chrome"  --> doShift "2:web"
+    , className =? "Gnome-terminal" --> doShift "1:term"
+    , className =? "Sublime_text"   --> doShift "3:code"
+    , className =? "Skype"          --> doShift "5:media"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
     , className =? "Steam"          --> doFloat
