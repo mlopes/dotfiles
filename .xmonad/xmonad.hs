@@ -334,7 +334,13 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = startup
+
+startup :: X ()
+startup = do
+  setWMName "LG3D"
+  spawn "xsetroot -solid black"
+
 
 
 ------------------------------------------------------------------------
@@ -349,7 +355,7 @@ main = do
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
           , ppSep = "   "}
       , manageHook = manageDocks <+> myManageHook
-      , startupHook = setWMName "LG3D"
+      , startupHook = myStartupHook
   }
 
 
