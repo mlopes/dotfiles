@@ -17,7 +17,7 @@ set __fish_git_prompt_char_upstream_behind '↓'
 #rbenv rehash >/dev/null ^&1
 
 set PATH /usr/local/bin $PATH
-set PATH $HOME/.rvm/bin $PATH
+#set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.cabal/bin ~/.xmonad/bin $PATH
 
 function fish_prompt
