@@ -62,6 +62,7 @@ myManageHook = composeAll
     [ className =? "Google-chrome"  --> doShift "2:web"
     , className =? "Gnome-terminal" --> doShift "1:term"
     , className =? "Sublime_text"   --> doShift "3:code"
+    , className =? "jetbrains-phpstorm"   --> doShift "3:code"
     , className =? "Skype"          --> doShift "5:media"
     , resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
