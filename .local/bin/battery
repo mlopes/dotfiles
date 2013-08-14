@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+HEART_CONNECTED=♥
+HEART_DISCONNECTED=♡
+#
+export curcap=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | sed "s/ \+//g" | cut -d: -f2 | sed "s/%//g"`
+export chargetime=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "time to empty" |  sed "s/ \+//g" | cut -d: -f2 | sed "s/hours/h/g"`
+
+export curcap=`awk  'BEGIN { rounded = sprintf("%.0f", '$curcap'); print rounded }'`
+
+
+if [[ "$chargetime" == "" ]]; then
+	echo $HEART_CONNECTED $curcap"%"
+else
+        echo $HEART_DISCONNECTED $curcap"%("$chargetime")"
+fi
