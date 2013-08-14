@@ -1,2 +1,1 @@
 xinput set-prop bcm5974 "Synaptics Finger" 50 90 255
-synclient PalmDetect=1 PalmMinWidth=14 HorizTwoFingerScroll=1

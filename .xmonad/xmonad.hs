@@ -344,6 +344,7 @@ startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
+  spawn "synclient PalmDetect=1 PalmMinWidth=14 HorizTwoFingerScroll=1"
 
 
 
