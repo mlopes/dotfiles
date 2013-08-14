@@ -2,3 +2,5 @@ xmonad-x86_64-linux
 xmonad.errors
 xmonad.hi
 xmonad.o
+.config/fish/fish_history
+.config/fish/fishd.*
