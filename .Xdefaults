@@ -89,3 +89,4 @@ URxvt.color15: #C6C6C6
 URxvt.background: [70]#101010
 URxvt.foreground: 15
 
+urxvt*font: xft:Source\ Code\ Pro:pixelsize=16:antialias=true,xft:Inconsolata\ for\ Powerline:pixelsize=16
