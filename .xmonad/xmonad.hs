@@ -34,7 +34,7 @@ import XMonad.Hooks.EwmhDesktops
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "/usr/bin/gnome-terminal"
+myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 
 
 ------------------------------------------------------------------------
