@@ -345,6 +345,7 @@ startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
   spawn "synclient PalmDetect=1 PalmMinWidth=14 HorizTwoFingerScroll=1"
+  spawn "xinput set-prop bcm5974 "Synaptics Finger" 50 90 255"
 
 
 
