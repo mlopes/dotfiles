@@ -34,7 +34,8 @@ import XMonad.Hooks.EwmhDesktops
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
+-- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
+myTerminal = "gnome-terminal"
 
 
 ------------------------------------------------------------------------
@@ -345,7 +346,7 @@ startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
   spawn "synclient PalmDetect=1 PalmMinWidth=14 HorizTwoFingerScroll=1"
-  spawn "xinput set-prop bcm5974 "Synaptics Finger" 50 90 255"
+  spawn "xinput set-prop bcm5974 \"Synaptics Finger\" 50 90 255"
 
 
 
