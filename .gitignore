@@ -4,3 +4,5 @@ xmonad.hi
 xmonad.o
 .config/fish/fish_history
 .config/fish/fishd.*
+.config/sublime-text-3/Cache/
+.config/sublime-text-3/Local/Session*
