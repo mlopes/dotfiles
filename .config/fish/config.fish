@@ -19,6 +19,7 @@ set __fish_git_prompt_char_upstream_behind '↓'
 set PATH /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.cabal/bin ~/.xmonad/bin $PATH
+set -xg TERM screen-256color
 
 function fish_prompt
   set last_status $status
