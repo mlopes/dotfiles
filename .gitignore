@@ -7,3 +7,4 @@ xmonad.o
 .config/sublime-text-3/Cache/
 .config/sublime-text-3/Local/Session*
 .vim/.netrwhist
+.config/sublime-text-3/Index/
