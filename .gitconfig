@@ -7,9 +7,6 @@ rb = rebase
 [user]
 	name = Marco Lopes
 	email = marco.paulo.lopes@gmail.com
-[github]
-	user = mlopes
-	token = aa0e635d01aef7dd9c3716efdf58c505
 [color]
 	branch = auto
 	diff = auto
@@ -35,3 +32,5 @@ rb = rebase
 	upload = true
 [push]
 	default = simple
+[include]
+    path = .github
