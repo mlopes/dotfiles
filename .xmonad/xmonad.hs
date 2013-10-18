@@ -35,7 +35,7 @@ import XMonad.Hooks.EwmhDesktops
 -- certain contrib modules.
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
-myTerminal = "gnome-terminal"
+myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 
 
 ------------------------------------------------------------------------
