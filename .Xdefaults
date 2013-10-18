@@ -1,5 +1,5 @@
 
-! Xft settings --------------------------------
+G! Xft settings --------------------------------
 Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
@@ -13,6 +13,7 @@ Xft.hintstyle:  hintslight
 !-----------------------------------
 URxvt*geometry:					100x35
 URxvt*borderLess:				false
+
 URxvt*depth:					32
 URxvt*scrollBar_right:				true
 URxvt*cursorBlink:				false
@@ -27,7 +28,6 @@ URxvt.tabbed.tabbar-bg: 			0
 URxvt.tabbed.tab-fg:    			4
 URxvt.tabbed.tab-bg:    			0	
 URxvt*termName:				 	rxvt-256color
-! URxvt*termName:				 	rxvt
 URxvt.urlLauncher:				/usr/bin/xdg-open
 URxvt.matcher.button:				1
 
@@ -36,7 +36,7 @@ URxvt*transparent:true
 URxvt*shading:15
 
 ! how many lines you want it to save per session
-URxvt*saveLines:32767
+URxvt*saveLines:65535
 ! URxvt*troughColor:#000000
 URxvt*letterSpace: -1
 
@@ -44,7 +44,7 @@ URxvt*letterSpace: -1
 URxvt*urgentOnBell: true
 
 ! dont forget to change this to your favorite browser
-URxvt*urlLauncher: chromium-browser
+URxvt*urlLauncher: google-chrome
 
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
@@ -71,14 +71,9 @@ URxvt.iso14755: False
 ! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
 !-------------------------------------------------------------------------------
 
-URxvt.depth:                32
-URxvt.geometry:             90x30
-URxvt.transparent:          false
-URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            50
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
@@ -92,11 +87,6 @@ URxvt*letterSpace: -1
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
-! Perl extensions
-URxvt.perl-ext-common:      default,matcher
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
-
 ! Cursor
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
@@ -105,46 +95,46 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
-!!Source http://github.com/altercation/solarized
-
-*background: #002b36
-*foreground: #657b83
-!!*fading: 40
-*fadeColor: #002b36
-*cursorColor: #93a1a1
-*pointerColorBackground: #586e75
-*pointerColorForeground: #93a1a1
-
-!! black dark/light
-*color0: #073642
-*color8: #002b36
-
-!! red dark/light
-*color1: #dc322f
-*color9: #cb4b16
-
-!! green dark/light
-*color2: #859900
-*color10: #586e75
-
-!! yellow dark/light
-*color3: #b58900
-*color11: #657b83
-
-!! blue dark/light
-*color4: #268bd2
-*color12: #839496
-
-!! magenta dark/light
-*color5: #d33682
-*color13: #6c71c4
-
-!! cyan dark/light
-*color6: #2aa198
-*color14: #93a1a1
-
-!! white dark/light
-*color7: #eee8d5
-*color15: #fdf6e3
-
 urxvt*font: xft:Source\ Code\ Pro:pixelsize=16:antialias=true,xft:Inconsolata\ for\ Powerline:pixelsize=16
+
+urxvt*background:       #0c0d0e
+urxvt*foreground:       #7f8f9f
+urxvt*scrollBar:        false
+urxvt*matcher.button:   1
+urxvt*allow_bold:    true
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+
+URxvt*fading:        0
+URxvt*tintColor:     #ffffff
+URxvt*shading:        0
+URxvt*inheritPixmap:     False
+
+! black + red
+!urxvt*color0:     #3f3f3f
+urxvt*color0:      #101010
+urxvt*color1:      #705050
+! green + yellow
+urxvt*color2:      #60b48a
+urxvt*color3:      #f0dfaf
+! blue + purple
+urxvt*color4:      #506070
+urxvt*color5:      #dc8cc3
+! cyan + white
+urxvt*color6:      #8cd0d3
+urxvt*color7:      #dcdccc
+! bright-black + bright-red
+urxvt*color8:      #000000
+urxvt*color9:      #dca3a3
+! bright-green + bright-yellow
+urxvt*color10:     #c3bf9f
+urxvt*color11:     #f0dfaf
+! bright-blue + bright-purple
+urxvt*color12:     #94bff3
+urxvt*color13:     #ec93d3
+! bright-cyan + bright-white
+urxvt*color14:     #93e0e3
+urxvt*color15:     #ffffff
+!}}}
