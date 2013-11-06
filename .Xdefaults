@@ -131,7 +131,7 @@ URxvt*inheritPixmap:     False
 *color4:  #1155ff
 *color12: #4488ff
 ! Magenta
-*color5:  #bb33ff
+*color5:  #ED53C9
 *color13: #dd66ff
 ! Cyan
 *color6:  #00ffbb
