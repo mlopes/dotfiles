@@ -4,3 +4,5 @@
 .tags
 .tags_sorted_by_file
 ruleset.xml
+*.sublime-project
+*.sublime-workspace
