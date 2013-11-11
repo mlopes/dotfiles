@@ -1,6 +1,8 @@
 ansi=1
-readline=Term::ReadLine::TTYtter
+vcheck=1
+; readline=Term::ReadLine::TTYtter
+readline=1
 ssl=1
 urlopen=open %U
 dostream=1
-exts=/home/mlopes/.config/ttytter/PrettyTweets.pl
+exts=/home/mlopes/.config/ttytter/PrettyTweetsNiko.pl
