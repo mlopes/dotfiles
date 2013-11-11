@@ -4,9 +4,6 @@ ci = commit
 rb = rebase
 	sb = status -sb 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-[user]
-	name = Marco Lopes
-	email = marco.paulo.lopes@gmail.com
 [color]
 	branch = auto
 	diff = auto
@@ -34,3 +31,4 @@ rb = rebase
 	default = simple
 [include]
     path = .github
+    path = .gituser
