@@ -9,12 +9,11 @@
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 11,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"vintage",
-		"Vintageous"
+		"Vintageous",
+		"vintage"
 	],
 	"margin": 0,
 	"rulers":
