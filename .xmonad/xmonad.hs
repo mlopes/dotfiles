@@ -66,6 +66,7 @@ myManageHook = composeAll
     , className =? "Urxvt" --> doShift "1:term"
     , className =? "Sublime_text"   --> doShift "3:code"
     , className =? "Gvim"   --> doShift "3:code"
+    , className =? "Emacs24"   --> doShift "3:code"
     , className =? "jetbrains-phpstorm"   --> doShift "3:code"
     , className =? "Skype"          --> doShift "5:media"
     , resource  =? "desktop_window" --> doIgnore
@@ -175,15 +176,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Audio previous.
   , ((0, 0x1008FF16),
-     spawn "")
+     spawn "cmus-remote --prev")
 
   -- Play/pause.
   , ((0, 0x1008FF14),
-     spawn "")
+     spawn "cmus-remote --pause")
 
   -- Audio next.
   , ((0, 0x1008FF17),
-     spawn "")
+     spawn "cmus-remote --next")
 
       -- Eject CD tray.
   , ((0, 0x1008FF2C),
