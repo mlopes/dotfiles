@@ -16,6 +16,7 @@ set __fish_git_prompt_char_upstream_behind '↓'
 #set PATH $HOME/.rbenv/shims $PATH
 #rbenv rehash >/dev/null ^&1
 
+set -x EDITOR vim
 set PATH /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.cabal/bin ~/.xmonad/bin $PATH
