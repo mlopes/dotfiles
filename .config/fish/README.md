@@ -1,6 +1,10 @@
 Fish Shell Configuration
 ========================
 
+The prompt is currently configured as seen in the screenshot:
+
+![prompt](prompt.png)
+
 Fish shell configuration contains:
 
   - Custom two line prompt with full path, time and current git branch and status.
