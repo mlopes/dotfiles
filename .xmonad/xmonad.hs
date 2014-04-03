@@ -163,15 +163,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn "screenshot")
       -- Mute volume.
-  , ((modMask .|. controlMask, xK_s),
+  , ((0, 0x1008ff12),
      spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
+  , ((0, 0x1008ff11),
      spawn "amixer -q set Master 10%-")
 
   -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
+  , ((0, 0x1008ff13),
      spawn "amixer -q set Master 10%+")
 
   -- Audio previous.
