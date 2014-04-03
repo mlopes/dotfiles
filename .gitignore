@@ -1,10 +1,1 @@
-xmonad-x86_64-linux
-xmonad.errors
-xmonad.hi
-xmonad.o
-.config/fish/fish_history
-.config/fish/fishd.*
-.config/sublime-text-3/Cache/
-.config/sublime-text-3/Local/Session*
-.vim/.netrwhist
-.config/sublime-text-3/
+*
