@@ -24,5 +24,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu% %memory% %swap% \\|/:<fc=#CEFFAC>%wifi%</fc> <)<fc=#CEFFAC>%volume%</fc> %enp2s0f0% %battery% <fc=#CEFFAC>%date%</fc> %EGLL%"
+    template = "%StdinReader% }{%multicpu% %memory% %swap% <icon=/home/mlopes/.xmonad/icons/wifi-icon.xbm/><fc=#CEFFAC>%wifi%</fc> <icon=/home/mlopes/.xmonad/icons/icon_speaker.xbm/><fc=#CEFFAC>%volume%</fc> %enp2s0f0% %battery% <fc=#CEFFAC>%date%</fc> <icon=/home/mlopes/.xmonad/icons/tag_cloud.xbm/> %EGLL%"
 }
