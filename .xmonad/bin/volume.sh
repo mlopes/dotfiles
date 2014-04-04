@@ -26,13 +26,13 @@ then
     echo "Mute"
 elif [ $level == "100" ]
 then
-    echo "))(("
+    echo "<))))"
 elif [ $(($level <= 33)) == "1" ]
 then
-    echo "*)"
+    echo "<)"
 elif [ $(($level <= 66)) == "1" ]
 then
-    echo "*))"
+    echo "<))"
 else
-    echo "*)))"
+    echo "<)))"
 fi
