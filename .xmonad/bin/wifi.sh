@@ -24,6 +24,6 @@ case $bars in
   *)  bar='[----!!----]' ;;
 esac
 
-echo $essid $bar
+echo "\|/$essid$bar"
 
 exit 0
