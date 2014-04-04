@@ -19,9 +19,10 @@ Config {
         Run Date "%a %b %_d %l:%M" "date" 10,
  	Run BatteryP ["BAT0"] ["-t", "Bat:<acstatus><watts> (<left>%)", "-L", "10", "-H", "80", "-p", "3", "--", "-O", "<fc=green>On</fc> - ", "", "-L", "-15", "-H", "-5", "-l", "red", "-m", "blue", "-h", "green", "energy_full", " -f", "/sys/class/power_supply/AC0/online"] 600,
 	Run Com "/home/mlopes/.xmonad/bin/wifi.sh" [] "wifi" 30,
+	Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 3,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu%  %memory%   %swap%   Wifi:%wifi%  %eth4% %battery%   <fc=#FFFFCC>%date%</fc>   %EGLL%"
+    template = "%StdinReader% }{%multicpu%  %memory%   %swap%   Wifi:%wifi% %volume%  %eth4% %battery%   <fc=#FFFFCC>%date%</fc>   %EGLL%"
 }

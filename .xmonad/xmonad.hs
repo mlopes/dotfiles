@@ -172,7 +172,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -q set Master 10%+")
+     spawn "amixer -q set Master unmute && amixer -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),

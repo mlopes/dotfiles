@@ -23,16 +23,16 @@ fi
 #Create displays
 if [ $active == "off" ] || [ $level == "0" ]
 then
-    echo "Mute"
+    echo "Muted"
 elif [ $level == "100" ]
 then
     echo "<))))"
 elif [ $(($level <= 33)) == "1" ]
 then
-    echo "<)"
+    echo "<)···"
 elif [ $(($level <= 66)) == "1" ]
 then
-    echo "<))"
+    echo "<))··"
 else
-    echo "<)))"
+    echo "<)))·"
 fi
