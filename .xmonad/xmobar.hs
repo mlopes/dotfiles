@@ -6,9 +6,8 @@
 Config {
     font = "xft:Source\ Code\ Pro\ for\ Powerline-9",
     bgColor = "#000000",
-    fgColor = "#ffffff",
-    position = Static { xpos = 0, ypos = 0, width = 1280, height = 16 },
-    -- position = Top C,
+    fgColor = "#009C00",
+    position = Static { xpos = 0, ypos = 0, width = 1918, height = 16 },
     lowerOnStart = False,
     commands = [
         Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
@@ -24,5 +23,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu%  %memory%   %swap%  %wifi% %volume%  %enp2s0f0% %battery%   <fc=#FFFFCC>%date%</fc>   %EGLL%"
+    template = "%StdinReader% }{%multicpu%  %memory%   %swap%  \\|/:<fc=#CEFFAC>%wifi%</fc> <)<fc=#CEFFAC>%volume%</fc>  %enp2s0f0% %battery%   <fc=#CEFFAC>%date%</fc>   %EGLL%"
 }
