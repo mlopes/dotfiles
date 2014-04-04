@@ -16,7 +16,7 @@ Config {
         Run Memory ["-t","Mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Swap ["-t","Swap: <usedratio>%","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Network "enp2s0f0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
-        Run Date "%a %b %_d %l:%M" "date" 10,
+        Run Date "%a %b %d %H:%M" "date" 10,
         Run BatteryP ["BAT0"] ["-t", "Bat:<fc=#CEFFAC><acstatus><watts>(<left>%)</fc>", "-L", "10", "-H", "80", "-p", "3", "--", "-O", "<fc=#CEFFAC>On</fc> - ", "", "-L", "-15", "-H", "-5", "-l", "red", "-m", "blue", "-h", "#CEFFAC", "energy_full", " -f", "/sys/class/power_supply/AC0/online"] 600,
        Run Com "/home/mlopes/.xmonad/bin/wifi.sh" [] "wifi" 30,
        Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 30,
