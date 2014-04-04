@@ -62,7 +62,8 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Google-chrome"  --> doShift "2:web"
+    [ className =? "Chromium"  --> doShift "2:web"
+    , className =? "Google-chrome"  --> doShift "2:web"
     , className =? "Google-chrome-unstable"  --> doShift "2:web"
     , className =? "Gnome-terminal" --> doShift "1:term"
     , className =? "Urxvt" --> doShift "1:term"
@@ -118,7 +119,7 @@ tabConfig = defaultTheme {
     inactiveColor = "#000000"
 }
 -- Color of current window title in xmobar.
-xmobarTitleColor = "#FFB6B0"
+xmobarTitleColor = "#CEFFAC"
 
 -- Color of current workspace in xmobar.
 xmobarCurrentWorkspaceColor = "#CEFFAC"
@@ -152,7 +153,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
   , ((modMask, xK_p),
-       spawn "exe=`dmenu_path_c | yeganesh` && eval \"exec $exe\"")
+       spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -269,7 +270,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
-     spawn "gnome-session-quit --logout --no-prompt")
+     io (exitWith ExitSuccess))
 
   -- Restart xmonad.
   , ((modMask, xK_q),
