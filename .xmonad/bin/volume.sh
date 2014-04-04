@@ -23,16 +23,22 @@ fi
 #Create displays
 if [ $active == "off" ] || [ $level == "0" ]
 then
-    echo "Muted"
+    echo "<)[Muted]"
 elif [ $level == "100" ]
 then
-    echo "<))))"
-elif [ $(($level <= 33)) == "1" ]
+    echo "<)[▓▓▓▓▓]"
+elif [ $(($level >= 80)) == "1" ]
 then
-    echo "<)···"
-elif [ $(($level <= 66)) == "1" ]
+    echo "<)[▓▓▓▓░]"
+elif [ $(($level >= 60)) == "1" ]
 then
-    echo "<))··"
+    echo "<)[▓▓▓░░]"
+elif [ $(($level >= 40)) == "1" ]
+then
+    echo "<)[▓▓░░░]"
+elif [ $(($level >= 20)) == "1" ]
+then
+    echo "<)[▓░░░░]"
 else
-    echo "<)))·"
+    echo "<)[░░░░░]"
 fi
