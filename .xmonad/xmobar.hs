@@ -4,7 +4,7 @@
 
 -- This is setup for dual 1920x1080 monitors, with the right monitor as primary
 Config {
-    font = "xft:Fixed-8",
+    font = "xft:Source\ Code\ Pro\ for\ Powerline-9",
     bgColor = "#000000",
     fgColor = "#ffffff",
     position = Static { xpos = 0, ypos = 0, width = 1280, height = 16 },
@@ -19,10 +19,10 @@ Config {
         Run Date "%a %b %_d %l:%M" "date" 10,
  	Run BatteryP ["BAT0"] ["-t", "Bat:<acstatus><watts> (<left>%)", "-L", "10", "-H", "80", "-p", "3", "--", "-O", "<fc=green>On</fc> - ", "", "-L", "-15", "-H", "-5", "-l", "red", "-m", "blue", "-h", "green", "energy_full", " -f", "/sys/class/power_supply/AC0/online"] 600,
 	Run Com "/home/mlopes/.xmonad/bin/wifi.sh" [] "wifi" 30,
-	Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 3,
+	Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 2,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu%  %memory%   %swap%   Wifi:%wifi% %volume%  %eth4% %battery%   <fc=#FFFFCC>%date%</fc>   %EGLL%"
+    template = "%StdinReader% }{%multicpu%  %memory%   %swap%   Wifi:%wifi% 🔊 %volume%  %eth4% %battery%   <fc=#FFFFCC>%date%</fc>   %EGLL%"
 }

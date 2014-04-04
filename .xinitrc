@@ -15,5 +15,6 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
+/usr/bin/xscreensaver -no-splash &
 xsetroot -cursor_name left_ptr
 exec xmonad

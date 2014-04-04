@@ -8,6 +8,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.ScreenCorners
 -- import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
@@ -27,6 +28,7 @@ import XMonad.Actions.GridSelect
 
 import XMonad.Hooks.EwmhDesktops
 
+import XMonad.Actions.CycleWS
 -- import XMonad.Hooks.ICCCMFocus
 
 ------------------------------------------------------------------------
@@ -345,12 +347,15 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- By default, do nothing.
 myStartupHook = startup
 
+myEventHook e = do
+     screenCornerEventHook e
+ 
+
 startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
-  spawn "synclient PalmDetect=1 PalmMinWidth=14 HorizTwoFingerScroll=1"
-  spawn "xinput set-prop bcm5974 \"Synaptics Finger\" 50 90 255"
+  addScreenCorner SCUpperRight (spawn "xscreensaver-command -lock")
 
 
 
@@ -398,5 +403,5 @@ defaults = defaultConfig {
     startupHook        = myStartupHook,
 
     -- make fullscreen work in chromium
-    handleEventHook    = fullscreenEventHook
+    handleEventHook    = myEventHook
 }
