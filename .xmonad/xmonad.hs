@@ -356,7 +356,8 @@ startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
-  addScreenCorner SCUpperRight (spawn "xscreensaver-command -lock")
+  addScreenCorner SCLowerRight (spawn "xscreensaver-command -lock")
+  spawn "/usr/bin/xscreensaver -no-splash &"
 
 
 
@@ -373,6 +374,7 @@ main = do
           , ppSep = "   "}
       , manageHook = manageDocks <+> myManageHook
       , startupHook = myStartupHook
+      , handleEventHook = myEventHook
   }
 
 
@@ -404,5 +406,5 @@ defaults = defaultConfig {
     startupHook        = myStartupHook,
 
     -- make fullscreen work in chromium
-    handleEventHook    = myEventHook
+    handleEventHook    = fullscreenEventHook
 }
