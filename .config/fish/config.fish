@@ -18,10 +18,13 @@ set __fish_git_prompt_char_upstream_equal ''
 #rbenv rehash >/dev/null ^&1
 
 set -x EDITOR vim
+set -x -U SHELL fish
 set PATH /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
-set PATH ~/.cabal/bin ~/.xmonad/bin $PATH
+set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
+
+alias ssh 'eval (/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa); and ssh'
 
 function fish_prompt
   set last_status $status
