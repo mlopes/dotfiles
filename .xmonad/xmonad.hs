@@ -193,6 +193,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((0, 0x1008FF2C),
      spawn "eject -T")
 
+      -- Keyboard Brightness Up
+  , ((0, 0x1008ff05),
+     spawn "kbdlight up")
+
+      -- Keyboard Brightness Down
+  , ((0, 0x1008ff06),
+     spawn "kbdlight down")
+
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
