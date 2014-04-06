@@ -203,11 +203,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
       -- Screen Brightness Up
   , ((0, 0x1008ff02),
-     spawn "xbacklight -inc 10")
+     spawn "xbacklight -inc 8")
 
       -- Screen Brightness Down
   , ((0, 0x1008ff03),
-     spawn "xbacklight -dec 10")
+     spawn "xbacklight -dec 5")
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
