@@ -24,9 +24,6 @@ set PATH /usr/local/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
 
-set -xg SHELL fish; set -xg ssh_env (/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
-set -xg ssh_env (echo $ssh_env | sed 's/ set -e/; set -e/')
-alias ssh eval $ssh_env; and ssh
 
 function fish_prompt
   set last_status $status
