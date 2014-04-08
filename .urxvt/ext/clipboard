@@ -1,0 +1,29 @@
+#! /usr/bin/perl
+ 
+sub on_sel_grab {
+#     my $query=quotemeta $_[0]->selection;
+    my $query = $_[0]->selection;
+#    $content =~ s/\\/\\\\/g;
+    open (my $pipe,'| xsel -i -b -p') or die;
+    print $pipe $query;
+    close $pipe;
+}
+
+sub paste {
+    my ($self) = @_;
+    my $content = `xsel -ob`;
+#    $content =~ s/\\/\\\\/g;
+    if ($? == 0) {
+        $self->tt_write($content);
+    } else {
+        print STDERR "error running xsel: $!\n";
+    }
+    # $self->tt_write ($content);
+}
+
+sub on_user_command {
+    my ($self, $cmd) = @_;
+    if ($cmd eq "clipboard:paste") {
+        $self->paste;
+    }
+}
