@@ -37,7 +37,8 @@ import XMonad.Actions.CycleWS
 -- certain contrib modules.
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
-myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+myTerminal = "gnome-terminal"
 
 
 ------------------------------------------------------------------------
