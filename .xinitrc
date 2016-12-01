@@ -13,4 +13,5 @@ fi
 
 xmodmap  ~/.Xmodmap
 xsetroot -cursor_name left_ptr
+setxkbmap
 exec xmonad
