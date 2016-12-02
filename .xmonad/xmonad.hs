@@ -159,6 +159,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_p),
        spawn "exe=`dmenu_path | yeganesh` && eval \"exec $exe\"")
 
+
+  -- Switch to single screen mode
+  , ((modMask .|. mod1Mask, xK_1),
+       spawn "xrandr -s 0")
+
+  -- Switch to dual screen mode
+  , ((modMask .|. mod1Mask, xK_2),
+       spawn "xrandr --output HDMI-1 --auto --above eDP-1")
+
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
   -- the mouse.
