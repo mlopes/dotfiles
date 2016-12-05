@@ -172,12 +172,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- After pressing this key binding, click a window, or draw a rectangle with
   -- the mouse.
   , ((modMask .|. shiftMask, xK_p),
-     spawn "select-screenshot")
+     spawn "~/.xmonad/bin/select-screenshot")
 
   -- Take full screenshot in multi-head mode.
   -- That is, take a screenshot of everything you see.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn "screenshot")
+     spawn "~/.xmonad/bin/screenshot")
       -- Mute volume.
   , ((0, 0x1008ff12),
      spawn "amixer -q set Master toggle")
@@ -382,7 +382,7 @@ myStartupHook = startup
 
 myEventHook e = do
      screenCornerEventHook e
- 
+
 
 startup :: X ()
 startup = do
