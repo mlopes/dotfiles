@@ -24,4 +24,5 @@ set PATH /usr/local/bin /home/mlopes/.gem/ruby/2.1.0/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
+ssh-add ~/.ssh/id_rsa
 

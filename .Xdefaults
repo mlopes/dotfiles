@@ -95,7 +95,7 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
-urxvt*font: xft:Source\ Code\ Pro:pixelsize=14:antialias=true,xft:Inconsolata\ for\ Powerline:pixelsize=16
+urxvt*font: xft:Source Code Pro for Powerline:pixelsize=15:antialias=true,xft:Inconsolata for Powerline:pixelsize=16
 
 urxvt*background:       #0c0d0e
 urxvt*foreground:       #7f8f9f
