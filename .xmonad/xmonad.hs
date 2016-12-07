@@ -80,6 +80,7 @@ myManageHook = composeAll
     , className =? "HipChat"                --> doShift "5:media"
     , className =? "Slack"                  --> doShift "5:media"
     , className =? "Skype"                  --> doShift "5:media"
+    , className =? "TelegramDesktop"        --> doShift "5:media"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
