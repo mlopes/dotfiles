@@ -399,13 +399,15 @@ startup = do
 -- Run xmonad with all the defaults we set up.
 --
 main = do
+  -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
-          , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-          , ppSep = "   "}
+          , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
+          , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
+          , ppSep = " >  "}
       , manageHook = manageDocks <+> myManageHook
       , startupHook = myStartupHook
       , handleEventHook = myEventHook
