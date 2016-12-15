@@ -1,0 +1,6 @@
+xmodmap  ~/.Xmodmap
+xsetroot -cursor_name left_ptr
+setxkbmap
+xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &
+hsetroot -solid "#000000"
+xflux -l 51.5 -g -0.12 -k 4200
