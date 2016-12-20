@@ -11,8 +11,8 @@ Config {
     position = Top
     lowerOnStart = False,
     commands = [
-        -- Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
-        Run Weather "EGRB" ["-t","<icon=/home/mlopes/.xmonad/icons/weather.xbm/> <tempF>F <skyCondition>","-L","64","-H","77","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 3600,
+        --Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        Run Weather "EGLL" ["-t","<icon=/home/mlopes/.xmonad/icons/weather.xbm/> <tempC>C <skyCondition>","-L","10","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 3600,
         Run MultiCpu ["-t","<icon=/home/mlopes/.xmonad/icons/cpu.xbm/><total0><total1><total2><total3>","-L","30","-H","60","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC","-w","3"] 10,
         Run Memory ["-t","<icon=/home/mlopes/.xmonad/icons/mem.xbm/><usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Swap ["-t","<usedratio>% swap","-H","1024","-L","512","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
@@ -26,5 +26,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp1s0wi% <icon=/home/mlopes/.xmonad/icons/vol-hi.xbm/><fc=#ffca28>%volume%</fc> %battery% %date% %EGRB%"
+    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp1s0wi% <icon=/home/mlopes/.xmonad/icons/vol-hi.xbm/><fc=#ffca28>%volume%</fc> %battery% %date% %EGLL%"
 }
