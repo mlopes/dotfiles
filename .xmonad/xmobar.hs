@@ -14,7 +14,7 @@ Config {
         --Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
         Run Weather "EGLL" ["-t","<icon=/home/mlopes/.xmonad/icons/weather.xbm/> <tempC>C <skyCondition>","-L","10","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 3600,
         Run MultiCpu ["-t","<icon=/home/mlopes/.xmonad/icons/cpu.xbm/><total0><total1><total2><total3>","-L","30","-H","60","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC","-w","3"] 10,
-        Run Memory ["-t","<icon=/home/mlopes/.xmonad/icons/mem.xbm/><usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
+        Run Memory ["-t","<icon=/home/mlopes/.xmonad/icons/mem.xbm/><usedratio>%","--High","80","--Low","10","--high","#FF6600","--low","#96CBFE","--normal","#ffca28"] 10,
         Run Swap ["-t","<usedratio>% swap","-H","1024","-L","512","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Network "enp2s0f0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Wireless "wlp1s0" [ "-t", "<icon=/home/mlopes/.xmonad/icons/net-wifi.xbm/> <fc=#ffca28><essid></fc> [<qualitybar>]","-L","0","-H","32","--normal","yellow","--high","#ffca28","--low","red"] 10,
