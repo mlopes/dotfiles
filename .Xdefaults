@@ -96,7 +96,7 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 ! urxvt*font: xft:Source Code Pro for Powerline:pixelsize=15:antialias=true,xft:Inconsolata for Powerline:pixelsize=16, xft:PowerlineSymbols
-URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=14:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=14:antialias=true:hinting=true
 
 urxvt*background:       #0c0d0e
 urxvt*foreground:       #7f8f9f
