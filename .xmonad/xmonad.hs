@@ -260,6 +260,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_k),
      windows W.focusUp  )
 
+  , ((modMask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  , ((mod1Mask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  -- Move focus to the master window.
   -- Move focus to the master window.
   , ((modMask, xK_m),
      windows W.focusMaster  )
