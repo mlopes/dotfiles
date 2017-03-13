@@ -68,6 +68,7 @@ myManageHook = composeAll
     , className =? "Chromium"               --> doShift "2:web"
     , className =? "Google-chrome"          --> doShift "2:web"
     , className =? "chromium-browser"       --> doShift "2:web"
+    , className =? "Chromium-browser"       --> doShift "2:web"
     , className =? "Google-chrome-unstable" --> doShift "2:web"
     , className =? "Firefox"                --> doShift "2:web"
     , className =? "Sublime_text"           --> doShift "3:code"

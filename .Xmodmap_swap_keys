@@ -5,3 +5,6 @@ remove Mod4 = Super_L
 add Mod1 = Super_L
 add Mod4 = Alt_L
 
+keycode 134 = ISO_Level3_Shift
+keycode 108 = Super_R
+
