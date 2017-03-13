@@ -1,3 +1,9 @@
+set -xg SHELL /usr/bin/fish
+
+if status --is-interactive
+ keychain --eval --quiet -Q id_rsa | source
+end
+
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
@@ -24,5 +30,5 @@ set PATH /usr/local/bin /home/mlopes/.gem/ruby/2.1.0/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
-ssh-add ~/.ssh/id_rsa
+# ssh-add ~/.ssh/id_rsa
 
