@@ -1,12 +1,6 @@
 keycode 12 = 3 sterling 3 sterling numbersign
 keycode 19 = 0 parenright 0 parenright degree
-keycode  49 = ccedilla Ccedilla ccedilla Ccedilla dead_acute 
+keycode  49 = dead_acute
+keycode  54 = c C c C ccedilla Ccedilla
 keycode 48 = apostrophe quotedbl
-
-keycode 64 = Alt_L
-keycode 133 = Super_L
-remove Mod1 = Alt_L
-remove Mod4 = Super_L
-add Mod1 = Super_L
-add Mod4 = Alt_L
 
