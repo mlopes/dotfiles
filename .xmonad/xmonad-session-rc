@@ -1,4 +1,4 @@
-xrandr -s 1920x1200
+xrandr -s 1680x1050
 xsetroot -cursor_name left_ptr
 setxkbmap
 xmodmap  ~/.Xmodmap
