@@ -183,15 +183,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "~/.xmonad/bin/screenshot")
       -- Mute volume.
   , ((0, 0x1008ff12),
-     spawn "amixer -q set Master toggle")
+     spawn "amixer -c 1 -q set Master toggle")
 
   -- Decrease volume.
   , ((0, 0x1008ff11),
-     spawn "amixer -q set Master 10%-")
+     spawn "amixer -c 1 -q set Master 10%-")
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -q set Master unmute && amixer -q set Master 10%+")
+     spawn "amixer -c 1 -q set Master unmute && amixer -c 1 -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),

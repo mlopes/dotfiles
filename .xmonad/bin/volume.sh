@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Get L/R volume info
-left=`amixer sget Master | grep Mono:`
-right=`amixer sget Master | grep Mono:`
+left=`amixer -c 1 sget Master | grep Mono:`
+right=`amixer -c 1 sget Master | grep Mono:`
 llevel=${left#*[}
 llevel=${llevel%\%]*}
 rlevel=${right#*[}
