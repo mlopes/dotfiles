@@ -1,5 +1,5 @@
 Config {
-    font = "xft:Source\ Code\ Pro\ for\ Powerline-9",
+    font = "xft:Source\ Code\ Pro\ for\ Powerline-14",
     -- bgColor = "#000900",
     -- fgColor = "#009C00",
     bgColor = "#000000",
