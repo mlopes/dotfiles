@@ -1,4 +1,12 @@
-pointer = 1 2 3 5 4 6 7 8 9 10 11 12
-keycode 108 = Multi_key
-keycode  49 = grave asciitilde grave asciitilde
-keycode  94 = less greater less greater bar brokenbar bar
+keycode 12 = 3 sterling 3 sterling numbersign
+keycode 19 = 0 parenright 0 parenright degree
+keycode  49 = ccedilla Ccedilla ccedilla Ccedilla dead_acute 
+keycode 48 = apostrophe quotedbl
+
+keycode 64 = Alt_L
+keycode 133 = Super_L
+remove Mod1 = Alt_L
+remove Mod4 = Super_L
+add Mod1 = Super_L
+add Mod4 = Alt_L
+
