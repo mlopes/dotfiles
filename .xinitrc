@@ -14,4 +14,5 @@ fi
 xmodmap  ~/.Xmodmap
 xsetroot -cursor_name left_ptr
 setxkbmap
+synclient VertScrollDelta=-102
 exec xmonad

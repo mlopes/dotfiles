@@ -1,6 +1,8 @@
-xmodmap  ~/.Xmodmap
+xrandr -s 1920x1200
 xsetroot -cursor_name left_ptr
 setxkbmap
+xmodmap  ~/.Xmodmap
 xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &
 hsetroot -solid "#000000"
 xflux -l 51.5 -g -0.12 -k 4200
+synclient VertScrollDelta=-102
