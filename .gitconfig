@@ -4,6 +4,7 @@
 	please = push --force-with-lease
 	it = !git init && git commit -m “root” --allow-empty
 	shorty = status --short --branch
+	st = status --short --branch
 [color]
 	branch = auto
 	diff = auto
