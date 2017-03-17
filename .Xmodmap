@@ -1,6 +1,5 @@
 keycode 66 = Multi_key
 keycode  49 = grave asciitilde grave asciitilde
-keycode  94 = less greater less greater bar brokenbar bar
 keycode  54 = c C c C ccedilla Ccedilla
 keycode 57 = n N n N dead_tilde
 keycode 31 = i I i I dead_circumflex
