@@ -40,8 +40,8 @@ Plugin 'dantleech/vim-phpunit'
 Plugin 'dantleech/vim-phpnamespace'
 
 " Color scheme
-" Plugin 'vim-scripts/twilight256.vim.git'
-" Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/twilight256.vim.git'
+Plugin 'tomasr/molokai'
 
 " Grep buffers
 Plugin 'Buffer-grep'
@@ -286,7 +286,7 @@ let g:phpunit_testroot = 'tests'
 
 " Color scheme
 " color twilight256
-color mustango
+color molokai
 " color molokai
 " let g:rehash256 = 1
 " let g:molokai_original = 1
@@ -380,3 +380,4 @@ func! AsciiMode()
 endfu
 com! ASC call AsciiMode()
 
+color mustango
