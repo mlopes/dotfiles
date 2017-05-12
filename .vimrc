@@ -113,6 +113,7 @@ Plugin 'henrik/vim-qargs'
 
 " PHPSpec integration
 " Plugin 'Herzult/phpspec-vim.git'
+Plugin 'rafi/vim-phpspec'
 
 " Tern javascript thing
 Plugin 'marijnh/tern_for_vim'
@@ -380,4 +381,4 @@ func! AsciiMode()
 endfu
 com! ASC call AsciiMode()
 
-color mustango
+" color mustango

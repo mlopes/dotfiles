@@ -37,7 +37,8 @@ import XMonad.Actions.CycleWS
 -- certain contrib modules.
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
-myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish -l"
 -- myTerminal = "gnome-terminal"
 
 
@@ -64,6 +65,7 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ 
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term"
+    , resource =? "termvim"                --> doShift "3:code"
     , className =? "URxvt"                  --> doShift "1:term"
     , className =? "Chromium"               --> doShift "2:web"
     , className =? "Google-chrome"          --> doShift "2:web"
@@ -152,6 +154,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
+
+  , ((mod1Mask, xK_Return),
+     spawn "/usr/bin/urxvt +ls -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),
