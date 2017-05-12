@@ -1,0 +1,9 @@
+name: Ledger-API
+root: ~/Projects/WorldFirst/ledger-api
+attach: false
+
+windows:
+  - editor: vim .
+  - console: fish -l
+
+pre: find ./ -name "*.swp" -delete

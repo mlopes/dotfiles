@@ -1,0 +1,9 @@
+name: WFO
+root: ~/Projects/WorldFirst/world-first-online
+attach: false
+
+windows:
+  - editor: vim .
+  - console: fish -l
+
+pre: find ./ -name "*.swp" -delete
