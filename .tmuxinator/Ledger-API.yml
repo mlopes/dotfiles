@@ -3,7 +3,8 @@ root: ~/Projects/WorldFirst/ledger-api
 attach: false
 
 windows:
-  - editor: vim .
+  - editor: nvim .
   - console: fish -l
+  - vm: vagrant up; vagrant ssh
 
 pre: find ./ -name "*.swp" -delete

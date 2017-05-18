@@ -3,7 +3,7 @@ root: ~/Projects/WorldFirst/world-account-ledger
 attach: false
 
 windows:
-  - editor: vim .
+  - editor: nvim .
   - console: fish -l
 
 pre: find ./ -name "*.swp" -delete
