@@ -8,3 +8,5 @@ ruleset.xml
 *.sublime-workspace
 .bundle
 .gems
+.*.swp
+tags
