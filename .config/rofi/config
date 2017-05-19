@@ -1,0 +1,16 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #3e424d, #ff6600, #ff6600
+rofi.color-normal: #3e424d, #ffca28, #3e424d, #ff6600, #ffffff
+rofi.color-active: #3e424d, #5294e2, #3e424d, #5294e2, #3e424d
+rofi.color-urgent: #3e424d, #dc322f, #3e424d, #dc322f, #ff0000
+rofi.dpi: 96
+rofi.font: Input Mono Condensed Regular 12
+rofi.lines: 10
+rofi.line-margin: 1
+rofi.monitor: 0
+rofi.opacity: 90
+rofi.padding: 1
+rofi.terminal: urxvt
