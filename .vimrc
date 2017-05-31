@@ -15,6 +15,8 @@ call vundle#begin()
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'guyzmo/notmuch-abook'
+
 " Utility bundles
 Plugin 'L9'
 Plugin 'vim-scripts/tlib'

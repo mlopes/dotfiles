@@ -106,7 +106,7 @@ myManageHook = composeAll
 myLayout = avoidStruts (
     Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2)) |||
-    -- tabbed shrinkText tabConfig |||
+    tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
     -- noBorders (fullscreenFull Full)
@@ -155,7 +155,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
-  , ((mod1Mask, xK_Return),
+  , ((modMask .|. mod1Mask, xK_Return),
      spawn "/usr/bin/urxvt +ls -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using xscreensaver.
@@ -164,8 +164,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
-  , ((modMask, xK_p), spawn "rofi -show run")
-       -- spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
+  --, ((modMask, xK_p), spawn "rofi -show run")
+  , ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
 
   -- Switch to single screen mode
