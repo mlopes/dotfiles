@@ -364,4 +364,6 @@ func! AsciiMode()
 endfu
 com! ASC call AsciiMode()
 
+hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
 " color mustango
