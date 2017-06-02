@@ -37,7 +37,8 @@ import XMonad.Actions.CycleWS
 -- certain contrib modules.
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
-myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish -l"
 -- myTerminal = "gnome-terminal"
 
 
@@ -64,12 +65,14 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ 
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term"
+    , resource =? "termvim"                --> doShift "3:code"
     , className =? "URxvt"                  --> doShift "1:term"
     , className =? "Chromium"               --> doShift "2:web"
     , className =? "Google-chrome"          --> doShift "2:web"
     , className =? "chromium-browser"       --> doShift "2:web"
     , className =? "Chromium-browser"       --> doShift "2:web"
-    , className =? "Google-chrome-unstable" --> doShift "2:web"
+    , className =? "vimb"                   --> doShift "2:web"
+    , className =? "Vimb"                   --> doShift "2:web"
     , className =? "Firefox"                --> doShift "2:web"
     , className =? "Sublime_text"           --> doShift "3:code"
     , className =? "Gvim"                   --> doShift "3:code"
@@ -104,7 +107,7 @@ myManageHook = composeAll
 myLayout = avoidStruts (
     Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2)) |||
-    -- tabbed shrinkText tabConfig |||
+    tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
     -- noBorders (fullscreenFull Full)
@@ -114,7 +117,7 @@ myLayout = avoidStruts (
 -- Colors and borders
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ffAF00"
+myFocusedBorderColor = "#ff2200"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -153,14 +156,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
+  , ((modMask .|. mod1Mask, xK_Return),
+     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -name termvim -e fish -l -c 'tmux attach'")
+
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),
      spawn "xscreensaver-command -lock")
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
-  , ((modMask, xK_p),
-       spawn "exe=`~/.xmonad/bin/dmenu_path | ~/.cabal/bin/yeganesh` && eval \"exec $exe\"")
+  --, ((modMask, xK_p), spawn "rofi -show run")
+  , ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
 
   -- Switch to single screen mode
@@ -183,15 +189,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "~/.xmonad/bin/screenshot")
       -- Mute volume.
   , ((0, 0x1008ff12),
-     spawn "amixer -c 1 -q set Master toggle")
+     spawn "amixer -q set Master toggle")
 
   -- Decrease volume.
   , ((0, 0x1008ff11),
-     spawn "amixer -c 1 -q set Master 10%-")
+     spawn "amixer -q set Master 10%-")
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -c 1 -q set Master unmute && amixer -c 1 -q set Master 10%+")
+     spawn "amixer -q set Master unmute && amixer -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
@@ -260,6 +266,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_k),
      windows W.focusUp  )
 
+  , ((modMask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  , ((mod1Mask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  -- Move focus to the master window.
   -- Move focus to the master window.
   , ((modMask, xK_m),
      windows W.focusMaster  )
