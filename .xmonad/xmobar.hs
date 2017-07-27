@@ -1,5 +1,6 @@
 Config {
     font = "xft:Source\ Code\ Pro\ for\ Powerline-9",
+    additionalFonts   = [ "xft:FontAwesome:pixelsize=9:antialias=true:hinting=true" ],
     -- bgColor = "#000900",
     -- fgColor = "#009C00",
     bgColor = "#000000",
@@ -19,7 +20,25 @@ Config {
         Run Network "enp2s0f0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Wireless "wlp1s0" [ "-t", "<icon=/home/mlopes/.xmonad/icons/net-wifi.xbm/> <fc=#ffca28><essid></fc> [<qualitybar>]","-L","0","-H","32","--normal","yellow","--high","#ffca28","--low","red"] 10,
         Run Date "<icon=/home/mlopes/.xmonad/icons/calendar.xbm/> <fc=#ffca28>%a %b %d %H:%M</fc>" "date" 10,
-        Run BatteryP ["BAT0"] ["-t", "<icon=/home/mlopes/.xmonad/icons/battery.xbm/> <fc=#ffca28><acstatus> <watts>(<left>%/<timeleft>)</fc>", "-L", "10", "-H", "80", "-p", "3", "--", "-L", "-15", "-H", "-5", "-l", "red", "-m", "#ffca28", "-h", "orange", "-f", "/sys/class/power_supply/AC0/online"] 600,
+        -- Run BatteryP ["BAT0"] ["-t", "<icon=/home/mlopes/.xmonad/icons/battery.xbm/> <fc=#ffca28><acstatus> <watts>(<left>%/<timeleft>)</fc>", "-L", "10", "-H", "80", "-p", "3", "--", "-L", "-15", "-H", "-5", "-l", "red", "-m", "#ffca28", "-h", "orange", "-f", "/sys/class/power_supply/AC0/online"] 600,
+		Run BatteryP
+			["BAT0"]
+            [ "-t", "<fc=#b58900><acstatus></fc>"
+            , "-L", "20"
+            , "-H", "85"
+            , "-l", "#dc322f"
+            , "-n", "#b58900"
+            , "-h", "#b58900"
+            , "--" -- battery specific options
+            -- discharging status
+            , "-o"  , "<fn=1>\xf242</fn> <left>% (<timeleft>) <watts>"
+            -- AC "on" status
+            , "-O"  , "<fn=1>\xf1e6</fn> <left>%"
+            -- charged status
+            , "-i"  , "<fn=1>\xf1e6</fn> <left>%"
+            , "--off-icon-pattern", "<fn=1>\xf1e6</fn>"
+            , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
+            ] 10,
         -- Run Com "/home/mlopes/.xmonad/bin/wifi.sh" [] "wifi" 30,
        Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 3,
        Run StdinReader

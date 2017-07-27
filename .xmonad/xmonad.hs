@@ -46,7 +46,7 @@ myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish 
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ map show [7..9]
+myWorkspaces = ["1:term","2:web","3:code","4:apps","5:media","6:applications"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -79,7 +79,8 @@ myManageHook = composeAll
     , className =? "jetbrains-pycharm"      --> doShift "3:code"
     , className =? "Emacs24"                --> doShift "3:code"
     , className =? "jetbrains-phpstorm"     --> doShift "3:code"
-    , className =? "VirtualBox"             --> doShift "4:vm"
+    , className =? "VirtualBox"             --> doShift "4:apps"
+    , className =? "Gimp"                   --> doShift "4:apps"
     , className =? "Xchat"                  --> doShift "5:media"
     , className =? "HipChat"                --> doShift "5:media"
     , className =? "Slack"                  --> doShift "5:media"
