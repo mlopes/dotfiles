@@ -1,5 +1,5 @@
 Config {
-    font = "xft:Source\ Code\ Pro\ for\ Powerline-9",
+    font = "xft:Source\ Code\ Pro\ for\ Powerline-9,FontAwesome:size=10",
     additionalFonts   = [ "xft:FontAwesome:pixelsize=10:antialias=true:hinting=true" ],
     -- bgColor = "#000900",
     -- fgColor = "#009C00",
