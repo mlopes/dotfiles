@@ -23,22 +23,22 @@ fi
 #Create displays
 if [ $active == "off" ] || [ $level == "0" ]
 then
-    echo "[Muted]"
+    echo "<fn=1></fn> [Muted]"
 elif [ $level == "100" ]
 then
-    echo "[▓▓▓▓▓]"
+    echo "<fn=1></fn> [▓▓▓▓▓]"
 elif [ $(($level >= 80)) == "1" ]
 then
-    echo "[▓▓▓▓░]"
+    echo "<fn=1></fn> [▓▓▓▓░]"
 elif [ $(($level >= 60)) == "1" ]
 then
-    echo "[▓▓▓░░]"
+    echo "<fn=1></fn> [▓▓▓░░]"
 elif [ $(($level >= 40)) == "1" ]
 then
-    echo "[▓▓░░░]"
+    echo "<fn=1></fn> [▓▓░░░]"
 elif [ $(($level >= 20)) == "1" ]
 then
-    echo "[▓░░░░]"
+    echo "<fn=1></fn> [▓░░░░]"
 else
-    echo "[░░░░░]"
+    echo "<fn=1></fn> [░░░░░]"
 fi
