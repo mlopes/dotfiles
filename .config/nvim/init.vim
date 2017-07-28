@@ -93,6 +93,9 @@ Plug 'airblade/vim-gitgutter'
 " Argument wrapping and unwrapping
 Plug 'FooSoft/vim-argwrap'
 
+" Bats support
+Plug 'vim-scripts/bats.vim'
+
 if v:version >= 704
   "" Snippets
   Plug 'SirVer/ultisnips'
@@ -209,7 +212,7 @@ let g:ctrlp_working_path_mode = ''
 let g:ctrlp_map = ''
 
 " Ultisnip
-let g:snips_author="Daniel Leech <daniel@dantleech.com>"
+let g:snips_author="Marco Lopes <marco@mlop.es>"
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['jshint']
