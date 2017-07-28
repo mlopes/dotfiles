@@ -38,7 +38,7 @@ import XMonad.Actions.CycleWS
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish -l"
+myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -e fish -l"
 -- myTerminal = "gnome-terminal"
 
 
@@ -158,7 +158,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn $ XMonad.terminal conf)
 
   , ((modMask .|. mod1Mask, xK_Return),
-     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -name termvim -e fish -l -c 'tmux attach'")
+     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),

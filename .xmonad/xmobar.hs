@@ -23,10 +23,10 @@ Config {
         -- Run BatteryP ["BAT0"] ["-t", "<icon=/home/mlopes/.xmonad/icons/battery.xbm/> <fc=#ffca28><acstatus> <watts>(<left>%/<timeleft>)</fc>", "-L", "10", "-H", "80", "-p", "3", "--", "-L", "-15", "-H", "-5", "-l", "red", "-m", "#ffca28", "-h", "orange", "-f", "/sys/class/power_supply/AC0/online"] 600,
 		Run BatteryP
 			["BAT0"]
-            [ "-t", "<fc=#b58900><acstatus></fc>"
+            [ "-t", "<fc=#ffca28><acstatus></fc>"
             , "-L", "20"
             , "-H", "85"
-            , "-l", "#red"
+            , "-l", "red"
             , "-n", "#b58900"
             , "-h", "orange"
             , "--" -- battery specific options
