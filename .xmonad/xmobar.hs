@@ -18,7 +18,7 @@ Config {
         Run Memory ["-t","<fn=1>\xf2db</fn> <usedratio>%","--High","80","--Low","10","--high","#FF6600","--low","#96CBFE","--normal","#ffca28"] 10,
         Run Swap ["-t","<usedratio>% swap","-H","1024","-L","512","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Network "enp2s0f0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
-        Run Wireless "wlp1s0" [ "-t", "<fn=1>\xf1eb</fn> <fc=#ffca28><essid></fc> [<qualitybar>]","-L","0","-H","32","--normal","yellow","--high","#ffca28","--low","red"] 10,
+        Run Wireless "wlp3s0" [ "-t", "<fn=1>\xf1eb</fn> <fc=#ffca28><essid></fc> [<qualitybar>]","-L","0","-H","32","--normal","yellow","--high","#ffca28","--low","red"] 10,
         Run Date "<fn=1>\xf073</fn> <fc=#ffca28>%a %b %d %H:%M</fc>" "date" 10,
         -- Run BatteryP ["BAT0"] ["-t", "<icon=/home/mlopes/.xmonad/icons/battery.xbm/> <fc=#ffca28><acstatus> <watts>(<left>%/<timeleft>)</fc>", "-L", "10", "-H", "80", "-p", "3", "--", "-L", "-15", "-H", "-5", "-l", "red", "-m", "#ffca28", "-h", "orange", "-f", "/sys/class/power_supply/AC0/online"] 600,
 		Run BatteryP
@@ -46,5 +46,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp1s0wi% <fc=#ffca28>%volume%</fc> %battery% %date% %EGLL%"
+    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp3s0wi% <fc=#ffca28>%volume%</fc> %battery% %date% %EGLL%"
 }
