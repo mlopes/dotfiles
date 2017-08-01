@@ -1,5 +1,5 @@
 keycode 11 = 2 at 2 at EuroSign
-keycode 12 = 3 sterling 3 sterling numbersign
+keycode 12 = 3 sterling 3 numbersign numbersign numbersign
 keycode 15 = 6 asciicircum 6 asciicircum
 keycode 19 = 0 parenright 0 parenright degree
 keycode  54 = c C c C ccedilla Ccedilla
@@ -9,4 +9,5 @@ keycode 26 = e E e E dead_acute
 keycode 38 = a A a A dead_grave
 keycode 94 = grave asciitilde
 keycode 48 = apostrophe quotedbl
+keycode 49 = numbersign quotedbl
 keycode  51 = backslash bar

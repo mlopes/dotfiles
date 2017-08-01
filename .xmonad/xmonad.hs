@@ -38,7 +38,7 @@ import XMonad.Actions.CycleWS
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish -l"
+myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -e fish -l"
 -- myTerminal = "gnome-terminal"
 
 
@@ -46,7 +46,7 @@ myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -e fish 
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ map show [7..9]
+myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075","5:apps \xf080"] ++ map show [6..9]
 
 
 ------------------------------------------------------------------------
@@ -64,27 +64,28 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ 
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Gnome-terminal"         --> doShift "1:term"
-    , resource =? "termvim"                --> doShift "3:code"
-    , className =? "URxvt"                  --> doShift "1:term"
-    , className =? "Chromium"               --> doShift "2:web"
-    , className =? "Google-chrome"          --> doShift "2:web"
-    , className =? "chromium-browser"       --> doShift "2:web"
-    , className =? "Chromium-browser"       --> doShift "2:web"
-    , className =? "vimb"                   --> doShift "2:web"
-    , className =? "Vimb"                   --> doShift "2:web"
-    , className =? "Firefox"                --> doShift "2:web"
-    , className =? "Sublime_text"           --> doShift "3:code"
-    , className =? "Gvim"                   --> doShift "3:code"
-    , className =? "jetbrains-pycharm"      --> doShift "3:code"
-    , className =? "Emacs24"                --> doShift "3:code"
-    , className =? "jetbrains-phpstorm"     --> doShift "3:code"
-    , className =? "VirtualBox"             --> doShift "4:vm"
-    , className =? "Xchat"                  --> doShift "5:media"
-    , className =? "HipChat"                --> doShift "5:media"
-    , className =? "Slack"                  --> doShift "5:media"
-    , className =? "Skype"                  --> doShift "5:media"
-    , className =? "TelegramDesktop"        --> doShift "5:media"
+    [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
+    , resource =? "termvim"                 --> doShift "3:code \xf126"
+    , className =? "URxvt"                  --> doShift "1:term \xf120"
+    , className =? "Chromium"               --> doShift "2:web \xf269"
+    , className =? "Google-chrome"          --> doShift "2:web \xf269"
+    , className =? "chromium-browser"       --> doShift "2:web \xf269"
+    , className =? "Chromium-browser"       --> doShift "2:web \xf269"
+    , className =? "vimb"                   --> doShift "2:web \xf269"
+    , className =? "Vimb"                   --> doShift "2:web \xf269"
+    , className =? "Firefox"                --> doShift "2:web \xf269"
+    , className =? "Sublime_text"           --> doShift "3:code \xf126"
+    , className =? "Gvim"                   --> doShift "3:code \xf126"
+    , className =? "jetbrains-pycharm"      --> doShift "3:code \xf126"
+    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
+    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
+    , className =? "Gimp"                   --> doShift "5:apps \xf080"
+    , className =? "Xchat"                  --> doShift "4:comms \xf075"
+    , className =? "HipChat"                --> doShift "4:comms \xf075"
+    , className =? "Slack"                  --> doShift "4:comms \xf075"
+    , className =? "Skype"                  --> doShift "4:comms \xf075"
+    , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
@@ -157,7 +158,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn $ XMonad.terminal conf)
 
   , ((modMask .|. mod1Mask, xK_Return),
-     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/CCCC -name termvim -e fish -l -c 'tmux attach'")
+     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),
