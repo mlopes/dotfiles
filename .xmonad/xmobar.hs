@@ -40,11 +40,18 @@ Config {
             , "--off-icon-pattern", "<fn=1>\xf1e6</fn>"
             , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
             ] 10,
+        Run Volume "default" "Master"
+            [ "-t", "<status>", "--"
+                                  , "--on", "<fc=#ffca28><fn=1>\xf028</fn> <volume>%</fc>"
+                                  , "--onc", "#859900"
+                                  , "--off", "<fc=orange><fn=1>\xf026</fn> MUTE</fc>"
+                                  , "--offc", "#dc322f"
+                                   ] 1,
         -- Run Com "/home/mlopes/.xmonad/bin/wifi.sh" [] "wifi" 30,
        Run Com "/home/mlopes/.xmonad/bin/volume.sh" [] "volume" 3,
        Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp3s0wi% <fc=#ffca28>%volume%</fc> %battery% %date% %EGLL%"
+    template = "%StdinReader% }{%multicpu% %memory% %swap%  %wlp3s0wi% %default:Master% %battery% %date% %EGLL%"
 }
