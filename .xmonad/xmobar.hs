@@ -14,7 +14,7 @@ Config {
     commands = [
         --Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
         Run Weather "EGLL" ["-t","<fn=1>\xf0c2</fn> <tempC>C <skyCondition>","-L","10","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 3600,
-        Run MultiCpu ["-t","<fn=1>\xf085</fn> <total0><total1><total2><total3>","-L","30","-H","60","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC","-w","3"] 10,
+        Run MultiCpu ["-t","<fn=1>\xf085</fn><total0><total1><total2><total3>","-L","30","-H","60","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC","-w","3"] 10,
         Run Memory ["-t","<fn=1>\xf2db</fn> <usedratio>%","--High","80","--Low","10","--high","#FF6600","--low","#96CBFE","--normal","#ffca28"] 10,
         Run Swap ["-t","<usedratio>% swap","-H","1024","-L","512","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
         Run Network "enp2s0f0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#ffca28","-n","#FFFFCC"] 10,
