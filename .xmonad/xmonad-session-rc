@@ -2,8 +2,9 @@ xrandr -s 1680x1050
 xsetroot -cursor_name left_ptr
 setxkbmap
 xmodmap  ~/.Xmodmap
-xmodmap  ~/.Xmodmap_swap_keys
+# xmodmap  ~/.Xmodmap_swap_keys
 xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &
-hsetroot -solid "#000000"
+hsetroot -fill ~/.xmonad/wallpaper.jpg
 xflux -l 51.5 -g -0.12 -k 4200
 synclient VertScrollDelta=-102
+xinput --set-prop 12 "Synaptics Palm Detection" 50
