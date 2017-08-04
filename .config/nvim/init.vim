@@ -93,6 +93,9 @@ Plug 'airblade/vim-gitgutter'
 " Argument wrapping and unwrapping
 Plug 'FooSoft/vim-argwrap'
 
+" Scala plugins bundle
+Plug 'derekwyatt/vim-scala'
+
 if v:version >= 704
   "" Snippets
   Plug 'SirVer/ultisnips'
