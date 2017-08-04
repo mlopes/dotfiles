@@ -110,7 +110,7 @@ myManageHook = composeAll
 myLayout = avoidStruts (
     (spacing 3 $ Tall 1 (3/100) (1/2)) |||
     (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
-    tabbed shrinkText tabConfig |||
+    -- tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
     -- noBorders (fullscreenFull Full)
