@@ -29,6 +29,8 @@ import XMonad.Actions.GridSelect
 import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Actions.CycleWS
+
+import XMonad.Layout.Spacing
 -- import XMonad.Hooks.ICCCMFocus
 
 ------------------------------------------------------------------------
@@ -106,8 +108,8 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
-    Tall 1 (3/100) (1/2) |||
-    Mirror (Tall 1 (3/100) (1/2)) |||
+    (spacing 3 $ Tall 1 (3/100) (1/2)) |||
+    (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
     tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
@@ -117,7 +119,7 @@ myLayout = avoidStruts (
 ------------------------------------------------------------------------
 -- Colors and borders
 --
-myNormalBorderColor  = "#7c7c7c"
+myNormalBorderColor  = "#121212"
 myFocusedBorderColor = "#ff2200"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
@@ -135,7 +137,7 @@ xmobarTitleColor = "#FF6F00"
 -- Color of current workspace in xmobar.
 xmobarCurrentWorkspaceColor = "#FF6F00"
 -- Width of the window border in pixels.
-myBorderWidth = 1
+myBorderWidth = 2
 
 
 ------------------------------------------------------------------------
