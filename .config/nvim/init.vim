@@ -100,6 +100,12 @@ endif
 
 Plug 'honza/vim-snippets'
 
+" Haskell type checking
+Plug  'bitc/vim-hdevtools'
+
+" Haskell syntax highlight indentation and cabal support
+Plug 'neovimhaskell/haskell-vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -257,6 +263,15 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
 
+" haskell-vim
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
 " ======================== "
 " Neo complete config
 " ======================== "
@@ -353,6 +368,9 @@ nnoremap <silent><leader>pp :call PhpunitRun()<CR>
 nnoremap <silent><leader>nn :call PhpNamespaceInsert()<CR>
 
 nnoremap <silent> <leader>aw :ArgWrap<CR>
+
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
