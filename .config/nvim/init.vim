@@ -95,6 +95,7 @@ Plug 'FooSoft/vim-argwrap'
 
 " Scala plugins bundle
 Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'
 
 if v:version >= 704
   "" Snippets
@@ -216,6 +217,10 @@ let g:ctrlp_max_depth = 80
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_map = ''
+
+" Ensime
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>y :EnTypeCheck<CR>
 
 " Ultisnip
 let g:snips_author="Daniel Leech <daniel@dantleech.com>"
