@@ -6,3 +6,5 @@
 ruleset.xml
 *.sublime-project
 *.sublime-workspace
+.ensime
+.ensime_cache/*
