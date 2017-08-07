@@ -120,7 +120,7 @@ myLayout = avoidStruts (
 -- Colors and borders
 --
 myNormalBorderColor  = "#121212"
-myFocusedBorderColor = "#ff2200"
+myFocusedBorderColor = "#E75700"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -132,10 +132,10 @@ tabConfig = defaultTheme {
     inactiveColor = "#000000"
 }
 -- Color of current window title in xmobar.
-xmobarTitleColor = "#FF6F00"
+xmobarTitleColor = "#EAAA31"
 
 -- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "#FF6F00"
+xmobarCurrentWorkspaceColor = "#FF6600"
 -- Width of the window border in pixels.
 myBorderWidth = 2
 
@@ -424,7 +424,7 @@ main = do
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
           , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
-          , ppSep = " >  "}
+          , ppSep = " |  "}
       , manageHook = manageDocks <+> myManageHook
       , startupHook = myStartupHook
       , handleEventHook = myEventHook
