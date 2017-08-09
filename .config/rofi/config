@@ -1,0 +1,20 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #332200AA, #E75700, #E75700
+rofi.color-normal: #00000000, #FE8C1F, #00000000, #55442299, #FF6600
+rofi.color-active: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
+rofi.color-urgent: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
+rofi.dpi: 96
+rofi.font: Source Code Pro Medium 12
+rofi.lines: 1
+rofi.columns: 10
+rofi.line-margin: 5
+rofi.width: 90%
+rofi.monitor: -1
+rofi.opacity: 90
+rofi.padding: 1
+rofi.terminal: urxvt
+rofi.hide-scrollbar: true
+rofi.location: 0

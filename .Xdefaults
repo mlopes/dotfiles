@@ -97,6 +97,7 @@ URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=14:antialias=true:hinting=tr
 
 urxvt*background:       rgba:0000/0000/0000/9999
 urxvt*foreground:       #7f8f9f
+urxvt*foreground:       #999389
 urxvt*matcher.button:   1
 urxvt*allow_bold:    true
 

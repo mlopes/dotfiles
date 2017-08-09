@@ -67,7 +67,6 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
-    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
@@ -79,15 +78,17 @@ myManageHook = composeAll
     , className =? "Sublime_text"           --> doShift "3:code \xf126"
     , className =? "Gvim"                   --> doShift "3:code \xf126"
     , className =? "jetbrains-pycharm"      --> doShift "3:code \xf126"
-    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , className =? "jetbrains-idea-ce"      --> doShift "3:code \xf126"
     , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
-    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
-    , className =? "Gimp"                   --> doShift "5:apps \xf080"
+    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "Xchat"                  --> doShift "4:comms \xf075"
     , className =? "HipChat"                --> doShift "4:comms \xf075"
     , className =? "Slack"                  --> doShift "4:comms \xf075"
     , className =? "Skype"                  --> doShift "4:comms \xf075"
     , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
+    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
+    , className =? "Gimp"                   --> doShift "5:apps \xf080"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
@@ -168,8 +169,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
-  --, ((modMask, xK_p), spawn "rofi -show run")
-  , ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
+  , ((modMask, xK_p), spawn "rofi -show run")
+  --, ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
 
   -- Switch to single screen mode
@@ -363,7 +364,7 @@ myFocusFollowsMouse = False
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
   [
     -- mod-button1, Set the window to floating mode and move by dragging
-    ((modMask, button1),
+    ((modMask .|. shiftMask, button1),
      (\w -> focus w >> mouseMoveWindow w))
 
     -- mod-button2, Raise the window to the top of the stack
