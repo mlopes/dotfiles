@@ -3,7 +3,7 @@
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
 rofi.color-window: #33AA0022, #E75700, #E75700
-rofi.color-normal: #00000000, #FE8C1F, #00000000, #55442299, #FF6600
+rofi.color-normal: #00000000, #FE8C1F, #00000000, #55994422, #FF6600
 rofi.color-active: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
 rofi.color-urgent: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
 rofi.dpi: 96
