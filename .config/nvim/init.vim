@@ -35,7 +35,7 @@ Plug 'godlygeek/tabular'
 Plug 'dantleech/vim-phpunit'
 
 " Determine the namespace for the current file
-Plug 'dantleech/vim-phpnamespace'
+" Plug 'dantleech/vim-phpnamespace'
 
 " Colour scheme
 Plug 'tomasr/molokai'
