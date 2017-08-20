@@ -163,9 +163,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. mod1Mask, xK_Return),
      spawn "/usr/bin/urxvt +ls -name termvim -e fish -l -c 'tmux attach'")
 
-  -- Lock the screen using xscreensaver.
+  -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
-     spawn "xscreensaver-command -lock")
+     spawn "slock")
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
