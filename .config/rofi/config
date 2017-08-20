@@ -7,7 +7,7 @@ rofi.color-normal: #00000000, #FE8C1F, #00000000, #55442299, #FF6600
 rofi.color-active: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
 rofi.color-urgent: #ff0000, #ff0000, #ff0000, #ff0000, #ff0000
 rofi.dpi: 96
-rofi.font: Source Code Pro Medium 12
+rofi.font: Source Code Pro Medium 24
 rofi.lines: 1
 rofi.columns: 10
 rofi.line-margin: 5
