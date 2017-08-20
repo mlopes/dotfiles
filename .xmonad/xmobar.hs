@@ -11,8 +11,12 @@ Config {
     borderColor = "#FF6600",
     pickBroadest = True
     position = Top,
-    textOffset = 16,
+    textOffset = 26,
     lowerOnStart = False,
+    overrideRedirect = False,
+    hideOnStart = False,
+    persistent = True,
+    allDesktops = True,
     commands = [
         Run Locks,
         --Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
