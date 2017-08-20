@@ -29,6 +29,8 @@ import XMonad.Actions.GridSelect
 import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Actions.CycleWS
+
+import XMonad.Layout.Spacing
 -- import XMonad.Hooks.ICCCMFocus
 
 ------------------------------------------------------------------------
@@ -38,7 +40,7 @@ import XMonad.Actions.CycleWS
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -e fish -l"
+myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "gnome-terminal"
 
 
@@ -65,7 +67,6 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
-    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
@@ -77,15 +78,17 @@ myManageHook = composeAll
     , className =? "Sublime_text"           --> doShift "3:code \xf126"
     , className =? "Gvim"                   --> doShift "3:code \xf126"
     , className =? "jetbrains-pycharm"      --> doShift "3:code \xf126"
-    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , className =? "jetbrains-idea-ce"      --> doShift "3:code \xf126"
     , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
-    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
-    , className =? "Gimp"                   --> doShift "5:apps \xf080"
+    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "Xchat"                  --> doShift "4:comms \xf075"
     , className =? "HipChat"                --> doShift "4:comms \xf075"
     , className =? "Slack"                  --> doShift "4:comms \xf075"
     , className =? "Skype"                  --> doShift "4:comms \xf075"
     , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
+    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
+    , className =? "Gimp"                   --> doShift "5:apps \xf080"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
@@ -106,9 +109,9 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
-    Tall 1 (3/100) (1/2) |||
-    Mirror (Tall 1 (3/100) (1/2)) |||
-    tabbed shrinkText tabConfig |||
+    (spacing 3 $ Tall 1 (3/100) (1/2)) |||
+    (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
+    -- tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
     -- noBorders (fullscreenFull Full)
@@ -117,8 +120,8 @@ myLayout = avoidStruts (
 ------------------------------------------------------------------------
 -- Colors and borders
 --
-myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ff2200"
+myNormalBorderColor  = "#121212"
+myFocusedBorderColor = "#E75700"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -130,12 +133,12 @@ tabConfig = defaultTheme {
     inactiveColor = "#000000"
 }
 -- Color of current window title in xmobar.
-xmobarTitleColor = "#FF6F00"
+xmobarTitleColor = "#EAAA31"
 
 -- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "#FF6F00"
+xmobarCurrentWorkspaceColor = "#FF6600"
 -- Width of the window border in pixels.
-myBorderWidth = 1
+myBorderWidth = 2
 
 
 ------------------------------------------------------------------------
@@ -158,7 +161,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn $ XMonad.terminal conf)
 
   , ((modMask .|. mod1Mask, xK_Return),
-     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
+     spawn "/usr/bin/urxvt +ls -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),
@@ -166,17 +169,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
-  --, ((modMask, xK_p), spawn "rofi -show run")
-  , ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
+  , ((modMask, xK_p), spawn "rofi -show run")
+  --, ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
 
   -- Switch to single screen mode
   , ((modMask .|. mod1Mask, xK_1),
-       spawn "xrandr -s 0")
+       spawn "xrandr --output HDMI2 --off")
 
   -- Switch to dual screen mode
   , ((modMask .|. mod1Mask, xK_2),
-       spawn "xrandr --output HDMI-1 --auto --above eDP-1")
+       spawn "xrandr --output HDMI2 --auto --above eDP1")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -190,15 +193,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "~/.xmonad/bin/screenshot")
       -- Mute volume.
   , ((0, 0x1008ff12),
-     spawn "amixer -q set Master toggle")
+     spawn "amixer -D pulse set Master 1+ toggle")
 
   -- Decrease volume.
   , ((0, 0x1008ff11),
-     spawn "amixer -q set Master 10%-")
+     spawn "amixer -D pulse set Master 10%-")
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -q set Master unmute && amixer -q set Master 10%+")
+     spawn "amixer -D pulse set Master unmute && amixer -D pulse set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
@@ -361,7 +364,7 @@ myFocusFollowsMouse = False
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
   [
     -- mod-button1, Set the window to floating mode and move by dragging
-    ((modMask, button1),
+    ((modMask .|. shiftMask, button1),
      (\w -> focus w >> mouseMoveWindow w))
 
     -- mod-button2, Raise the window to the top of the stack
@@ -415,14 +418,14 @@ startup = do
 --
 main = do
   -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "/usr/local/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
           , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
-          , ppSep = " >  "}
+          , ppSep = " |  "}
       , manageHook = manageDocks <+> myManageHook
       , startupHook = myStartupHook
       , handleEventHook = myEventHook

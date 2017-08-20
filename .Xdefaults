@@ -1,9 +1,9 @@
 
 G! Xft settings --------------------------------
-Xft.dpi:        96
+Xft.dpi:        166
 Xft.antialias:  true
 Xft.rgba:       rgb
-Xft.hinting:    true
+Xft.hinting:    full
 Xft.hintstyle:  hintslight
 
 !-----------------------------------
@@ -15,13 +15,8 @@ URxvt*geometry:					100x35
 URxvt*borderLess:				false
 
 URxvt*depth:					32
-URxvt*scrollBar_right:				true
-URxvt*cursorBlink:				false
-URxvt*cursorUnderline:				true
-URxvt*scrollColor:				#111111
 URxvt*perl-ext-common:				default,matcher,clipboard,font-size
 ! URxvt*perl-ext-common:				default,clipboard,tabbed,matcher
-URxvt.scrollBar:				off
 ! URxvt.iconFile:					~/icons/Terminal.svg
 URxvt.tabbed.tabbar-fg:			 	7
 URxvt.tabbed.tabbar-bg: 			0
@@ -29,23 +24,17 @@ URxvt.tabbed.tab-fg:    			4
 URxvt.tabbed.tab-bg:    			0	
 URxvt*termName:				 	rxvt-256color
 URxvt.url-launcher:				/usr/bin/xdg-open
-URxvt.matcher.button:				1
 
-URxvt*loginShell:true
-URxvt*transparent:true
-URxvt*shading:15
 
 ! how many lines you want it to save per session
 URxvt*saveLines:65535
 ! URxvt*troughColor:#000000
-URxvt*letterSpace: -1
 
 ! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
 URxvt*urgentOnBell: true
 
 ! dont forget to change this to your favorite browser
 #URxvt*urlLauncher: google-chrome
-
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.C-Up:     perl:font-size:increase
@@ -77,15 +66,22 @@ URxvt.loginShell:           true
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
-! Fonts
-URxvt.allow_bold:           false
-
 ! Fix font space
 URxvt*letterSpace: -1
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
+
+! Scroll
+URxvt*scrollColor:				#111111
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
 
 ! Cursor
 URxvt.cursorBlink:          true
@@ -95,22 +91,18 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
+! Fonts
 ! urxvt*font: xft:Source Code Pro for Powerline:pixelsize=15:antialias=true,xft:Inconsolata for Powerline:pixelsize=16, xft:PowerlineSymbols
 URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=14:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=14:antialias=true:hinting=true
 
-urxvt*background:       #0c0d0e
+urxvt*background:       rgba:0000/0000/0000/9999
 urxvt*foreground:       #7f8f9f
-urxvt*scrollBar:        false
+urxvt*foreground:       #999389
 urxvt*matcher.button:   1
 urxvt*allow_bold:    true
 
-Xft*dpi:                96
-Xft*antialias:          true
-Xft*hinting:            full
-
 URxvt*fading:        0
 URxvt*tintColor:     #ffffff
-URxvt*shading:        0
 URxvt*inheritPixmap:     False
 
 ! color scheme
