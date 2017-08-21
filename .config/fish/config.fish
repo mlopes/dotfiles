@@ -33,8 +33,8 @@ set __fish_git_prompt_char_upstream_equal ''
 #rbenv rehash >/dev/null ^&1
 
 set -x EDITOR vim
-set -x -U SHELL /usr/bin/fish
-set PATH /home/mlopes/.local/bin /usr/local/bin /home/mlopes/.gem/ruby/2.1.0/bin $PATH
+set -x SHELL /usr/bin/fish
+set PATH /home/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
