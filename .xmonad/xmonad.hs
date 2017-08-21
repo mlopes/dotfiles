@@ -175,11 +175,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Switch to single screen mode
   , ((modMask .|. mod1Mask, xK_1),
-       spawn "xrandr --output HDMI2 --off")
+       spawn "xrandr --output DP1 --off")
 
   -- Switch to dual screen mode
   , ((modMask .|. mod1Mask, xK_2),
-       spawn "xrandr --output HDMI2 --auto --above eDP1")
+       spawn "xrandr --output DP1 --auto --above eDP1 && feh --bg-tile ~/.xmonad/wallpaper.jpg")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
