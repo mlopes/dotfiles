@@ -1,9 +1,0 @@
-name: Ledger-Client
-root: ~/Projects/WorldFirst/ledger
-attach: false
-
-windows:
-  - editor: nvim .
-  - console: fish -l
-
-pre: find ./ -name "*.swp" -delete
