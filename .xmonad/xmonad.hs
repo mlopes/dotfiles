@@ -67,6 +67,7 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
+    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
@@ -81,7 +82,6 @@ myManageHook = composeAll
     , className =? "jetbrains-idea-ce"      --> doShift "3:code \xf126"
     , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
     , className =? "Emacs24"                --> doShift "3:code \xf126"
-    , resource =? "termvim"                 --> doShift "3:code \xf126"
     , className =? "Xchat"                  --> doShift "4:comms \xf075"
     , className =? "HipChat"                --> doShift "4:comms \xf075"
     , className =? "Slack"                  --> doShift "4:comms \xf075"
