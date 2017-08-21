@@ -1,0 +1,10 @@
+name: environment-dashboard
+root: ~/Projects/environment-dashboard
+attach: false
+
+windows:
+  - console: fish -l
+  - play: sbt run
+  - sbt: sbt
+
+pre: find ./ -name "*.swp" -delete
