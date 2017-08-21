@@ -161,7 +161,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn $ XMonad.terminal conf)
 
   , ((modMask .|. mod1Mask, xK_Return),
-     spawn "/usr/bin/urxvt +ls -name termvim -e fish -l -c 'tmux attach'")
+     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
