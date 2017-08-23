@@ -68,6 +68,7 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
     , resource =? "termvim"                 --> doShift "3:code \xf126"
+    , resource =? "termtelegram"            --> doShift "4:comms \xf075"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
