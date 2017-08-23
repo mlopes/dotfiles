@@ -3,8 +3,8 @@ root: ~/Projects/environment-dashboard
 attach: false
 
 windows:
-  - console: fish -l
-  - play: sbt run
-  - sbt: sbt
+  - console: git st
+  - play: set -x CP_FLOW_ID ""; set -x CP_API_KEY ""; set -x TERM "xterm-color"; sbt run
+  - sbt: set -x TERM "xterm-color"; sbt
 
 pre: find ./ -name "*.swp" -delete
