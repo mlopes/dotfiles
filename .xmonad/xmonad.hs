@@ -423,7 +423,7 @@ main = do
   xmonad $ docks defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
-          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
+          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 75
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
           , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
           , ppSep = " |  "}
