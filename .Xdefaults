@@ -95,10 +95,7 @@ URxvt.pointerBlank:         true
 
 ! Fonts
 ! urxvt*font: xft:Source Code Pro for Powerline:pixelsize=15:antialias=true,xft:Inconsolata for Powerline:pixelsize=16, xft:PowerlineSymbols
-URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=16:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=16:antialias=true:hinting=true
-URxvt*boldFont: xft:Source\ Code\ Pro\ Black:pixelsize=16:antialias=true:hinting=true
-URxvt*italicFont: xft:Source\ Code\ Pro\ Italic:pixelsize=16:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:Source\ Code\ Pro\ Black\ Italic:pixelsize=16:antialias=true:hinting=true
+URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=7:antialias=true:hinting=true,xft:Symbola:antialias=true:hinting=true,xft:FontAwesome:size=7,antialias=true,hinting=true
 
 urxvt*background:       rgba:0000/0000/0000/9999
 urxvt*foreground:       #7f8f9f
