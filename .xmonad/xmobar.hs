@@ -31,11 +31,11 @@ Config {
 		Run BatteryP
 			["BAT0"]
             [ "-t", "<fc=#FE8C1F><acstatus></fc>"
-            , "-L", "20"
+            , "-L", "10"
             , "-H", "85"
-            , "-l", "#FFD77C"
+            , "-h", "#FFD77C"
             , "-n", "#FE8C1F"
-            , "-h", "#FF6600"
+            , "-l", "#FF0000"
             , "--" -- battery specific options
             , "-p", "green"
             -- discharging status
