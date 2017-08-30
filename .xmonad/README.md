@@ -23,17 +23,17 @@ and supplementary scripts to make life easier.
 
 ## Dependencies
 
-* xmonad (currently being used in 0.13-5)
-* xmonad-contrib (currently being used in 0.13-4)
-* [xmobar](http://projects.haskell.org/xmobar/)(currently being used with 0.24.5 with compiled with alsa support)
+* [xmonad](http://xmonad.org/) (currently being used in 0.13)
+* [xmonad-contrib](http://hackage.haskell.org/package/xmonad-contrib) (currently being used in 0.13)
+* [xmobar](http://projects.haskell.org/xmobar/) (currently being used with 0.24.5 with compiled with alsa support)
 * [rofi](https://davedavenport.github.io/rofi/)
 * [scrot](http://freecode.com/projects/scrot)
 * [slock](http://tools.suckless.org/slock/)
-* cmus
-* amixer
-* urxvt
-* fish shell
+* [cmus](https://cmus.github.io/)
+* [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
+* [fish shell](https://fishshell.com/)
 * tmux
+* amixer
 * xrandr
 * kbdlight
 * xbacklight
