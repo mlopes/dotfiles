@@ -19,7 +19,7 @@ this will give you a configuration that I've been using personally use for
 work every day. Thought has been put into the colors, key bindings, layouts,
 and supplementary scripts to make life easier.
 
-![Screenshot of xmonad using this config](screenshot.png?s=200)
+<img src="screenshot" width="200px">
 
 
 ## Dependencies
