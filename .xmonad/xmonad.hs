@@ -166,7 +166,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   , ((modMask .|. shiftMask, xK_m),
-     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name cmusterm -e cmus")
+     spawn "/usr/bin/urxvt +ls -fn 'xft:DejaVu Sans Mono for Powerline:pixelsize=24:antialias=true:hinting=true' -depth 32 -bg rgba:0000/0000/0000/9999 -name cmusterm -e cmus")
 
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
