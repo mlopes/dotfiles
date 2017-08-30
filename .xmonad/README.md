@@ -50,16 +50,16 @@ and supplementary scripts to make life easier.
 
 ## Starting xmonad when logging in from a specific tty (example uses tty1)
 
-    # Add the following to your `~/.bash_profile` file
-    ```
+    # Add the following to your ~/.bash_profile file
+    
     if [ "$(tty)" = "/dev/tty1" ]; then
         exec startx
     fi
-    ```
+    
     # Add the following to your `~/.xinitrc` file
-    ```
+    
     exec xmonad
-    ```
+    
 
     If you're using the configurations from this repository, these steps have
     already been done for you.
