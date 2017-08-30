@@ -19,8 +19,7 @@ this will give you a configuration that I've been using personally use for
 work every day. Thought has been put into the colors, key bindings, layouts,
 and supplementary scripts to make life easier.
 
-![Screenshot of xmonad using this config](screenshot.png?s=200)
-
+<img src="https://github.com/mlopes/dotfiles/raw/xps/.xmonad/screenshot.png" width="500px">
 
 ## Dependencies
 
@@ -50,13 +49,14 @@ and supplementary scripts to make life easier.
 
 ## Starting xmonad when logging in from a specific tty (example uses tty1)
 
-    # Add the following to your ~/.bash_profile file
+Add the following to your `~/.bash_profile` file
     
     if [ "$(tty)" = "/dev/tty1" ]; then
         exec startx
     fi
-    
-    # Add the following to your `~/.xinitrc` file
+
+
+Add the following to your `~/.xinitrc` file
     
     exec xmonad
     
