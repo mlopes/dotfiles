@@ -70,53 +70,53 @@ Add the following to your `~/.xinitrc` file
 The following keyboard shortcuts are set in this configuration. It uses the `Win Key` in a PC or the `Command Key` on a
 Mac.
 
-* Win+Shift+Return: Start an instance of the urxvt terminal running the fish shell, which will open on Workspace 1
-* Win+Alt+Return: Start an instance of the urxvt terminal running fish on tmux, which will open on Workspace 3
-* Win+Alt+Return: Start an instance of the urxvt terminal running cmus, which will open on Workspace 9
-* Win+Ctrl+l: Lock screen
-* Win+p: Run the rofi launcher.  Once it comes up, type the name of a program and press enter to launch it
-* Win+Shift+p: Take screenshot in select mode. Click or click and drag to select
-* Win+Ctrl+Shift+p: Take fullscreen screenshot. Supports multiple monitors
-* Win+Shift+c: Close focused window
-* Win+Space: Change workspace layout
-* Win+Shift+Space: Change back to default workspace layout
-* Win+n: Resize viewed windows to the correct size
-* Win+Tab: Focus next window
-* Alt+Tab: Focus next window
-* Win+j: Focus next window
-* Win+k: Focus previous window
-* Win+m: Focus master window
-* Win+Return: Swap focused window with master window
-* Win+Shift+j: Swap focused window with next window
-* Win+Shift+k: Swap focused window with previous window
-* Win+h: Shrink master window area
-* Win+l: Expand master window area
-* Win+t: Push floating window back into tiling
-* Win+,: Increment number of windows in master window area
-* Win+.: Decrement number of windows in master window area
-* Win+q: Restart xmonad. This reloads xmonad configuration, does not logout
-* Win+Shift+q: Quit xmonad and logout
-* Win+[1-9]: Switch to workspace 1-9, depending on which number was pressed
-* Win+Shift+[1-9]: Send focused window to workspace 1-9
-* Win+d: Focus left-most/internal monitor (Xinerama screen 1)
-* Win+e: Focus center-most/external monitor (Xinerama screen 2)
-* Win+r: Focus right-most monitor (Xinerama screen 3)
-* Win+Shift+d: Send focused window to workspace on left-most monitor
-* Win+Shift+e: Send focused window to workspace on center-most monitor
-* Win+Shift+r: Send focused window to workspace on right-most monitor
-* Win+Alt+1: Switch to single screen mode
-* Win+Alt+2: Switch to dual screen mode
-* mute button: Mutes the sound
-* volume down button: Decreses the volume by 10%
-* volume up button: Unmutes the sound and increases the volume by 10%
-* previous button: Starts song again/goes to the previous song on cmus
-* play/pause button: Starts playback or pauses cmus
-* next button: Goes to the next song on cmus
-* eject button: Ejects CD if the computer has a CD/DVD drive
-* keyboard brightness down: Decreases brightness of keyboard backlight 
-* keyboard brightness up: Increases brightness of keyboard backlight 
-* screen brightness down: Decreases brightness of the screen
-* screen brightness up: Increases brightness of the screen
+* `Win+Shift+Return`: Start an instance of the urxvt terminal running the fish shell, which will open on Workspace 1
+* `Win+Alt+Return`: Start an instance of the urxvt terminal running fish on tmux, which will open on Workspace 3
+* `Win+Alt+Return`: Start an instance of the urxvt terminal running cmus, which will open on Workspace 9
+* `Win+Ctrl+l`: Lock screen
+* `Win+p`: Run the rofi launcher.  Once it comes up, type the name of a program and press enter to launch it
+* `Win+Shift+p`: Take screenshot in select mode. Click or click and drag to select
+* `Win+Ctrl+Shift+p`: Take fullscreen screenshot. Supports multiple monitors
+* `Win+Shift+c`: Close focused window
+* `Win+Space`: Change workspace layout
+* `Win+Shift+Space`: Change back to default workspace layout
+* `Win+n`: Resize viewed windows to the correct size
+* `Win+Tab`: Focus next window
+* `Alt+Tab`: Focus next window
+* `Win+j`: Focus next window
+* `Win+k`: Focus previous window
+* `Win+m`: Focus master window
+* `Win+Return`: Swap focused window with master window
+* `Win+Shift+j`: Swap focused window with next window
+* `Win+Shift+k`: Swap focused window with previous window
+* `Win+h`: Shrink master window area
+* `Win+l`: Expand master window area
+* `Win+t`: Push floating window back into tiling
+* `Win+,`: Increment number of windows in master window area
+* `Win+.`: Decrement number of windows in master window area
+* `Win+q`: Restart xmonad. This reloads xmonad configuration, does not logout
+* `Win+Shift+q`: Quit xmonad and logout
+* `Win+[1-9]`: Switch to workspace 1-9, depending on which number was pressed
+* `Win+Shift+[1-9]`: Send focused window to workspace 1-9
+* `Win+d`: Focus left-most/internal monitor (Xinerama screen 1)
+* `Win+e`: Focus center-most/external monitor (Xinerama screen 2)
+* `Win+r`: Focus right-most monitor (Xinerama screen 3)
+* `Win+Shift+d`: Send focused window to workspace on left-most monitor
+* `Win+Shift+e`: Send focused window to workspace on center-most monitor
+* `Win+Shift+r`: Send focused window to workspace on right-most monitor
+* `Win+Alt+1`: Switch to single screen mode
+* `Win+Alt+2`: Switch to dual screen mode
+* `mute button`: Mutes the sound
+* `volume down button`: Decreses the volume by 10%
+* `volume up button`: Unmutes the sound and increases the volume by 10%
+* `previous button`: Starts song again/goes to the previous song on cmus
+* `play/pause button`: Starts playback or pauses cmus
+* `next button`: Goes to the next song on cmus
+* `eject button`: Ejects CD if the computer has a CD/DVD drive
+* `keyboard brightness down`: Decreases brightness of keyboard backlight 
+* `keyboard brightness up`: Increases brightness of keyboard backlight 
+* `screen brightness down`: Decreases brightness of the screen
+* `screen brightness up`: Increases brightness of the screen
 
 
 ## Personalizing or modifying xmonad configuration
@@ -132,4 +132,4 @@ Most of the xmobar configuration is in `~/.xmonad/xmobar.hs`. Whichever
 configurations are not in this file, should be in `~/.xmonad/xmonad.hs`, this
 currently includes workspace colours and names.
 
-All scripts are in ~/.xmonad/bin/.
+All scripts are in `~/.xmonad/bin/.`
