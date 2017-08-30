@@ -94,7 +94,7 @@ Mac.
 * `Win+t`: Push floating window back into tiling
 * `Win+,`: Increment number of windows in master window area
 * `Win+.`: Decrement number of windows in master window area
-* `Win+q`: Restart xmonad. This reloads xmonad configuration, does not logout
+* `Win+q`: Reload xmonad. This reloads xmonad configuration, does not logout
 * `Win+Shift+q`: Quit xmonad and logout
 * `Win+[1-9]`: Switch to workspace 1-9, depending on which number was pressed
 * `Win+Shift+[1-9]`: Send focused window to workspace 1-9
