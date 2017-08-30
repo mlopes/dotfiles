@@ -26,9 +26,9 @@ and supplementary scripts to make life easier.
 * xmonad (currently being used in 0.13-5)
 * xmonad-contrib (currently being used in 0.13-4)
 * [xmobar](http://projects.haskell.org/xmobar/)(currently being used with 0.24.5 with compiled with alsa support)
-* [rofi](https://davedavenport.github.io/rofi/)/
-* [scrot](http://freecode.com/projects/scrot)(currently being used with
-* [slock](http://tools.suckless.org/slock/)(currently being used with 1.4-2)
+* [rofi](https://davedavenport.github.io/rofi/)
+* [scrot](http://freecode.com/projects/scrot)
+* [slock](http://tools.suckless.org/slock/)
 * cmus
 * amixer
 * urxvt
