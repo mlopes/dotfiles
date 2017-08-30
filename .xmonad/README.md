@@ -118,6 +118,29 @@ Mac.
 * `screen brightness down`: Decreases brightness of the screen
 * `screen brightness up`: Increases brightness of the screen
 
+### Keybindings Troubleshooting
+
+Some of the key configurations will depend on the devices you're using.
+
+#### Switching between single and dual screens mode doesn't work
+If switching between single screen and dual screen mode doesn't work, use
+`xrandr` to check if your devices correspond to the ones set in the keybinds
+configuration.
+
+#### Sound volume and mutting not working
+The Keybindings for volume control and mutting sound, use `amixer` but assume
+that the device is a `pulse` device. If you're not using pulseaudio, you'll have to
+remove the `-D pulse` from the `amixer` calls.
+
+#### CD won't eject
+This usually means you don't have a CD/DVD drive
+
+#### Adjusting keyboard/screen brightness doesn't work
+Usually this means that your system as some misconfiguration or no ACPI
+support. This configuration doesn't specify any devices for this, it relies on
+`kbdlight` and `xbacklight`, if ACPI is working in your system, these
+utilities should be able to dim the backlights.
+
 
 ## Personalizing or modifying xmonad configuration
 
