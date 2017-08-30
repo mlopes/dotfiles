@@ -1,5 +1,6 @@
-# xmonad-config
-xmonad-config is the [xmonad](http://xmonad.org/) configuration used by Vic Fryzel.
+# xmonad config
+This is [Marco Lopes](https://github.com/mlopes/dotfiles/)'s xmonad and xmobar configuration.
+This configuration is rooted in the [xmonad](http://xmonad.org/) configuration used by Vic Fryzel as it was circa 2013, and was heavily customised since then. Years of customisations have left litle in common with the original configuration.
 
 
 ## Introduction
