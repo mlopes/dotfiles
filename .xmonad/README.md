@@ -19,8 +19,7 @@ this will give you a configuration that I've been using personally use for
 work every day. Thought has been put into the colors, key bindings, layouts,
 and supplementary scripts to make life easier.
 
-<img src="screenshot" width="200px">
-
+<img src="https://github.com/mlopes/dotfiles/raw/xps/.xmonad/screenshot.png" width="500px">
 
 ## Dependencies
 
