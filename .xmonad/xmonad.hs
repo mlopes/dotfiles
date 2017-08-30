@@ -413,7 +413,7 @@ startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
-  addScreenCorner SCLowerRight (spawn "slock")
+  --addScreenCorner SCLowerRight (spawn "slock")
 
 
 
