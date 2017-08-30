@@ -41,7 +41,6 @@ import XMonad.Layout.Spacing
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 myTerminal = "/usr/bin/urxvt +ls -e fish -l"
--- myTerminal = "gnome-terminal"
 
 
 ------------------------------------------------------------------------
@@ -67,8 +66,9 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 --
 myManageHook = composeAll
     [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
-    , resource =? "termvim"                 --> doShift "3:code \xf126"
-    , resource =? "termtelegram"            --> doShift "4:comms \xf075"
+    , resource  =? "termvim"                --> doShift "3:code \xf126"
+    , resource  =? "termtelegram"           --> doShift "4:comms \xf075"
+    , resource  =? "cmusterm"               --> doShift "9"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
@@ -164,6 +164,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask .|. mod1Mask, xK_Return),
      spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
+
+  , ((modMask .|. shiftMask, xK_m),
+     spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name cmusterm -e cmus")
 
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
