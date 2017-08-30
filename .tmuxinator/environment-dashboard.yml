@@ -4,7 +4,7 @@ attach: false
 
 windows:
   - console: git st
-  - play: set -x CP_FLOW_ID ""; set -x CP_API_KEY ""; set -x TERM "xterm-color"; sbt run
-  - sbt: set -x TERM "xterm-color"; sbt
+  - play: source environment-dashboard.env; sbt run
+  - sbt: source environment-dashboard.env; sbt
 
 pre: find ./ -name "*.swp" -delete
