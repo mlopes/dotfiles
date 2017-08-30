@@ -413,8 +413,7 @@ startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
-  addScreenCorner SCLowerRight (spawn "xscreensaver-command -lock")
-  spawn "/usr/bin/xscreensaver -no-splash &"
+  addScreenCorner SCLowerRight (spawn "slock")
 
 
 
