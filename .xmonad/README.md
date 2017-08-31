@@ -7,7 +7,7 @@ This configuration is rooted in the [xmonad](http://xmonad.org/) configuration u
 
 If you are unfamiliar with xmonad, it is a tiling window manager that is
 notoriously minimal, stable, beautiful, and featureful.  If you find yourself
-spending a lot of time organizing or managing windows, you may consider trying
+spending a lot of time organising or managing windows, you may consider trying
 xmonad.
 
 However, xmonad can be somewhat difficult to configure if you're new to
@@ -15,8 +15,8 @@ Haskell or even to xmonad itself.
 
 This folder contains a completely working and very usable xmonad
 configuration "out of the box". If you are just starting out with xmonad,
-this will give you a configuration that I've been using personally use for
-work every day. Thought has been put into the colors, key bindings, layouts,
+this will give you a configuration that I've been using personally for
+work every day. Thought has been put into the colours, key bindings, layouts,
 and supplementary scripts to make life easier.
 
 <img src="https://github.com/mlopes/dotfiles/raw/xps/.xmonad/screenshot.png" width="500px">
@@ -74,7 +74,7 @@ Mac.
 * `Win+Alt+Return`: Start an instance of the urxvt terminal running fish on tmux, which will open on Workspace 3
 * `Win+Alt+Return`: Start an instance of the urxvt terminal running cmus, which will open on Workspace 9
 * `Win+Ctrl+l`: Lock screen
-* `Win+p`: Run the rofi launcher.  Once it comes up, type the name of a program and press enter to launch it
+* `Win+p`: Run the rofi launcher.  Once it comes up, type the name of a programme and press enter to launch it
 * `Win+Shift+p`: Take screenshot in select mode. Click or click and drag to select
 * `Win+Ctrl+Shift+p`: Take fullscreen screenshot. Supports multiple monitors
 * `Win+Shift+c`: Close focused window
@@ -99,10 +99,10 @@ Mac.
 * `Win+[1-9]`: Switch to workspace 1-9, depending on which number was pressed
 * `Win+Shift+[1-9]`: Send focused window to workspace 1-9
 * `Win+d`: Focus left-most/internal monitor (Xinerama screen 1)
-* `Win+e`: Focus center-most/external monitor (Xinerama screen 2)
+* `Win+e`: Focus centre-most/external monitor (Xinerama screen 2)
 * `Win+r`: Focus right-most monitor (Xinerama screen 3)
 * `Win+Shift+d`: Send focused window to workspace on left-most monitor
-* `Win+Shift+e`: Send focused window to workspace on center-most monitor
+* `Win+Shift+e`: Send focused window to workspace on centre-most monitor
 * `Win+Shift+r`: Send focused window to workspace on right-most monitor
 * `Win+Alt+1`: Switch to single screen mode
 * `Win+Alt+2`: Switch to dual screen mode
@@ -142,12 +142,12 @@ support. This configuration doesn't specify any devices for this, it relies on
 utilities should be able to dim the backlights.
 
 
-## Personalizing or modifying xmonad configuration
+## Personalising or modifying xmonad configuration
 
 Once cloned, xmonad-config is laid out as follows.
 
 All xmonad configuration is in ~/.xmonad/xmonad.hs.  This includes
-things like key bindings, colors, layouts, etc.  You may need to have some
+things like key bindings, colours, layouts, etc.  You may need to have some
 basic understanding of [Haskell](http://www.haskell.org/haskellwiki/Haskell)
 in order to modify this file, but most people have no problems.
 
