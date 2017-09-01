@@ -210,15 +210,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Audio previous.
   , ((0, 0x1008FF16),
-     spawn "cmus-remote --prev")
+     spawn "mpc prev")
 
   -- Play/pause.
   , ((0, 0x1008FF14),
-     spawn "cmus-remote --pause")
+     spawn "mpc toggle")
 
   -- Audio next.
   , ((0, 0x1008FF17),
-     spawn "cmus-remote --next")
+     spawn "mpc next")
 
       -- Eject CD tray.
   , ((0, 0x1008FF2C),
