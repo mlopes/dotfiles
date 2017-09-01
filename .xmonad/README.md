@@ -29,7 +29,7 @@ and supplementary scripts to make life easier.
 * [rofi](https://davedavenport.github.io/rofi/)
 * [scrot](http://freecode.com/projects/scrot)
 * [slock](http://tools.suckless.org/slock/)
-* [cmus](https://cmus.github.io/)
+* [mpd](https://www.musicpd.org/) (and mpc to control it via Keybindings)
 * [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
 * [fish shell](https://fishshell.com/)
 * tmux
@@ -72,7 +72,6 @@ Mac.
 
 * `Win+Shift+Return`: Start an instance of the urxvt terminal running the fish shell, which will open on Workspace 1
 * `Win+Alt+Return`: Start an instance of the urxvt terminal running fish on tmux, which will open on Workspace 3
-* `Win+Alt+Return`: Start an instance of the urxvt terminal running cmus, which will open on Workspace 9
 * `Win+Ctrl+l`: Lock screen
 * `Win+p`: Run the rofi launcher.  Once it comes up, type the name of a programme and press enter to launch it
 * `Win+Shift+p`: Take screenshot in select mode. Click or click and drag to select
@@ -109,9 +108,9 @@ Mac.
 * `mute button`: Mutes the sound
 * `volume down button`: Decreses the volume by 10%
 * `volume up button`: Unmutes the sound and increases the volume by 10%
-* `previous button`: Starts song again/goes to the previous song on cmus
-* `play/pause button`: Starts playback or pauses cmus
-* `next button`: Goes to the next song on cmus
+* `previous button`: Starts song again/goes to the previous song on mpd
+* `play/pause button`: Starts playback or pauses mpd
+* `next button`: Goes to the next song on mpd
 * `eject button`: Ejects CD if the computer has a CD/DVD drive
 * `keyboard brightness down`: Decreases brightness of keyboard backlight 
 * `keyboard brightness up`: Increases brightness of keyboard backlight 
