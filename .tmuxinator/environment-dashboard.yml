@@ -4,7 +4,7 @@ attach: false
 
 windows:
   - console: git st
-  - play: source environment-dashboard.env; sbt run
-  - sbt: source environment-dashboard.env; sbt
+  - play: source ~/.tmuxinator/environment-dashboard.env; sbt run
+  - sbt: source ~/.tmuxinator/environment-dashboard.env; sbt
 
 pre: find ./ -name "*.swp" -delete
