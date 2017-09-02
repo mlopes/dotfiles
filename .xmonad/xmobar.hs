@@ -1,6 +1,6 @@
 Config {
-    font = "xft:Source\ Code\ Pro\ for\ Powerline-10,FontAwesome:size=10",
-    additionalFonts   = [ "xft:FontAwesome:pixelsize=20:antialias=true:hinting=true" ],
+    font = "xft:Source\ Code\ Pro\ for\ Powerline-8,FontAwesome:size=8",
+    additionalFonts   = [ "xft:FontAwesome:pixelsize=10:antialias=true:hinting=true" ],
     -- bgColor = "#000900",
     -- fgColor = "#009C00",
     bgColor = "#330022",
@@ -11,7 +11,7 @@ Config {
     borderColor = "#FF6600",
     pickBroadest = True
     position = Top,
-    textOffset = 26,
+    textOffset = 12,
     lowerOnStart = False,
     overrideRedirect = False,
     hideOnStart = False,
