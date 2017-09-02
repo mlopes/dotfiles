@@ -5,7 +5,7 @@ import System.IO
 import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks (ToggleStruts(..),avoidStruts,docks,manageDocks)
+import XMonad.Hooks.ManageDocks (ToggleStruts(..),avoidStruts,manageDocks)
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ScreenCorners
@@ -423,7 +423,7 @@ startup = do
 main = do
   -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ docks defaults {
+  xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 75
