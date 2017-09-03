@@ -1,0 +1,2 @@
+#! /bin/bash
+tmux a -t Terminal || tmux new -s Terminal
