@@ -69,7 +69,7 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fix font space
-URxvt*letterSpace: -3
+URxvt*letterSpace: -1
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
@@ -94,7 +94,7 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 ! Fonts
-URxvt*font: xft:Source Code Pro for Powerline:pixelsize=12:antialias=true,xft:Inconsolata for Powerline:pixelsize=12, xft:PowerlineSymbols,xft:FontAwesome:size=8,antialias=true,hinting=true
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true,xft:Inconsolata for Powerline:pixelsize=12, xft:PowerlineSymbols,xft:FontAwesome:size=8,antialias=true,hinting=true
 
 urxvt*background:       rgba:0000/0000/0000/9999
 urxvt*foreground:       #7f8f9f
