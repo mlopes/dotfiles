@@ -32,7 +32,8 @@ import XMonad.Actions.CycleWS
 
 import XMonad.Layout.Spacing
 -- import XMonad.Hooks.ICCCMFocus
-import XMonad.Util.Dzen
+import qualified XMonad.Util.Dzen as Dzen
+
 import XMonad.Util.Run (runProcessWithInput)
 ------------------------------------------------------------------------
 -- Terminal
@@ -154,9 +155,11 @@ myBorderWidth = 2
 --
 myModMask = mod4Mask
 
+terminus = "-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
+
 mpcCurrentSong = do
-    s <- runProcessWithInput "mpc" [] ""
-    dzenConfig (onCurr (center 500 100)) s
+    s <- runProcessWithInput "mpc" ["current"] ""
+    Dzen.dzenConfig (Dzen.onCurr (Dzen.center 800 30) Dzen.>=> Dzen.font terminus) s
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
