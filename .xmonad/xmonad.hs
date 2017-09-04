@@ -32,7 +32,8 @@ import XMonad.Actions.CycleWS
 
 import XMonad.Layout.Spacing
 -- import XMonad.Hooks.ICCCMFocus
-
+import XMonad.Util.Dzen
+import XMonad.Util.Run (runProcessWithInput)
 ------------------------------------------------------------------------
 -- Terminal
 -- The preferred terminal program, which is used in a binding below and by
@@ -153,6 +154,10 @@ myBorderWidth = 2
 --
 myModMask = mod4Mask
 
+mpcCurrentSong = do
+    s <- runProcessWithInput "mpc" [] ""
+    dzenConfig (onCurr (center 500 100)) s
+
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- Custom key bindings
@@ -166,7 +171,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   , ((modMask .|. shiftMask, xK_m),
-     spawn "/usr/bin/urxvt +ls -fn 'xft:DejaVu Sans Mono for Powerline:pixelsize=24:antialias=true:hinting=true' -depth 32 -bg rgba:0000/0000/0000/9999 -name cmusterm -e cmus")
+    mpcCurrentSong)
 
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
