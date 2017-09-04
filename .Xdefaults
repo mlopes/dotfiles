@@ -32,6 +32,7 @@ URxvt*saveLines:65535
 
 ! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
 URxvt*urgentOnBell: true
+URxvt*visualBell:  true
 
 ! dont forget to change this to your favorite browser
 #URxvt*urlLauncher: google-chrome
