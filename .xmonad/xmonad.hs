@@ -157,9 +157,11 @@ myModMask = mod4Mask
 
 terminus = "-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
 
-mpcCurrentSong = do
-    s <- runProcessWithInput "mpc" ["current"] ""
+externalCommandInPopUp :: String -> [String] -> X ()
+externalCommandInPopUp c p = do
+    s <- runProcessWithInput c p ""
     Dzen.dzenConfig (Dzen.onCurr (Dzen.center 800 30) Dzen.>=> Dzen.font terminus) s
+
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -174,7 +176,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
 
   , ((modMask .|. shiftMask, xK_m),
-    mpcCurrentSong)
+    (externalCommandInPopUp "mpc" ["current"]))
 
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
