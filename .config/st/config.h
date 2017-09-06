@@ -7,7 +7,7 @@
  */
 static char font[] = "DejaVu Sans Mono for Powerline:size=9:antialias=true:autohint=true";
 static int borderpx = 2;
-#define histsize 20000
+#define histsize 2000
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -84,41 +84,40 @@ static char termname[] = "st-256color";
 static unsigned int tabspaces = 8;
 
 /* bg opacity */
-static const int alpha = 0x99;
+static const int alpha = 0xAA;
 
-/* Material theme */
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#263238", /* black   */
-  [1] = "#ff9800", /* red     */
-  [2] = "#8bc34a", /* green   */
-  [3] = "#ffc107", /* yellow  */
-  [4] = "#03a9f4", /* blue    */
-  [5] = "#e91e63", /* magenta */
-  [6] = "#009688", /* cyan    */
-  [7] = "#cfd8dc", /* white   */
+  [0] = "#282a2e", /* black   */
+  [1] = "#a54242", /* red     */
+  [2] = "#8c9440", /* green   */
+  [3] = "#de935f", /* yellow  */
+  [4] = "#5f819d", /* blue    */
+  [5] = "#85678f", /* magenta */
+  [6] = "#5e8d87", /* cyan    */
+  [7] = "#707880", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#37474f", /* black   */
-  [9]  = "#ffa74d", /* red     */
-  [10] = "#9ccc65", /* green   */
-  [11] = "#ffa000", /* yellow  */
-  [12] = "#81d4fa", /* blue    */
-  [13] = "#ad1457", /* magenta */
-  [14] = "#26a69a", /* cyan    */
-  [15] = "#eceff1", /* white   */
+  [8]  = "#373b41", /* black   */
+  [9]  = "#cc6666", /* red     */
+  [10] = "#b5bd68", /* green   */
+  [11] = "#f0c674", /* yellow  */
+  [12] = "#81a2be", /* blue    */
+  [13] = "#b294bb", /* magenta */
+  [14] = "#8abeb7", /* cyan    */
+  [15] = "#c5c8c6", /* white   */
 
   /* special colors */
-  [256] = "#263238", /* background */
-  [257] = "#eceff1", /* foreground */
-  [258] = "#000000", /* foreground */
+  [256] = "#1d1f21", /* background */
+  [257] = "#c5c8c6", /* foreground */
+  [258] = "#000000", /* real black */
 };
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, cursor reversed
+ * foreground, background, cursor, reverse cursor
  */
 static unsigned int defaultfg = 257;
 static unsigned int defaultbg = 258;
@@ -132,8 +131,6 @@ static unsigned int defaultrcs = 256;
  */
 static unsigned int defaultitalic = 7;
 static unsigned int defaultunderline = 7;
-
-
 
 /*
  * Default shape of cursor
