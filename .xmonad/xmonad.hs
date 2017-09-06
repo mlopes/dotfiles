@@ -12,7 +12,7 @@ import XMonad.Hooks.ScreenCorners
 -- import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
-import XMonad.Layout.Tabbed
+import XMonad.Layout.Decoration
 import XMonad.Util.Run(spawnPipe,safeSpawn)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
@@ -128,7 +128,7 @@ myNormalBorderColor  = "#121212"
 myFocusedBorderColor = "#E75700"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
-tabConfig = defaultTheme {
+tabConfig = def {
     activeBorderColor = "#00FF00",
     activeTextColor = "#FFCA28",
     activeColor = "#000000",
@@ -333,7 +333,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      sendMessage ToggleStruts)
 
   -- Show grid selector
-  , ((modMask, xK_g), goToSelected defaultGSConfig)
+  , ((modMask, xK_g), goToSelected def)
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
@@ -347,9 +347,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ++
 
   [
-    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto  defaultXPConfig
+    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto  def
                          { autoComplete = Just 500000 })
-  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring defaultXPConfig)
+  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring def)
   ]
 
   ++
@@ -454,7 +454,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults = def {
     -- simple stuff
     terminal           = myTerminal,
     focusFollowsMouse  = myFocusFollowsMouse,
