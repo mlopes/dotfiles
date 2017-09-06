@@ -43,7 +43,7 @@ import XMonad.Util.Run (runProcessWithInput)
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "st -f 'DejaVu Sans Mono:size=7:antialias=true:autohint=true' -e fish -l -c ~/.local/bin/terminal"
+myTerminal = "st -f 'DejaVu Sans Mono for Powerline:size=7:antialias=true:autohint=true' -e fish -l -c ~/.local/bin/terminal"
 
 
 ------------------------------------------------------------------------
@@ -175,7 +175,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask .|. mod1Mask, xK_Return),
      -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
-     spawn "st -f 'DejaVu Sans Mono:size=7:antialias=true:autohint=true' -n termvim -e fish -l -c 'tmux attach'")
+     spawn "st -f 'DejaVu Sans Mono for Powerline:size=7:antialias=true:autohint=true' -n termvim -e fish -l -c 'tmux attach'")
 
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))
