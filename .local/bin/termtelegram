@@ -1,1 +1,2 @@
-/usr/local/bin/termtelegram
+#!/usr/bin/env sh
+urxvt +ls -fn "xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=24:antialias=true:hinting=true,xft:Symbola" -letsp 1 -depth 32 -bg rgba:0000/0000/0000/9999 -name termtelegram -e nctelegram
