@@ -42,7 +42,8 @@ import XMonad.Util.Run (runProcessWithInput)
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+myTerminal = "st -f 'DejaVu Sans Mono:size=7:antialias=true:autohint=true' -e fish -l -c ~/.local/bin/terminal"
 
 
 ------------------------------------------------------------------------
