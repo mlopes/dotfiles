@@ -1,6 +1,7 @@
 set shell=/bin/bash
 set nocompatible               " be iMproved
-filetype off                   " required!
+" filetype off                   " required!
+filetype plugin indent on
 
 " enable 256 colors
 set t_Co=256
@@ -94,7 +95,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'FooSoft/vim-argwrap'
 
 " Bats support
-Plug 'vim-scripts/bats.vim'
+" Plug 'vim-scripts/bats.vim'
 
 if v:version >= 704
   "" Snippets
@@ -102,6 +103,19 @@ if v:version >= 704
 endif
 
 Plug 'honza/vim-snippets'
+
+" Haskell pluggins
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
+
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
+Plug 'garbas/vim-snipmate'
+
+Plug 'Shougo/neocomplete.vim'
+Plug 'ervandew/supertab'
+Plug 'Shougo/vimproc.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -134,7 +148,8 @@ filetype plugin indent on
 set autoindent
 set expandtab
 set shiftwidth=4
-set tabstop=4
+set tabstop=2
+set softtabstop=2
 set smarttab
 
 " Automatically write file for some commands, like cfile
@@ -149,6 +164,9 @@ set incsearch
 
 " highlight search matches
 set hlsearch
+
+set completeopt=menuone,menu,longest
+
 
 let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
 let g:padawan#composer_command = "composer"
@@ -192,13 +210,19 @@ if has('statusline')
     set statusline=%<%f\ " Filename
     set statusline+=%w%h%m%r " Options
     set statusline+=%{fugitive#statusline()} " Git Hotness
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
     set statusline+=\ [%{&ff}/%Y] " filetype
     set statusline+=\ [%{getcwd()}] " current dir
     set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
 
 " Ignore files
-set wildignore+=*/.git/*,*.cache,*.cache.php,*.swp,*.swo,**/cache/**,*.min.js
+set wildignore+=*/.git/*,*.cache,*.cache.php,*.swp,*.swo,**/cache/**,*.min.js,.cabal-sandbox
+set wildmode=longest,list,full
+set wildmenu
+set completeopt+=longest
 
 " Allow hidden buffers
 set hidden
@@ -256,8 +280,10 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 
 " ======================== "
@@ -357,7 +383,33 @@ nnoremap <silent><leader>nn :call PhpNamespaceInsert()<CR>
 
 nnoremap <silent> <leader>aw :ArgWrap<CR>
 
+map <Leader>s :SyntasticToggleMode<CR>
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
+endif
+
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 func! AsciiMode()
     syntax off
