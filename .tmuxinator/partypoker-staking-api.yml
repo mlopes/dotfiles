@@ -1,0 +1,12 @@
+name: partypoker-staking-api
+root: ~/Projects/partypoker-staking-api
+attach: false
+
+windows:
+  - editor: nvim .
+  - console: git st
+  - play: sbt run
+  - tests: sbt ~test
+  - sbt: sbt
+
+pre: find ./ -name "*.swp" -delete

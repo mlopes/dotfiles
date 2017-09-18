@@ -1,0 +1,13 @@
+name: partypoker-staking
+root: ~/Projects/partypoker-staking
+attach: false
+
+windows:
+  - editor: nvim .
+  - console:
+      layout: d9e8,319x92,0,0[319x9,0,0,3,319x83,0,10,4]
+      panes:
+        - make watch-assets
+        - git st
+
+pre: find ./ -name "*.swp" -delete
