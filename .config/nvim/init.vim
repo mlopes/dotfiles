@@ -117,6 +117,9 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'ervandew/supertab'
 Plug 'Shougo/vimproc.vim'
 
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
+
 " Initialize plugin system
 call plug#end()
 
@@ -389,6 +392,8 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
+nnoremap <localleader>c :EnType<CR>
+
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 if has("gui_running")
@@ -401,6 +406,8 @@ endif
 
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+autocmd BufWritePost *.scala silent :EnTypeCheck
 
 let g:haskell_tabular = 1
 

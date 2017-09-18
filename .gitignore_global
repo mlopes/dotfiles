@@ -10,3 +10,7 @@ ruleset.xml
 .gems
 .*.swp
 tags
+ensime.sbt
+.ensime
+.ensime_cache/
+project/.ensime
