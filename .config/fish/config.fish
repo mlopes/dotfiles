@@ -39,3 +39,5 @@ set PATH /home/mlopes/.local/bin /usr/local/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
 
+alias emacs "emacs -nw"
+
