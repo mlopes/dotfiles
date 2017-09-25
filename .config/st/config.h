@@ -7,7 +7,7 @@
  */
 static char font[] = "DejaVu Sans Mono for Powerline:size=7:antialias=true:autohint=true";
 static int borderpx = 2;
-#define histsize 20000
+#define histsize 200000
 
 /*
  * What program is execed by st depends of these precedence rules:
