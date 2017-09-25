@@ -180,6 +180,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))
 
+  , ((modMask .|. shiftMask, xK_s),
+    (externalCommandInPopUp "connected_screens" []))
+
   -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
      spawn "slock")
