@@ -11,8 +11,8 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 " Required:
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
@@ -36,7 +36,7 @@ Plug 'godlygeek/tabular'
 Plug 'dantleech/vim-phpunit'
 
 " Determine the namespace for the current file
-Plug 'dantleech/vim-phpnamespace'
+" Plug 'dantleech/vim-phpnamespace'
 
 " Colour scheme
 Plug 'tomasr/molokai'
@@ -61,7 +61,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 " Syntax checking on write
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 Plug 'tpope/vim-fugitive'
 
@@ -105,7 +105,7 @@ endif
 Plug 'honza/vim-snippets'
 
 " Haskell pluggins
-Plug 'eagletmt/ghcmod-vim'
+" Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -120,25 +120,31 @@ Plug 'Shougo/vimproc.vim'
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
+Plug 'w0rp/ale'
+
+" requires phpactor
+Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
+Plug 'roxma/ncm-phpactor'
+
 " Initialize plugin system
 call plug#end()
 
-autocmd FileType php LanguageClientStart
+" autocmd FileType php LanguageClientStart
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ }
+" let g:LanguageClient_serverCommands = {
+"    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+"    \ }
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_autoStart = 1
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
   
 
 " show TWIG highlighting
@@ -242,8 +248,8 @@ let g:ctrlp_map = ''
 let g:snips_author="Marco Lopes <marco@mlop.es>"
 
 " Syntastic
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_checkers = ['php'] " , 'phpcs', 'phpmd']
+" let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_php_checkers = ['php'] " , 'phpcs', 'phpmd']
 
 " php,pec-vim
 "
@@ -266,7 +272,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php setlocal omnifunc=phpactor#complete
+autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 " Settings for php-cs-fixer
 let g:php_cs_fixer_path = "/usr/local/bin/phpcsfixer"
@@ -416,7 +422,7 @@ vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+" autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 func! AsciiMode()
     syntax off
