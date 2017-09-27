@@ -125,6 +125,7 @@ Plug 'w0rp/ale'
 " requires phpactor
 Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
 Plug 'roxma/ncm-phpactor'
+Plug 'majutsushi/tagbar'
 
 " Initialize plugin system
 call plug#end()
@@ -330,7 +331,7 @@ map <Leader>n :NERDTreeToggle <CR>
 map <Leader>f :NERDTreeFind <CR>
 
 " Tagbar shows list of all methods and variables in class
-map <Leader>t :TagbarToggle <CR>
+map <Leader>t :TagbarOpenAutoClose <CR>
 
 " Automatically add a use statement for class under cursor (uses ctags)
 map <Leader>u :call PhpInsertUse()<CR>
