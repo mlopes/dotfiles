@@ -334,10 +334,10 @@ map <Leader>f :NERDTreeFind <CR>
 map <Leader>t :TagbarOpenAutoClose <CR>
 
 " Automatically add a use statement for class under cursor (uses ctags)
-map <Leader>u :call PhpInsertUse()<CR>
+" map <Leader>u :call PhpInsertUse()<CR>
 
 " Expand the class under the cursor (uses ctags)
-map <Leader>e :call PhpExpandClass()<CR>
+" map <Leader>e :call PhpExpandClass()<CR>
 
 " Fuzzy search open buffers
 map <C-B> :CtrlPBuffer <CR>
