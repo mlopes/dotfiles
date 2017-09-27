@@ -1,5 +1,5 @@
-name: partypoker-staking
-root: ~/Projects/partypoker-staking
+name: pps
+root: ~/Projects/pps
 attach: false
 
 windows:
