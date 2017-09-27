@@ -52,7 +52,7 @@ Plug 'tobyS/vmustache'
 Plug 'kien/ctrlp.vim'
 
 " Twig syntax highlighting
-Plug 'evidens/vim-twig'
+Plug 'lumiliet/vim-twig'
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
@@ -147,9 +147,6 @@ set hidden
 " nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
   
 
-" show TWIG highlighting
-au BufRead,BufNewFile *.twig set syntax=htmljinja
-
 " Automatically detect filetypes
 filetype plugin indent on
 
@@ -204,7 +201,7 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 " show TWIG highlighting
-" au BufRead,BufNewFile *.twig set syntax=htmljinja
+au BufRead,BufNewFile *.twig set syntax=htmljinja
 
 scriptencoding utf-8
 set history=1000
@@ -399,6 +396,20 @@ map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
 nnoremap <localleader>c :EnType<CR>
+
+" Include use statement
+map <Leader>u :call phpactor#UseAdd()<CR>
+map <Leader>e :call phpactor#ClassExpand()<CR>
+map <Leader>o :call phpactor#GotoDefinition()<CR>
+map <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
+map <Leader>pfm :call phpactor#MoveFile()<CR>
+map <Leader>pfc :call phpactor#CopyFile()<CR>
+map <Leader>tt :call phpactor#Transform()<CR>
+map <Leader>cc :call phpactor#ClassNew()<CR>
+map <Leader>fr :call phpactor#FindReferences()<CR>
+
+" Show information about "type" under cursor including current frame
+nnoremap <silent><Leader>d :call phpactor#OffsetTypeInfo()<CR>
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
