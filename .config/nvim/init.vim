@@ -11,9 +11,6 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 " Required:
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
-" Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
-" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 " (Optional) Multi-entry selection UI.
@@ -130,8 +127,6 @@ Plug 'majutsushi/tagbar'
 " Initialize plugin system
 call plug#end()
 
-" autocmd FileType php LanguageClientStart
-
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
@@ -184,10 +179,6 @@ let NERDTreeCascadeSingleChildDir=0
 " set syntax highlighting options.
 syntax on
 let c_space_errors = 1
-let php_sql_query = 1
-let php_sync_method = 0
-let php_folding=0
-let g:DisableAutoPHPFolding = 1
 
 " Nerdtree: Close NERDTree if it is the last open buffer
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
@@ -245,22 +236,8 @@ let g:ctrlp_map = ''
 " Ultisnip
 let g:snips_author="Marco Lopes <marco@mlop.es>"
 
-" Syntastic
-" let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_php_checkers = ['php'] " , 'phpcs', 'phpmd']
-
-" php,pec-vim
-"
-let g:phpspec_run_cmd_options = '--verbose -fpretty'
-
 " Only get tags from CWD
 set tags=tags;
-set tags+=/usr/share/php/PHPUnit/tags
-" let g:phpcomplete_parse_docblock_comments = 1
-" let g:phpcomplete_complete_for_unknown_classes = 0
-
-" PHP Compoete extended
-" let g:phpcomplete_index_composer_command="composer"
 
 " Settings for rst / markdown
 autocmd FileType rst setlocal textwidth=78
@@ -270,10 +247,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpactor#Complete
-
-" Settings for php-cs-fixer
-let g:php_cs_fixer_path = "/usr/local/bin/phpcsfixer"
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -300,9 +273,6 @@ let g:syntastic_check_on_wq = 0
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-
-" phpunit test directory
-let g:phpunit_testroot = 'tests'
 
 
 " Color scheme
@@ -333,12 +303,6 @@ map <Leader>f :NERDTreeFind <CR>
 " Tagbar shows list of all methods and variables in class
 map <Leader>t :TagbarOpenAutoClose <CR>
 
-" Automatically add a use statement for class under cursor (uses ctags)
-" map <Leader>u :call PhpInsertUse()<CR>
-
-" Expand the class under the cursor (uses ctags)
-" map <Leader>e :call PhpExpandClass()<CR>
-
 " Fuzzy search open buffers
 map <C-B> :CtrlPBuffer <CR>
 " Fuzzy search tags
@@ -366,27 +330,12 @@ map <Leader>= :cnext<CR>
 " Previous quick fix item
 map <Leader>- :cprev<CR>
 
-" PHPCs Fixer
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-
 " PDV PhpDocumentor
 nnoremap <silent><leader>dd :call pdv#DocumentWithSnip()<CR>
 
 " Remap C-w C-w to C-w C-o, like in tmux
 nnoremap <C-w><C-o> <C-w><C-w>
 nnoremap <C-w>o <C-w><C-w>
-
-" Generate missing method
-nnoremap <silent><leader>mm :call phpactor#generate_snippet("implement_missing_methods")<CR>
-nnoremap <silent><leader>mp :call phpactor#generate_snippet("implement_missing_properties")<CR>
-
-" Generate PHPUnit test cases
-nnoremap <silent><leader>pt :call PhpunitGenerate()<CR>
-nnoremap <silent><leader>pp :call PhpunitRun()<CR>
-
-" Insert the current namespace
-nnoremap <silent><leader>nn :call PhpNamespaceInsert()<CR>
 
 nnoremap <silent> <leader>aw :ArgWrap<CR>
 
@@ -397,20 +346,6 @@ map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
 nnoremap <localleader>c :EnType<CR>
-
-" Include use statement
-map <Leader>u :call phpactor#UseAdd()<CR>
-map <Leader>e :call phpactor#ClassExpand()<CR>
-map <Leader>o :call phpactor#GotoDefinition()<CR>
-map <Leader>pd :call phpactor#OffsetTypeInfo()<CR>
-map <Leader>pfm :call phpactor#MoveFile()<CR>
-map <Leader>pfc :call phpactor#CopyFile()<CR>
-map <Leader>tt :call phpactor#Transform()<CR>
-map <Leader>cc :call phpactor#ClassNew()<CR>
-map <Leader>fr :call phpactor#FindReferences()<CR>
-
-" Show information about "type" under cursor including current frame
-nnoremap <silent><Leader>d :call phpactor#OffsetTypeInfo()<CR>
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
