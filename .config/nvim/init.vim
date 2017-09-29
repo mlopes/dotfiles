@@ -11,22 +11,16 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 " Required:
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
-" (Optional) Multi-entry selection UI.
+" General fuzzy search capability
 Plug 'junegunn/fzf'
-" (Optional) Multi-entry selection UI.
-Plug 'Shougo/denite.nvim'
 
-" (Optional) Completion integration with deoplete.
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" (Optional) Completion integration with nvim-completion-manager.
+" Completion as you type - being used for Haskell and PHP
 Plug 'roxma/nvim-completion-manager'
 
-" (Optional) Showing function signature and inline doc.
-Plug 'Shougo/echodoc.vim'
-
+" Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'
 
-" Aligning
+" Aligning - TODO - Check if it's doing any usefull stuff
 Plug 'godlygeek/tabular'
 
 " Colour scheme
@@ -41,16 +35,11 @@ Plug 'scrooloose/nerdtree'
 " Easily comment - <Leader>cc
 Plug 'scrooloose/nerdcommenter'
 
-" Syntax checking on write
-" Plug 'scrooloose/syntastic'
-
+" Git support
 Plug 'tpope/vim-fugitive'
 
 " Apply a command on every file in the quickfix list :Qdo %s/Foobar/Barfoo
 Plug 'henrik/vim-qargs'
-
-" Vdebug - PHP debugging
-Plug 'joonty/vdebug'
 
 " Airline status bar
 Plug 'vim-airline/vim-airline'
@@ -102,6 +91,9 @@ Plug 'rafi/vim-phpspec'
 Plug 'mudpile45/vim-phpdoc'
 " Twig syntax highlighting
 Plug 'lumiliet/vim-twig'
+" Vdebug - Debug plugin - Being used for PHP
+Plug 'joonty/vdebug'
+
 
 
 " Initialize plugin system
