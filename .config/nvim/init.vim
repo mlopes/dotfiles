@@ -192,9 +192,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-" show TWIG highlighting
-au BufRead,BufNewFile *.twig set syntax=htmljinja
-
 scriptencoding utf-8
 set history=1000
 set nospell
