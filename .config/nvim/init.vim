@@ -86,6 +86,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
+" Syntaxe check and linting - Being used for PHP and Haskell
 Plug 'w0rp/ale'
 
 " PHP plugins
@@ -100,7 +101,6 @@ Plug 'stephpy/vim-php-cs-fixer'
 " Refactoring
 Plug 'adoy/vim-php-refactoring-toolbox'
 " PHPSpec integration
-" Plugin 'Herzult/phpspec-vim.git'
 Plug 'rafi/vim-phpspec'
 " Automatically insert use statements and expand class names to FQN
 Plug 'arnaud-lb/vim-php-namespace'
