@@ -5,14 +5,14 @@ import System.IO
 import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageDocks (ToggleStruts(..),avoidStruts,docks,manageDocks)
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ScreenCorners
 -- import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
-import XMonad.Layout.Tabbed
+import XMonad.Layout.Decoration
 import XMonad.Util.Run(spawnPipe,safeSpawn)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
@@ -29,23 +29,28 @@ import XMonad.Actions.GridSelect
 import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Actions.CycleWS
--- import XMonad.Hooks.ICCCMFocus
 
+import XMonad.Layout.Spacing
+-- import XMonad.Hooks.ICCCMFocus
+import qualified XMonad.Util.Dzen as Dzen
+
+import XMonad.Util.Run (runProcessWithInput)
 ------------------------------------------------------------------------
 -- Terminal
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
-myTerminal = "/usr/bin/urxvt +ls -e fish -l"
--- myTerminal = "gnome-terminal"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+-- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
+myTerminal = "st -e fish -l -c ~/.local/bin/terminal"
 
 
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ map show [7..9]
+myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075","5:apps \xf080"] ++ map show [6..9]
 
 
 ------------------------------------------------------------------------
@@ -63,24 +68,32 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media","6:applications"] ++ 
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Gnome-terminal"         --> doShift "1:term"
-    , className =? "URxvt"                  --> doShift "1:term"
-    , className =? "Chromium"               --> doShift "2:web"
-    , className =? "Google-chrome"          --> doShift "2:web"
-    , className =? "chromium-browser"       --> doShift "2:web"
-    , className =? "Google-chrome-unstable" --> doShift "2:web"
-    , className =? "Firefox"                --> doShift "2:web"
-    , className =? "Sublime_text"           --> doShift "3:code"
-    , className =? "Gvim"                   --> doShift "3:code"
-    , className =? "jetbrains-pycharm"      --> doShift "3:code"
-    , className =? "Emacs24"                --> doShift "3:code"
-    , className =? "jetbrains-phpstorm"     --> doShift "3:code"
-    , className =? "VirtualBox"             --> doShift "4:vm"
-    , className =? "Xchat"                  --> doShift "5:media"
-    , className =? "HipChat"                --> doShift "5:media"
-    , className =? "Slack"                  --> doShift "5:media"
-    , className =? "Skype"                  --> doShift "5:media"
-    , className =? "TelegramDesktop"        --> doShift "5:media"
+    [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
+    , resource  =? "termvim"                --> doShift "3:code \xf126"
+    , resource  =? "termtelegram"           --> doShift "4:comms \xf075"
+    , resource  =? "cmusterm"               --> doShift "9"
+    , className =? "URxvt"                  --> doShift "1:term \xf120"
+    , className =? "Chromium"               --> doShift "2:web \xf269"
+    , className =? "Google-chrome"          --> doShift "2:web \xf269"
+    , className =? "chromium-browser"       --> doShift "2:web \xf269"
+    , className =? "Chromium-browser"       --> doShift "2:web \xf269"
+    , className =? "vimb"                   --> doShift "2:web \xf269"
+    , className =? "Vimb"                   --> doShift "2:web \xf269"
+    , className =? "Firefox"                --> doShift "2:web \xf269"
+    , className =? "Sublime_text"           --> doShift "3:code \xf126"
+    , className =? "Gvim"                   --> doShift "3:code \xf126"
+    , className =? "jetbrains-pycharm"      --> doShift "3:code \xf126"
+    , className =? "jetbrains-idea-ce"      --> doShift "3:code \xf126"
+    , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
+    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , className =? "Xchat"                  --> doShift "4:comms \xf075"
+    , className =? "HipChat"                --> doShift "4:comms \xf075"
+    , className =? "Slack"                  --> doShift "4:comms \xf075"
+    , className =? "Skype"                  --> doShift "4:comms \xf075"
+    , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
+    , className =? "Whatsie"                --> doShift "4:comms \xf075"
+    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
+    , className =? "Gimp"                   --> doShift "5:apps \xf080"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
@@ -101,8 +114,8 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
-    Tall 1 (3/100) (1/2) |||
-    Mirror (Tall 1 (3/100) (1/2)) |||
+    (spacing 3 $ Tall 1 (3/100) (1/2)) |||
+    (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
     -- tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
@@ -112,11 +125,11 @@ myLayout = avoidStruts (
 ------------------------------------------------------------------------
 -- Colors and borders
 --
-myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ffAF00"
+myNormalBorderColor  = "#121212"
+myFocusedBorderColor = "#E75700"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
-tabConfig = defaultTheme {
+tabConfig = def {
     activeBorderColor = "#00FF00",
     activeTextColor = "#FFCA28",
     activeColor = "#000000",
@@ -125,12 +138,12 @@ tabConfig = defaultTheme {
     inactiveColor = "#000000"
 }
 -- Color of current window title in xmobar.
-xmobarTitleColor = "#FF6F00"
+xmobarTitleColor = "#EAAA31"
 
 -- Color of current workspace in xmobar.
-xmobarCurrentWorkspaceColor = "#FF6F00"
+xmobarCurrentWorkspaceColor = "#FF6600"
 -- Width of the window border in pixels.
-myBorderWidth = 1
+myBorderWidth = 2
 
 
 ------------------------------------------------------------------------
@@ -143,6 +156,14 @@ myBorderWidth = 1
 --
 myModMask = mod4Mask
 
+terminus = "-*-terminus-*-*-*-*-24-*-*-*-*-*-*-*"
+
+externalCommandInPopUp :: String -> [String] -> X ()
+externalCommandInPopUp c p = do
+    s <- runProcessWithInput c p ""
+    Dzen.dzenConfig (Dzen.onCurr (Dzen.center 800 30) Dzen.>=> Dzen.font terminus) s
+
+
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- Custom key bindings
@@ -152,23 +173,33 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
-  -- Lock the screen using xscreensaver.
+  , ((modMask .|. mod1Mask, xK_Return),
+     -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
+     spawn "st -n termvim -e fish -l -c 'tmux attach'")
+
+  , ((modMask .|. shiftMask, xK_m),
+    (externalCommandInPopUp "mpc" ["current"]))
+
+  , ((modMask .|. shiftMask, xK_s),
+    (externalCommandInPopUp "connected_screens" []))
+
+  -- Lock the screen using slock.
   , ((modMask .|. controlMask, xK_l),
-     spawn "xscreensaver-command -lock")
+     spawn "slock")
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
-  , ((modMask, xK_p),
-       spawn "exe=`~/.xmonad/bin/dmenu_path | ~/.cabal/bin/yeganesh` && eval \"exec $exe\"")
+  , ((modMask, xK_p), spawn "rofi -show run")
+  --, ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
 
   -- Switch to single screen mode
   , ((modMask .|. mod1Mask, xK_1),
-       spawn "xrandr -s 0")
+       spawn "xrandr --output DP1 --off")
 
   -- Switch to dual screen mode
   , ((modMask .|. mod1Mask, xK_2),
-       spawn "xrandr --output HDMI-1 --auto --above eDP-1")
+       spawn "xrandr --output DP1 --auto --above eDP1 && feh --bg-tile ~/.xmonad/wallpaper.jpg")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -182,27 +213,27 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "~/.xmonad/bin/screenshot")
       -- Mute volume.
   , ((0, 0x1008ff12),
-     spawn "amixer -q set Master toggle")
+     spawn "amixer -D pulse set Master 1+ toggle")
 
   -- Decrease volume.
   , ((0, 0x1008ff11),
-     spawn "amixer -q set Master 10%-")
+     spawn "amixer -D pulse set Master 10%-")
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -q set Master unmute && amixer -q set Master 10%+")
+     spawn "amixer -D pulse set Master unmute && amixer -D pulse set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
-     spawn "cmus-remote --prev")
+     spawn "mpc prev")
 
   -- Play/pause.
   , ((0, 0x1008FF14),
-     spawn "cmus-remote --pause")
+     spawn "mpc toggle")
 
   -- Audio next.
   , ((0, 0x1008FF17),
-     spawn "cmus-remote --next")
+     spawn "mpc next")
 
       -- Eject CD tray.
   , ((0, 0x1008FF2C),
@@ -259,6 +290,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_k),
      windows W.focusUp  )
 
+  , ((modMask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  , ((mod1Mask .|. shiftMask, xK_Tab),
+     windows W.focusUp  )
+
+  -- Move focus to the master window.
   -- Move focus to the master window.
   , ((modMask, xK_m),
      windows W.focusMaster  )
@@ -300,7 +338,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      sendMessage ToggleStruts)
 
   -- Show grid selector
-  , ((modMask, xK_g), goToSelected defaultGSConfig)
+  , ((modMask, xK_g), goToSelected def)
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
@@ -314,9 +352,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ++
 
   [
-    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto  defaultXPConfig
+    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto  def
                          { autoComplete = Just 500000 })
-  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring defaultXPConfig)
+  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring def)
   ]
 
   ++
@@ -331,7 +369,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
   [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+      | (key, sc) <- zip [xK_d, xK_e, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -346,7 +384,7 @@ myFocusFollowsMouse = False
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
   [
     -- mod-button1, Set the window to floating mode and move by dragging
-    ((modMask, button1),
+    ((modMask .|. shiftMask, button1),
      (\w -> focus w >> mouseMoveWindow w))
 
     -- mod-button2, Raise the window to the top of the stack
@@ -390,8 +428,7 @@ startup :: X ()
 startup = do
   setWMName "LG3D"
   spawn "xsetroot -solid black"
-  addScreenCorner SCLowerRight (spawn "xscreensaver-command -lock")
-  spawn "/usr/bin/xscreensaver -no-splash &"
+  --addScreenCorner SCLowerRight (spawn "slock")
 
 
 
@@ -401,13 +438,13 @@ startup = do
 main = do
   -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
   xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmonad $ defaults {
+  xmonad $ docks defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
-          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
+          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 75
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
           , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
-          , ppSep = " >  "}
+          , ppSep = " |  "}
       , manageHook = manageDocks <+> myManageHook
       , startupHook = myStartupHook
       , handleEventHook = myEventHook
@@ -422,7 +459,7 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = defaultConfig {
+defaults = def {
     -- simple stuff
     terminal           = myTerminal,
     focusFollowsMouse  = myFocusFollowsMouse,

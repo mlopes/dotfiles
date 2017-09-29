@@ -1,6 +1,7 @@
-xmodmap  ~/.Xmodmap
 xsetroot -cursor_name left_ptr
-setxkbmap
+setxkbmap gb
+xmodmap  ~/.Xmodmap
 xcompmgr -cfF -t-9 -l-11 -r9 -o.95 -D6 &
-hsetroot -solid "#000000"
-xflux -l 51.5 -g -0.12 -k 4200
+feh --bg-tile ~/.xmonad/wallpaper.jpg
+# xflux -l 51.5 -g -0.12 -k 4200
+# amixer cset "numid=14,iface=MIXER,name='Master Playback Volume'" on

@@ -1,0 +1,10 @@
+name: ell
+root: ~/Projects/ell
+attach: false
+
+windows:
+  - editor: nvim .
+  - console: git st
+  - vm: hem vm up; hem vm ssh
+
+pre: find ./ -name "*.swp" -delete

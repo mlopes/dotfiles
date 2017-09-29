@@ -1,4 +1,14 @@
-pointer = 1 2 3 5 4 6 7 8 9 10 11 12
-keycode 108 = Multi_key
+clear lock
+clear control
+
+keycode 66 = Control_L
+add control = Control_L Control_R
+
 keycode  49 = grave asciitilde grave asciitilde
-keycode  94 = less greater less greater bar brokenbar bar
+keycode  54 = c C c C ccedilla Ccedilla
+keycode 57 = n N n N dead_tilde
+keycode 31 = i I i I dead_circumflex
+keycode 26 = e E e E dead_acute
+keycode 38 = a A a A dead_grave
+
+

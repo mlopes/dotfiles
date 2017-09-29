@@ -1,9 +1,10 @@
 [alias]
-co = checkout
-ci = commit
-rb = rebase
-	sb = status -sb 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	amend = commit --amend --no-edit
+	please = push --force-with-lease
+	it = !git init && git commit -m “root” --allow-empty
+	shorty = status --short --branch
+	st = status --short --branch
 [color]
 	branch = auto
 	diff = auto

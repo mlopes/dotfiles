@@ -1,0 +1,9 @@
+name: pz
+root: ~/Projects/pz
+attach: false
+
+windows:
+  - vim: vim .
+  - console: git st
+
+pre: find ./ -name "*.swp" -delete

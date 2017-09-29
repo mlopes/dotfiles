@@ -1,0 +1,12 @@
+name: pps-api
+root: ~/Projects/pps-api
+attach: false
+
+windows:
+  - editor: nvim .
+  - console: git st
+  - play: sbt run
+  - tests: sbt ~test
+  - sbt: sbt
+
+pre: find ./ -name "*.swp" -delete

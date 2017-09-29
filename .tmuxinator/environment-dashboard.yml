@@ -1,0 +1,10 @@
+name: environment-dashboard
+root: ~/Projects/environment-dashboard
+attach: false
+
+windows:
+  - console: git st
+  - play: source ~/.tmuxinator/environment-dashboard.env; sbt run
+  - sbt: source ~/.tmuxinator/environment-dashboard.env; sbt
+
+pre: find ./ -name "*.swp" -delete

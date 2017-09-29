@@ -6,3 +6,11 @@
 ruleset.xml
 *.sublime-project
 *.sublime-workspace
+.bundle
+.gems
+.*.swp
+tags
+ensime.sbt
+.ensime
+.ensime_cache/
+project/.ensime
