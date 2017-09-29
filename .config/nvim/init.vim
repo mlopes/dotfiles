@@ -29,27 +29,11 @@ Plug 'tpope/vim-surround'
 " Aligning
 Plug 'godlygeek/tabular'
 
-" Generate PHPUnit tests
-Plug 'dantleech/vim-phpunit'
-
-" Determine the namespace for the current file
-" Plug 'dantleech/vim-phpnamespace'
-
 " Colour scheme
 Plug 'tomasr/molokai'
 
-" phpcsfixer integration
-Plug 'stephpy/vim-php-cs-fixer'
-
-" pdv - php documentor (docblocks)
-Plug 'tobyS/pdv'
-Plug 'tobyS/vmustache'
-
 " Ctrlp - quickly find files, tags and buffers using fuzzy search
 Plug 'kien/ctrlp.vim'
-
-" Twig syntax highlighting
-Plug 'lumiliet/vim-twig'
 
 " Nerdtree file browser
 Plug 'scrooloose/nerdtree'
@@ -62,18 +46,8 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'tpope/vim-fugitive'
 
-" Automatically insert use statements and expand class names to FQN
-Plug 'arnaud-lb/vim-php-namespace'
-
-" PHP Documentation - hit K (shift-k) on any php function
-Plug 'mudpile45/vim-phpdoc'
-
 " Apply a command on every file in the quickfix list :Qdo %s/Foobar/Barfoo
 Plug 'henrik/vim-qargs'
-
-" PHPSpec integration
-" Plugin 'Herzult/phpspec-vim.git'
-Plug 'rafi/vim-phpspec'
 
 " Vdebug - PHP debugging
 Plug 'joonty/vdebug'
@@ -81,9 +55,6 @@ Plug 'joonty/vdebug'
 " Airline status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Refactoring
-Plug 'adoy/vim-php-refactoring-toolbox'
 
 " Git gutter
 Plug 'airblade/vim-gitgutter'
@@ -94,10 +65,8 @@ Plug 'FooSoft/vim-argwrap'
 " Bats support
 Plug 'vim-scripts/bats.vim'
 
-if v:version >= 704
-  "" Snippets
-  Plug 'SirVer/ultisnips'
-endif
+"" Snippets
+Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
 
@@ -119,10 +88,27 @@ Plug 'derekwyatt/vim-scala'
 
 Plug 'w0rp/ale'
 
+" PHP plugins
 " requires phpactor
 Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
 Plug 'roxma/ncm-phpactor'
 Plug 'majutsushi/tagbar'
+" Determine the namespace for the current file
+Plug 'dantleech/vim-phpnamespace'
+" phpcsfixer integration
+Plug 'stephpy/vim-php-cs-fixer'
+" Refactoring
+Plug 'adoy/vim-php-refactoring-toolbox'
+" PHPSpec integration
+" Plugin 'Herzult/phpspec-vim.git'
+Plug 'rafi/vim-phpspec'
+" Automatically insert use statements and expand class names to FQN
+Plug 'arnaud-lb/vim-php-namespace'
+" PHP Documentation - hit K (shift-k) on any php function
+Plug 'mudpile45/vim-phpdoc'
+" Twig syntax highlighting
+Plug 'lumiliet/vim-twig'
+
 
 " Initialize plugin system
 call plug#end()
