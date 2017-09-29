@@ -94,16 +94,10 @@ Plug 'w0rp/ale'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
 Plug 'roxma/ncm-phpactor'
 Plug 'majutsushi/tagbar'
-" Determine the namespace for the current file
-Plug 'dantleech/vim-phpnamespace'
-" phpcsfixer integration
-Plug 'stephpy/vim-php-cs-fixer'
 " Refactoring
 Plug 'adoy/vim-php-refactoring-toolbox'
 " PHPSpec integration
 Plug 'rafi/vim-phpspec'
-" Automatically insert use statements and expand class names to FQN
-Plug 'arnaud-lb/vim-php-namespace'
 " PHP Documentation - hit K (shift-k) on any php function
 Plug 'mudpile45/vim-phpdoc'
 " Twig syntax highlighting

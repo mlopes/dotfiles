@@ -10,22 +10,13 @@ nnoremap <Leader>fr :call phpactor#FindReferences()<CR>
 nnoremap <silent><leader>mm :call phpactor#generate_snippet("implement_missing_methods")<CR>
 nnoremap <silent><leader>mp :call phpactor#generate_snippet("implement_missing_properties")<CR>
 
-" PHPCs Fixer
-nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-"
-" Insert the current namespace
-nnoremap <silent><leader>nn :call PhpNamespaceInsert()<CR>
-"
 " Show information about "type" under cursor including current frame
 nnoremap <silent><Leader>d :call phpactor#OffsetTypeInfo()<CR>
 
 autocmd FileType php setlocal omnifunc=phpactor#Complete
 
-" Settings for php-cs-fixer
-let g:php_cs_fixer_path = "/usr/local/bin/phpcsfixer"
 
-" php,pec-vim
+" php,sppec-vim
 "
 let g:phpspec_run_cmd_options = '--verbose -fpretty'
 
