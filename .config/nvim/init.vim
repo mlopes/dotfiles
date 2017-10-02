@@ -56,8 +56,8 @@ Plug 'vim-scripts/bats.vim'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
-
 Plug 'honza/vim-snippets'
+Plug 'garbas/vim-snipmate'
 
 " Haskell pluggins
 " Plug 'eagletmt/ghcmod-vim'
@@ -65,8 +65,6 @@ Plug 'eagletmt/neco-ghc'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
 
 Plug 'Shougo/neocomplete.vim'
 Plug 'ervandew/supertab'
