@@ -58,6 +58,7 @@ Plug 'garbas/vim-snipmate'
 
 " Haskell pluggins
 Plug 'eagletmt/neco-ghc'
+Plug 'eagletmt/ghcmod-vim'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -303,12 +304,6 @@ nnoremap <C-w>o <C-w><C-w>
 
 nnoremap <silent> <leader>aw :ArgWrap<CR>
 
-map <Leader>s :SyntasticToggleMode<CR>
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
-
 nnoremap <localleader>c :EnType<CR>
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
@@ -321,21 +316,13 @@ else " no gui
   endif
 endif
 
-let g:ale_linters = {'haskell': ['stack-ghc', 'ghc-mod', 'hlint', 'hdevtools']}
-
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
 autocmd BufWritePost *.scala silent :EnTypeCheck
-
-let g:haskell_tabular = 1
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
-" autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 func! AsciiMode()
     syntax off
