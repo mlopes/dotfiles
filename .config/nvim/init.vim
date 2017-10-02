@@ -14,9 +14,6 @@ call plug#begin(expand('~/.local/share/nvim/plugged'))
 " General fuzzy search capability
 Plug 'junegunn/fzf'
 
-" Completion as you type - being used for Haskell and PHP
-Plug 'roxma/nvim-completion-manager'
-
 " Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'
 
@@ -60,13 +57,11 @@ Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
 
 " Haskell pluggins
-" Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
 Plug 'Shougo/vimproc.vim'
 
@@ -75,6 +70,11 @@ Plug 'derekwyatt/vim-scala'
 
 " Syntaxe check and linting - Being used for PHP and Haskell
 Plug 'w0rp/ale'
+
+" Completion as you type - being used for Haskell and PHP
+Plug 'roxma/nvim-completion-manager'
+" Auto-completion enhancements - being used for Hasekll
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " PHP plugins
 " requires phpactor
@@ -119,7 +119,7 @@ filetype plugin indent on
 " Indentation
 set autoindent
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set smarttab
@@ -184,10 +184,7 @@ if has('statusline')
 endif
 
 " Ignore files
-set wildignore+=*/.git/*,*.cache,*.cache.php,*.swp,*.swo,**/cache/**,*.min.js,.cabal-sandbox
-set wildmode=longest,list,full
-set wildmenu
-set completeopt+=longest
+set wildignore+=*/.git/*,*.cache,*.swp,*.swo,**/cache/**,*.min.js
 
 " Allow hidden buffers
 set hidden
