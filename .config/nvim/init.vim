@@ -324,6 +324,8 @@ else " no gui
   endif
 endif
 
+let g:ale_linters = {'haskell': ['stack-ghc', 'ghc-mod', 'hlint', 'hdevtools']}
+
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
