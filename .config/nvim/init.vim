@@ -1,6 +1,5 @@
 set shell=/bin/bash
 set nocompatible               " be iMproved
-" filetype off                   " required!
 filetype plugin indent on
 
 " enable 256 colors
@@ -103,19 +102,6 @@ call plug#end()
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-" let g:LanguageClient_serverCommands = {
-"    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-"    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-"    \ }
-
-" Automatically start language servers.
-" let g:LanguageClient_autoStart = 1
-
-" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-  
-
 " Automatically detect filetypes
 filetype plugin indent on
 
@@ -141,7 +127,6 @@ set incsearch
 set hlsearch
 
 set completeopt=menuone,menu,longest
-
 
 let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
 " set syntax highlighting options.
@@ -232,20 +217,6 @@ let g:UltiSnipsEditSplit="vertical"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-
-" Color scheme
-" color twilight256
-color molokai
-" color molokai
-" let g:rehash256 = 1
-" let g:molokai_original = 1
-
-" Enable powerline fonts
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 0
-" let g:airline_section_y = airline#section#create_right(['ffenc', '%o'])
-
-
 " =============================== "
 " ===== Keyboard Mappings ======= "
 
@@ -267,11 +238,6 @@ map <C-B> :CtrlPBuffer <CR>
 map <C-T> :CtrlPTag <CR>
 " Fuzzy search all project filenames
 map <C-F> :FZF <CR>
-
-" map <C-p> :Unite file_rec/async<cr>
-" map <C-b> :Unite buffer <cr>
-" map <C-t> :Unite tag <cr>
-" map <Leader>g :Unite grep:.<cr>
 
 " Update ctags
 map <Leader>cp :!ctags --verbose <CR>
@@ -299,6 +265,8 @@ nnoremap <silent> <leader>aw :ArgWrap<CR>
 
 nnoremap <localleader>c :EnType<CR>
 
+nnoremap <CR> :noh<CR><CR>
+
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 if has("gui_running")
@@ -323,4 +291,6 @@ com! ASC call AsciiMode()
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! Normal ctermbg=NONE guibg=NONE
-" color mustango
+
+" Color scheme
+color molokai
