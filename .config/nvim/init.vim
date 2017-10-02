@@ -144,17 +144,29 @@ set completeopt=menuone,menu,longest
 
 
 let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
-let g:padawan#composer_command = "composer"
-let NERDTreeCascadeOpenSingleChildDir=0
-let NERDTreeCascadeSingleChildDir=0
-
-
 " set syntax highlighting options.
 syntax on
 let c_space_errors = 1
 
-" Nerdtree: Close NERDTree if it is the last open buffer
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+augroup defaultgroup
+  " Nerdtree: Close NERDTree if it is the last open buffer
+  autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+  autocmd FileType c,cpp,java,php,scala,haskell autocmd BufWritePre <buffer> %s/\s\+$//e
+
+  " Settings for rst / markdown
+  autocmd FileType rst setlocal textwidth=78
+  autocmd Filetype markdown setlocal textwidth=78
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
+
+let g:padawan#composer_command = "composer"
+let NERDTreeCascadeOpenSingleChildDir=0
+let NERDTreeCascadeSingleChildDir=0
+
 function! s:CloseIfOnlyNerdTreeLeft()
   if exists("t:NERDTreeBufName")
     if bufwinnr(t:NERDTreeBufName) != -1
@@ -205,15 +217,6 @@ let g:snips_author="Marco Lopes <marco@mlop.es>"
 
 " Only get tags from CWD
 set tags=tags;
-
-" Settings for rst / markdown
-autocmd FileType rst setlocal textwidth=78
-autocmd Filetype markdown setlocal textwidth=78
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -309,8 +312,6 @@ endif
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
-
-autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 
 func! AsciiMode()
     syntax off
