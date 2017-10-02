@@ -56,7 +56,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
 
-" Haskell pluggins
+" Haskell plugins
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
 
@@ -64,8 +64,10 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 
 Plug 'ervandew/supertab'
+" Used by Haskell
 Plug 'Shougo/vimproc.vim'
 
+" Scala plugins
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
@@ -219,18 +221,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-
 " ======================== "
 " Neo complete config
 " ======================== "
@@ -315,8 +305,6 @@ else " no gui
     inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
   endif
 endif
-
-autocmd BufWritePost *.scala silent :EnTypeCheck
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>
