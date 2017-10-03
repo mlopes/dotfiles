@@ -94,7 +94,7 @@ Plug 'lumiliet/vim-twig'
 " Vdebug - Debug plugin - Being used for PHP
 Plug 'joonty/vdebug'
 
-
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
@@ -293,4 +293,5 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! Normal ctermbg=NONE guibg=NONE
 
 " Color scheme
-color molokai
+set background=dark
+color gruvbox
