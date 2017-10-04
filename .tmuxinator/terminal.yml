@@ -1,0 +1,7 @@
+name: Terminal
+root: ~/
+startup_pane: 1
+
+windows:
+  - terminal: #empty
+

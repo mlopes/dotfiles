@@ -1,0 +1,7 @@
+name: Dev
+root: ~/Projects/lab
+startup_pane: 1
+
+windows:
+  - terminal: #empty
+
