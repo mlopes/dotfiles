@@ -69,6 +69,9 @@ Plug 'Shougo/vimproc.vim'
 " Scala plugins
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
+" Play Framework
+Plug 'gre/play2vim'
+Plug 'othree/html5.vim'
 
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
