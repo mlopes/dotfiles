@@ -104,10 +104,9 @@ func! AsciiMode()
 endfu
 com! ASC call AsciiMode()
 
-hi! Normal ctermbg=NONE guibg=NONE
-hi! Normal ctermbg=NONE guibg=NONE
-
 " Color scheme
 set background=dark
 color gruvbox
-hi Normal ctermbg=none
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
