@@ -56,3 +56,7 @@ else " no gui
   endif
 endif
 
+vnoremap a= :Tabularize /=<CR>
+vnoremap a; :Tabularize /::<CR>
+vnoremap a- :Tabularize /-><CR>
+
