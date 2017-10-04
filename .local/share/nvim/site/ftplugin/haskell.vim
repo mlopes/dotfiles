@@ -1,4 +1,4 @@
-let g:ale_linters = {'haskell': ['stack-ghc', 'ghc-mod', 'hlint', 'hdevtools']}
+let g:ale_linters.haskell = ['stack-ghc', 'ghc-mod', 'hlint', 'hdevtools']
 
 let g:haskellmode_completion_ghc = 1
 

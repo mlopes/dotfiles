@@ -70,7 +70,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 
-" Syntaxe check and linting - Being used for PHP and Haskell
+" Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
 
 " Completion as you type - being used for Haskell and PHP
