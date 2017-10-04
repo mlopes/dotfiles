@@ -298,3 +298,4 @@ hi! Normal ctermbg=NONE guibg=NONE
 " Color scheme
 set background=dark
 color gruvbox
+hi Normal ctermbg=none
