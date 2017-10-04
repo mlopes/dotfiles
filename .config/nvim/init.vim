@@ -1,11 +1,11 @@
 set shell=/bin/bash
 set nocompatible               " be iMproved
-filetype plugin indent on
 
 " enable 256 colors
 set t_Co=256
 
 source $HOME/.local/share/nvim/site/config/plugins.vim
+source $HOME/.local/share/nvim/site/config/keybindings.vim
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -125,65 +125,9 @@ let g:UltiSnipsEditSplit="vertical"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" =============================== "
-" ===== Keyboard Mappings ======= "
-
-" Use "," as the <Leader> key
-let mapleader=","
-
-" Toggle NERDTree file browser
-map <Leader>n :NERDTreeToggle <CR>
-
-" Open current file in NERDTree
-map <Leader>f :NERDTreeFind <CR>
-
-" Tagbar shows list of all methods and variables in class
-map <Leader>t :TagbarOpenAutoClose <CR>
-
-" Fuzzy search open buffers
-map <C-B> :CtrlPBuffer <CR>
-" Fuzzy search tags
-map <C-T> :CtrlPTag <CR>
-" Fuzzy search all project filenames
-map <C-F> :FZF <CR>
-
-" Update ctags
-map <Leader>cp :!ctags --verbose <CR>
-
-" Reload the .vimrc config
-map <Leader>vr :so ~/.config/nvim/init.vim<CR>
-
-" Edit .vimrc
-map <Leader>ve :tabnew ~/.config/nvim/init.vim<CR>
-
-" Next quick fix item
-map <Leader>= :cnext<CR>
-
-" Previous quick fix item
-map <Leader>- :cprev<CR>
-
-" PDV PhpDocumentor
-nnoremap <silent><leader>dd :call pdv#DocumentWithSnip()<CR>
-
-" Remap C-w C-w to C-w C-o, like in tmux
-nnoremap <C-w><C-o> <C-w><C-w>
-nnoremap <C-w>o <C-w><C-w>
-
-nnoremap <silent> <leader>aw :ArgWrap<CR>
-
-nnoremap <localleader>c :EnType<CR>
-
-nnoremap <CR> :noh<CR><CR>
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
-if has("gui_running")
-  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-else " no gui
-  if has("unix")
-    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-  endif
-endif
 
 vmap a= :Tabularize /=<CR>
 vmap a; :Tabularize /::<CR>

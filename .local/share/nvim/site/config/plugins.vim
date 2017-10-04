@@ -1,3 +1,6 @@
+" =============================== "
+" ======= Plugin Imports ======== "
+
 let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 
 " Required:
