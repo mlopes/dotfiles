@@ -1,6 +1,6 @@
 name: environment-dashboard
 root: ~/Projects/environment-dashboard
-attach: false
+startup_pane: 1
 
 windows:
   - console: git st

@@ -1,6 +1,6 @@
 name: pps
 root: ~/Projects/pps
-attach: false
+startup_pane: 1
 
 windows:
   - editor: nvim .

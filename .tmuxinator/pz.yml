@@ -1,9 +1,9 @@
 name: pz
 root: ~/Projects/pz
-attach: false
+startup_pane: 1
 
 windows:
-  - vim: vim .
+  - editor: nvim .
   - console: git st
 
 pre: find ./ -name "*.swp" -delete
