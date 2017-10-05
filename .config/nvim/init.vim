@@ -5,7 +5,6 @@ source $HOME/.local/share/nvim/site/config/settings.vim
 source $HOME/.local/share/nvim/site/config/variables.vim
 source $HOME/.local/share/nvim/site/config/keybindings.vim
 source $HOME/.local/share/nvim/site/config/autocmds.vim
-source $HOME/.local/share/nvim/site/config/functions.vim
 
 " Automatically detect filetypes
 filetype plugin indent on

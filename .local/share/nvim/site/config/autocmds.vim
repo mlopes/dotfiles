@@ -1,3 +1,13 @@
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
 augroup defaultgroup
   " Nerdtree: Close NERDTree if it is the last open buffer
   autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
