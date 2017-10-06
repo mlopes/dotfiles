@@ -20,12 +20,12 @@ set __fish_git_prompt_color_flags '#FCD984'
 set __fish_git_prompt_color_merging '#FAB511'
 
 # Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
-set __fish_git_prompt_char_stagedstate '→'
-set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
-set __fish_git_prompt_char_untrackedfiles '…'
+set __fish_git_prompt_char_dirtystate ' '
+set __fish_git_prompt_char_stagedstate ' '
+set __fish_git_prompt_char_stashstate '  '
+set __fish_git_prompt_char_upstream_ahead ''
+set __fish_git_prompt_char_upstream_behind ''
+set __fish_git_prompt_char_untrackedfiles ' '
 set __fish_git_prompt_char_upstream_equal ''
 
 #set PATH $HOME/.rbenv/bin $PATH
@@ -41,3 +41,4 @@ set PATH ~/.xmonad/bin $PATH
 
 alias emacs "emacs -nw"
 
+source ~/.local/share/icons-in-terminal/icons.fish
