@@ -18,3 +18,7 @@ color gruvbox
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! Normal ctermbg=NONE guibg=NONE
+
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif

@@ -95,5 +95,7 @@ Plug 'joonty/vdebug'
 
 Plug 'morhetz/gruvbox'
 
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Initialize plugin system
 call plug#end()
