@@ -12,11 +12,11 @@ nnoremap <silent><leader>mp :call phpactor#generate_snippet("implement_missing_p
 " Show information about "type" under cursor including current frame
 nnoremap <silent><Leader>d :call phpactor#OffsetTypeInfo()<CR>
 
-set wildignore+=*.cache.php
+setlocal wildignore+=*.cache.php
 
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+setlocal shiftwidth=4
+setlocal tabstop=4
+setlocal softtabstop=4
 
 let g:phpspec_run_cmd_options = '--verbose -fpretty'
 let php_sql_query = 1
@@ -24,7 +24,4 @@ let php_sync_method = 0
 let php_folding=0
 let g:DisableAutoPHPFolding = 1
 
-augroup phpgroup
-    autocmd!
-    autocmd FileType php setlocal omnifunc=phpactor#Complete
-augroup END
+setlocal omnifunc=phpactor#Complete

@@ -1,26 +1,26 @@
 let g:ale_linters.haskell = ['stack-ghc', 'ghc-mod', 'hlint', 'hdevtools']
 
-let g:haskellmode_completion_ghc = 1
+let g:haskellmode_completion_ghc = 0
+let g:necoghc_enable_detailed_browse = 1
+let g:necoghc_use_stack = 1
 
 let g:haskell_tabular = 1
 
-augroup haskellgroup
-  autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-augroup END
+setlocal omnifunc=necoghc#omnifunc
 
 " Ignore files
-set wildignore+=.cabal-sandbox
-set wildmode=longest,list,full
-set wildmenu
+setlocal wildignore+=.cabal-sandbox
+setlocal wildmode=longest,list,full
+setlocal wildmenu
 
-set completeopt=menuone,menu,longest
+setlocal completeopt=menuone,menu,longest
 
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+setlocal shiftwidth=2
+setlocal tabstop=2
+setlocal softtabstop=2
 
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
+nnoremap <silent> tw :GhcModTypeInsert<CR>
+nnoremap <silent> ts :GhcModSplitFunCase<CR>
+nnoremap <silent> tq :GhcModType<CR>
+nnoremap <silent> te :GhcModTypeClear<CR>
 
