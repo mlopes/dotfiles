@@ -86,44 +86,42 @@ static unsigned int tabspaces = 8;
 /* bg opacity */
 static const int alpha = 0x99;
 
-/* Material theme */
+/* gruvbox-dark colorscheme */
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-
-  /* 8 normal colors */
-  [0] = "#263238", /* black   */
-  [1] = "#ff9800", /* red     */
-  [2] = "#8bc34a", /* green   */
-  [3] = "#ffc107", /* yellow  */
-  [4] = "#03a9f4", /* blue    */
-  [5] = "#e91e63", /* magenta */
-  [6] = "#009688", /* cyan    */
-  [7] = "#cfd8dc", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#37474f", /* black   */
-  [9]  = "#ffa74d", /* red     */
-  [10] = "#9ccc65", /* green   */
-  [11] = "#ffa000", /* yellow  */
-  [12] = "#81d4fa", /* blue    */
-  [13] = "#ad1457", /* magenta */
-  [14] = "#26a69a", /* cyan    */
-  [15] = "#eceff1", /* white   */
-
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
   /* special colors */
   [256] = "#263238", /* background */
   [257] = "#eceff1", /* foreground */
   [258] = "#000000", /* foreground */
 };
 
+
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, cursor reversed
+ * foreground, background, cursor
  */
-static unsigned int defaultfg = 257;
+static unsigned int defaultfg = 15;
 static unsigned int defaultbg = 258;
-static unsigned int defaultcs = 257;
+static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 256;
+
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this

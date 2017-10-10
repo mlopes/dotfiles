@@ -20,7 +20,7 @@ function fish_prompt
   set_color $__prompt_text_colour
   printf '├─ '
   set_color $fish_color_cwd
-  printf '$ '
+  printf ' $ '
 
   set_color normal
 end

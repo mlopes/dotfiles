@@ -43,7 +43,7 @@ import XMonad.Util.Run (runProcessWithInput)
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "st -e fish -l -c ~/.local/bin/terminal"
+myTerminal = "st -e fish -l -c 'tmuxinator terminal'"
 
 
 ------------------------------------------------------------------------
@@ -73,6 +73,7 @@ myManageHook = composeAll
     , resource  =? "termtelegram"           --> doShift "4:comms \xf075"
     , resource  =? "cmusterm"               --> doShift "9"
     , className =? "URxvt"                  --> doShift "1:term \xf120"
+    , className =? "st-256color"            --> doShift "1:term \xf120"
     , className =? "Chromium"               --> doShift "2:web \xf269"
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
     , className =? "chromium-browser"       --> doShift "2:web \xf269"
@@ -175,7 +176,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask .|. mod1Mask, xK_Return),
      -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
-     spawn "st -n termvim -e fish -l -c 'tmux attach'")
+     spawn "st -n termvim -e fish -l -c 'tmuxinator dev'")
 
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))

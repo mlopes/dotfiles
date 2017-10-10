@@ -1,6 +1,6 @@
 name: ell
 root: ~/Projects/ell
-attach: false
+startup_pane: 1
 
 windows:
   - editor: nvim .
