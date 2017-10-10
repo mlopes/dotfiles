@@ -46,6 +46,9 @@ Plug 'FooSoft/vim-argwrap'
 " Bats support
 Plug 'vim-scripts/bats.vim'
 
+" Tmux focus events support
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
