@@ -24,3 +24,4 @@ nnoremap <silent> ts :GhcModSplitFunCase<CR>
 nnoremap <silent> tq :GhcModType<CR>
 nnoremap <silent> te :GhcModTypeClear<CR>
 
+let g:ghcmod_use_basedir="/home/mlopes/.local/bin"
