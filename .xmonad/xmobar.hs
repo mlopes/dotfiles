@@ -48,16 +48,16 @@ Config {
             , "--off-icon-pattern", "<fn=1>\xf1e6</fn>"
             , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
             ] 10,
---        Run Volume "default" "Master"
---            [ "-t", "<status>", "--"
---                                  , "--on", "<fc=#FE8C1F><fn=1>\xf028</fn> <volume>%</fc>"
---                                  , "--onc", "#FFD77C"
---                                  , "--off", "<fc=#FE8C1F><fn=1>\xf026</fn> MUTE</fc>"
---                                  , "--offc", "#FF6600"
---                                   ] 1,
+        Run Volume "default" "Master"
+            [ "-t", "<status>", "--"
+                                  , "--on", "<fc=#FE8C1F><fn=1>\xf028</fn> <volume>%</fc>"
+                                  , "--onc", "#FFD77C"
+                                  , "--off", "<fc=#FE8C1F><fn=1>\xf026</fn> MUTE</fc>"
+                                  , "--offc", "#FF6600"
+                                   ] 1,
        Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{%locks% %multicpu% %memory% %swap% %wlp58s0wi% %battery% %date% %EGLL%"
+    template = "%StdinReader% }{%locks% %multicpu% %memory% %swap% %wlp58s0wi% %default:Master% %battery% %date% %EGLL%"
 }
