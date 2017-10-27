@@ -176,6 +176,11 @@ orangeColorizer = G.colorRangeFromClassName
   where black = minBound
         white = maxBound
 
+myXPConfig :: XPConfig
+myXPConfig = amberXPConfig{
+                            font="xft:DejaVu Sans Mono for Powerline:size=7"
+                            ,height=32}
+
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- Custom key bindings
@@ -364,9 +369,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ++
 
   [
-    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto  def
+    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto myXPConfig
                          { autoComplete = Just 500000 })
-  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring def)
+  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring myXPConfig)
   ]
 
   ++
