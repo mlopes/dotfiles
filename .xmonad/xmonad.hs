@@ -24,7 +24,7 @@ import System.Environment (getEnvironment)
 import XMonad.Prompt
 import XMonad.Prompt.Window
 
-import XMonad.Actions.GridSelect
+import qualified XMonad.Actions.GridSelect as G
 
 import XMonad.Hooks.EwmhDesktops
 
@@ -164,6 +164,17 @@ externalCommandInPopUp c p = do
     s <- runProcessWithInput c p ""
     Dzen.dzenConfig (Dzen.onCurr (Dzen.center 800 30) Dzen.>=> Dzen.font terminus) s
 
+gsconfig2 colorizer = (G.buildDefaultGSConfig colorizer) { G.gs_cellheight = 100, G.gs_cellwidth = 200 }
+
+-- | A orangemonochrome colorizer based on window class
+orangeColorizer = G.colorRangeFromClassName
+                     black            -- lowest inactive bg
+                     (0xFF,0x66,0x00) -- highest inactive bg
+                     black            -- active bg
+                     white            -- inactive fg
+                     white            -- active fg
+  where black = minBound
+        white = maxBound
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -339,7 +350,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      sendMessage ToggleStruts)
 
   -- Show grid selector
-  , ((modMask, xK_g), goToSelected def)
+  , ((modMask, xK_g), G.goToSelected $ gsconfig2 orangeColorizer)
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
