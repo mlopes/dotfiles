@@ -204,11 +204,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask, xK_l),
      spawn "slock")
 
-  -- Launch dmenu via yeganesh.
+  -- Launch rofi
   -- Use this to launch programs without a key binding.
-  , ((modMask, xK_p), spawn "rofi -show run")
+  , ((modMask, xK_p), spawn "rofi -show drun")
   --, ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
+  -- Launch rofi in run mode
+  -- Use this to launch programs without a key binding.
+  , ((modMask .|. shiftMask, xK_p), spawn "rofi -show run")
+  --, ((modMask, xK_p), spawn "exe=`~/.xmonad/bin/dmenu_path | yeganesh` && eval \"exec $exe\"")
 
   -- Switch to single screen mode
   , ((modMask .|. mod1Mask, xK_1),
@@ -221,7 +225,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
   -- the mouse.
-  , ((modMask .|. shiftMask, xK_p),
+  , ((modMask .|. controlMask, xK_p),
      spawn "~/.xmonad/bin/select-screenshot")
 
   -- Take full screenshot in multi-head mode.
