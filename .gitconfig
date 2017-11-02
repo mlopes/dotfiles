@@ -3,8 +3,10 @@
 	amend = commit --amend --no-edit
 	please = push --force-with-lease
 	it = !git init && git commit -m “root” --allow-empty
-	shorty = status --short --branch
 	st = status --short --branch
+  up = pull --rebase --prune
+  tidy = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
 [color]
 	branch = auto
 	diff = auto
