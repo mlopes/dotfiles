@@ -7,7 +7,7 @@
   up = pull --rebase --prune
   tidy = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
-  raster = rebase master
+  remaster = rebase master
 [color]
 	branch = auto
 	diff = auto
