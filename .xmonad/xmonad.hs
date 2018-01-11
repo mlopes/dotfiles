@@ -238,11 +238,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Decrease volume.
   , ((0, 0x1008ff11),
-     spawn "amixer -D pulse set Master 10%-")
+     spawn "amixer -D pulse set Master 2%-")
 
   -- Increase volume.
   , ((0, 0x1008ff13),
-     spawn "amixer -D pulse set Master unmute && amixer -D pulse set Master 10%+")
+     spawn "amixer -D pulse set Master unmute && amixer -D pulse set Master 2%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
