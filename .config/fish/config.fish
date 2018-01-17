@@ -1,9 +1,5 @@
 set -xg SHELL /usr/bin/fish
 
-if status --is-interactive
- keychain --eval --quiet -Q id_rsa | source
-end
-
 set __prompt_colour '#FFCA28'
 set __prompt_text_colour '#FAB511'
 set __prompt_date_colour '#FCD984'
@@ -34,7 +30,7 @@ set __fish_git_prompt_char_upstream_equal ''
 
 set -x EDITOR vim
 set -x -U SHELL /usr/bin/fish
-set PATH /home/mlopes/.local/bin /usr/local/bin /home/mlopes/.gem/ruby/2.1.0/bin $PATH
+set PATH /Users/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
