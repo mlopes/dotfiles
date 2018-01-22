@@ -32,7 +32,6 @@ set -x EDITOR vim
 set -x -U SHELL /usr/bin/fish
 set PATH /Users/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
-set PATH ~/.xmonad/bin $PATH
 # set -xg TERM screen-256color
 # ssh-add ~/.ssh/id_rsa
 
