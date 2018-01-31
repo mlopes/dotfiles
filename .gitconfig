@@ -12,7 +12,7 @@
 	status = auto
 	ui = true
 [core]
-	excludesfile = /home/mlopes/.gitignore_global
+	excludesfile = /Users/mlopes/.gitignore_global
 [diff]
 	mnemonicprefix = true
 [difftool "sourcetree"]

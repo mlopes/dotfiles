@@ -8,3 +8,4 @@ ruleset.xml
 *.sublime-workspace
 .ensime
 .ensime_cache/*
+*.log
