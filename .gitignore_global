@@ -9,3 +9,5 @@ ruleset.xml
 .ensime
 .ensime_cache/*
 *.log
+.bundle
+.gems
