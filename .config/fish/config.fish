@@ -1,4 +1,4 @@
-set -xg SHELL /usr/bin/fish
+set -xg SHELL /usr/local/bin/fish
 
 set __prompt_colour '#FFCA28'
 set __prompt_text_colour '#FAB511'
@@ -29,7 +29,7 @@ set __fish_git_prompt_char_upstream_equal ''
 #rbenv rehash >/dev/null ^&1
 
 set -x EDITOR vim
-set -x -U SHELL /usr/bin/fish
+set -x -U SHELL /usr/local/bin/fish
 set PATH /Users/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 # set -xg TERM screen-256color
