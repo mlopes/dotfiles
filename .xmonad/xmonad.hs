@@ -78,6 +78,7 @@ myManageHook = composeAll
     , className =? "Google-chrome"          --> doShift "2:web \xf269"
     , className =? "chromium-browser"       --> doShift "2:web \xf269"
     , className =? "Chromium-browser"       --> doShift "2:web \xf269"
+    , className =? "tabbed"                 --> doShift "2:web \xf269"
     , className =? "vimb"                   --> doShift "2:web \xf269"
     , className =? "Vimb"                   --> doShift "2:web \xf269"
     , className =? "Firefox"                --> doShift "2:web \xf269"
