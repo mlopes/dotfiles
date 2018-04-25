@@ -1,0 +1,2 @@
+!# /bin/bash
+tabbed -d -n vimb -c vimb -e
