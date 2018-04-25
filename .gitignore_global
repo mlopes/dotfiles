@@ -14,3 +14,4 @@ ensime.sbt
 .ensime
 .ensime_cache/
 project/.ensime
+.vscode

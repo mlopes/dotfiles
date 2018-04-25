@@ -1,1 +1,3 @@
 set download-path=~/Downloads
+set default-zoom=180
+set input-autohide=true
