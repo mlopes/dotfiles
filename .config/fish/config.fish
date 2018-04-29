@@ -28,6 +28,7 @@ set __fish_git_prompt_char_upstream_equal ''
 #set PATH $HOME/.rbenv/shims $PATH
 #rbenv rehash >/dev/null ^&1
 
+set -x MONO_GAC_PREFIX /usr/local
 set -x EDITOR vim
 set -x -U SHELL /usr/local/bin/fish
 set PATH /Users/mlopes/.local/bin /usr/local/bin $PATH
