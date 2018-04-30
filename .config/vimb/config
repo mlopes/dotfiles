@@ -1,6 +1,8 @@
 set download-path=~/Downloads
+set home-page=http://mail.inviqa.com
 set default-zoom=180
 set input-autohide=true
+set incsearch=true
 
 nnoremap gt :sh! xdotool key --window $VIMB_XID ctrl+shift+l<CR><Esc>
 nnoremap gT :sh! xdotool key --window $VIMB_XID ctrl+shift+h<CR><Esc>
