@@ -13,8 +13,10 @@ import XMonad.Hooks.ScreenCorners
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Decoration
+import XMonad.Layout.Tabbed
 import XMonad.Util.Run(spawnPipe,safeSpawn)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.Themes
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -118,7 +120,8 @@ myManageHook = composeAll
 myLayout = avoidStruts (
     (spacing 3 $ Tall 1 (3/100) (1/2)) |||
     (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
-    -- tabbed shrinkText tabConfig |||
+    --tabbed shrinkText (theme kavonAutumnTheme) |||
+    tabbed shrinkText tabConfig |||
     Full) -- |||
     -- spiral (6/7)) |||
     -- noBorders (fullscreenFull Full)
@@ -132,12 +135,13 @@ myFocusedBorderColor = "#E75700"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = def {
-    activeBorderColor = "#00FF00",
+    activeBorderColor = "#E75700",
     activeTextColor = "#FFCA28",
-    activeColor = "#000000",
+    activeColor = "#330000",
     inactiveBorderColor = "#7C7C7C",
     inactiveTextColor = "#EEEEEE",
-    inactiveColor = "#000000"
+    inactiveColor = "#000000",
+    fontName = "xft:terminus:size=6"
 }
 -- Color of current window title in xmobar.
 xmobarTitleColor = "#EAAA31"
