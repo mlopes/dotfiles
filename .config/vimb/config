@@ -16,3 +16,6 @@ nnoremap 7gt :sh! xdotool key --window $VIMB_XID ctrl+7<CR><Esc>
 nnoremap 8gt :sh! xdotool key --window $VIMB_XID ctrl+8<CR><Esc>
 nnoremap 9gt :sh! xdotool key --window $VIMB_XID ctrl+9<CR><Esc>
 
+set status-ssl-css=color:#FFCA28;background-color:#393939;
+set status-css=color:#FFCA28;background-color:#593939;
+set status-ssl-invalid-css=color:#FF0000;background-color:#593939;
