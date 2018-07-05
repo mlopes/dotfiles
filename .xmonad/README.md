@@ -121,15 +121,19 @@ Mac.
 
 Some of the key configurations will depend on the devices you're using.
 
-#### Switching between single and dual screens mode doesn't work
-If switching between single screen and dual screen mode doesn't work, use
-`xrandr` to check if your devices correspond to the ones set in the keybinds
-configuration.
+#### Switching between single and dual screens
+Win+Alt+1 will switch to single screen mode, Win+Alt+2 will switch to dual
+screen mode.
+These keybindings are set to `xrandr` commands. Please check that your device
+IDs correspond to the ones set in the keybinds configuration.
 
 #### Sound volume and mutting not working
 The Keybindings for volume control and mutting sound, use `amixer` but assume
 that the device is a `pulse` device. If you're not using pulseaudio, you'll have to
 remove the `-D pulse` from the `amixer` calls.
+Due to issues with Debian based distros not making the 'fn' key available to
+the user, the mute buttons might not work in Debian/Ubuntu/Mint, it should
+work as expected in Arch.
 
 #### CD won't eject
 This usually means you don't have a CD/DVD drive
@@ -139,6 +143,9 @@ Usually this means that your system as some misconfiguration or no ACPI
 support. This configuration doesn't specify any devices for this, it relies on
 `kbdlight` and `xbacklight`, if ACPI is working in your system, these
 utilities should be able to dim the backlights.
+Due to issues with Debian based distros not making the 'fn' key available to
+the user, the brightness regulation buttons might not work in Debian/Ubuntu/Mint,
+it should work as expected in Arch.
 
 
 ## Personalising or modifying xmonad configuration
