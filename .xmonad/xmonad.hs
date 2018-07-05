@@ -52,7 +52,7 @@ myTerminal = "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -e 
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075","5:apps \xf080"] ++ map show [6..9]
+myWorkspaces = ["1:dev \xf126","2:ide \xf121","3:web \xf269","4:comms \xf075","5:term \xf120", "6:apps \xf080"] ++ map show [7..9]
 
 
 ------------------------------------------------------------------------
@@ -70,34 +70,34 @@ myWorkspaces = ["1:term \xf120","2:web \xf269","3:code \xf126","4:comms \xf075",
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Gnome-terminal"         --> doShift "1:term \xf120"
-    , resource  =? "termvim"                --> doShift "3:code \xf126"
+    [ resource  =? "termvim"                --> doShift "1:dev \xf126"
     , resource  =? "termtelegram"           --> doShift "4:comms \xf075"
     , resource  =? "cmusterm"               --> doShift "9"
-    , className =? "URxvt"                  --> doShift "1:term \xf120"
-    , className =? "st-256color"            --> doShift "1:term \xf120"
-    , className =? "Chromium"               --> doShift "2:web \xf269"
-    , className =? "Google-chrome"          --> doShift "2:web \xf269"
-    , className =? "chromium-browser"       --> doShift "2:web \xf269"
-    , className =? "Chromium-browser"       --> doShift "2:web \xf269"
-    , className =? "tabbed"                 --> doShift "2:web \xf269"
-    , className =? "vimb"                   --> doShift "2:web \xf269"
-    , className =? "Vimb"                   --> doShift "2:web \xf269"
-    , className =? "Firefox"                --> doShift "2:web \xf269"
-    , className =? "Sublime_text"           --> doShift "3:code \xf126"
-    , className =? "Gvim"                   --> doShift "3:code \xf126"
-    , className =? "jetbrains-pycharm"      --> doShift "3:code \xf126"
-    , className =? "jetbrains-idea-ce"      --> doShift "3:code \xf126"
-    , className =? "jetbrains-phpstorm"     --> doShift "3:code \xf126"
-    , className =? "Emacs24"                --> doShift "3:code \xf126"
+    , className =? "URxvt"                  --> doShift "5:term \xf120"
+    , className =? "st-256color"            --> doShift "5:term \xf120"
+    , className =? "Gnome-terminal"         --> doShift "5:term \xf120"
+    , className =? "Chromium"               --> doShift "3:web \xf269"
+    , className =? "Google-chrome"          --> doShift "3:web \xf269"
+    , className =? "chromium-browser"       --> doShift "3:web \xf269"
+    , className =? "Chromium-browser"       --> doShift "3:web \xf269"
+    , className =? "tabbed"                 --> doShift "3:web \xf269"
+    , className =? "vimb"                   --> doShift "3:web \xf269"
+    , className =? "Vimb"                   --> doShift "3:web \xf269"
+    , className =? "Firefox"                --> doShift "3:web \xf269"
+    , className =? "Sublime_text"           --> doShift "2:ide \xf121"
+    , className =? "Gvim"                   --> doShift "2:ide \xf121"
+    , className =? "jetbrains-pycharm"      --> doShift "2:ide \xf121"
+    , className =? "jetbrains-idea-ce"      --> doShift "2:ide \xf121"
+    , className =? "jetbrains-phpstorm"     --> doShift "2:ide \xf121"
+    , className =? "Emacs24"                --> doShift "2:ide \xf121"
     , className =? "Xchat"                  --> doShift "4:comms \xf075"
     , className =? "HipChat"                --> doShift "4:comms \xf075"
     , className =? "Slack"                  --> doShift "4:comms \xf075"
     , className =? "Skype"                  --> doShift "4:comms \xf075"
     , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
     , className =? "Whatsie"                --> doShift "4:comms \xf075"
-    , className =? "VirtualBox"             --> doShift "5:apps \xf080"
-    , className =? "Gimp"                   --> doShift "5:apps \xf080"
+    , className =? "VirtualBox"             --> doShift "6:apps \xf080"
+    , className =? "Gimp"                   --> doShift "6:apps \xf080"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
     , className =? "Steam"                  --> doFloat
