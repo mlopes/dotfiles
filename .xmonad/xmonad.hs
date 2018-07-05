@@ -45,7 +45,7 @@ import XMonad.Util.Run (runProcessWithInput)
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "st -e fish -l -c 'tmuxinator terminal'"
+myTerminal = "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -e fish -l -c 'tmuxinator terminal'"
 
 
 ------------------------------------------------------------------------
@@ -197,7 +197,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask .|. mod1Mask, xK_Return),
      -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
-     spawn "st -n termvim -e fish -l -c 'tmuxinator dev'")
+     spawn "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -n termvim -e fish -l -c 'tmuxinator dev'")
 
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))
@@ -221,11 +221,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Switch to single screen mode
   , ((modMask .|. mod1Mask, xK_1),
-       spawn "xrandr --output DP1 --off")
+       spawn "xrandr --output DP-2 --off")
 
   -- Switch to dual screen mode
   , ((modMask .|. mod1Mask, xK_2),
-       spawn "xrandr --output DP1 --auto --above eDP1 && feh --bg-tile ~/.xmonad/wallpaper.jpg")
+       spawn "xrandr --output DP-2 --auto --above eDP-1 && feh --bg-tile ~/.xmonad/wallpaper.jpg")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with

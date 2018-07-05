@@ -1,6 +1,6 @@
 set download-path=~/Downloads
-set home-page=http://mail.inviqa.com
-set default-zoom=180
+set home-page=http://mail.google.com
+set default-zoom=220
 set input-autohide=true
 set incsearch=true
 

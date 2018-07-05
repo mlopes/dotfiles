@@ -1,6 +1,6 @@
 
 G! Xft settings --------------------------------
-Xft.dpi:        166
+Xft.dpi:        100
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    full
@@ -35,7 +35,7 @@ URxvt*urgentOnBell: true
 URxvt*visualBell:  true
 
 ! dont forget to change this to your favorite browser
-#URxvt*urlLauncher: google-chrome
+! URxvt*urlLauncher: google-chrome
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.C-Up:     perl:font-size:increase
