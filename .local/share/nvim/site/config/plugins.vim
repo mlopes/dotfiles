@@ -55,6 +55,9 @@ Plug 'honza/vim-snippets'
 Plug 'garbas/vim-snipmate'
 
 " Haskell plugins
+
+Plug 'parsonsmatt/intero-neovim'
+
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
 
@@ -82,11 +85,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " PHP plugins
 " requires phpactor
-Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
-Plug 'roxma/ncm-phpactor'
+" Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
+" Plug 'roxma/ncm-phpactor'
 Plug 'majutsushi/tagbar'
 " Refactoring
-Plug 'adoy/vim-php-refactoring-toolbox'
+" Plug 'adoy/vim-php-refactoring-toolbox'
 " PHPSpec integration
 Plug 'rafi/vim-phpspec'
 " PHP Documentation - hit K (shift-k) on any php function
@@ -100,5 +103,12 @@ Plug 'morhetz/gruvbox'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'neomake/neomake'
+
+" Elm
+Plug 'carmonw/elm-vim'
+Plug 'pbogut/deoplete-elm'
+
 " Initialize plugin system
 call plug#end()

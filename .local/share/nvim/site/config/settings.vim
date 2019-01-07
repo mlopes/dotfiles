@@ -55,3 +55,5 @@ set wildignore+=*/.git/*,*.cache,*.swp,*.swo,**/cache/**,*.min.js
 
 " Only get tags from CWD
 set tags=tags;
+
+let g:deoplete#enable_at_startup = 1

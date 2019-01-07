@@ -45,3 +45,6 @@ set PATH ~/.xmonad/bin $PATH
 alias emacs "emacs -nw"
 
 source ~/.local/share/icons-in-terminal/icons.fish
+
+kitty + complete setup fish | source
+

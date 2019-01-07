@@ -45,7 +45,8 @@ import XMonad.Util.Run (runProcessWithInput)
 -- myTerminal = "urxvt -e fish -c \"tmux -q has-session; and exec tmux attach-session -d; or exec tmux new-session -n$USER -s$USER@$HOSTNAME\""
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
-myTerminal = "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -e fish -l -c 'tmuxinator terminal'"
+-- myTerminal = "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -e fish -l -c 'tmuxinator terminal'"
+myTerminal = "/home/mlopes/.local/bin/kitty fish -l -c 'tmuxinator terminal'"
 
 
 ------------------------------------------------------------------------
@@ -75,6 +76,7 @@ myManageHook = composeAll
     , resource  =? "cmusterm"               --> doShift "9"
     , className =? "URxvt"                  --> doShift "5:term \xf120"
     , className =? "st-256color"            --> doShift "5:term \xf120"
+    , className =? "kitty"                  --> doShift "5:term \xf120"
     , className =? "Gnome-terminal"         --> doShift "5:term \xf120"
     , className =? "Chromium"               --> doShift "3:web \xf269"
     , className =? "Google-chrome"          --> doShift "3:web \xf269"
@@ -197,7 +199,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask .|. mod1Mask, xK_Return),
      -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
-     spawn "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -n termvim -e fish -l -c 'tmuxinator dev'")
+     -- spawn "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -n termvim -e fish -l -c 'tmuxinator dev'")
+     spawn "/home/mlopes/.local/bin/kitty --name termvim fish -l -c 'tmuxinator dev'")
 
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))
@@ -225,7 +228,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Switch to dual screen mode
   , ((modMask .|. mod1Mask, xK_2),
-       spawn "xrandr --output DP-2 --auto --above eDP-1 && feh --bg-tile ~/.xmonad/wallpaper.jpg")
+       spawn "xrandr --output DP-2 --auto --above eDP-1 --primary && feh --bg-tile ~/.xmonad/wallpaper.jpg")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -395,7 +398,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
   [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_d, xK_e, xK_r] [0..]
+      | (key, sc) <- zip [xK_e, xK_d, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -463,7 +466,7 @@ startup = do
 --
 main = do
   -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "/usr/bin/xmobar -x 0 ~/.xmonad/xmobar.hs"
   xmonad $ docks defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
