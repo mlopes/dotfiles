@@ -9,6 +9,7 @@
   alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
   remaster = !git fetch origin master:master && git rebase master
   upush = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
+  plead = !git amend && git please
 [color]
 	branch = auto
 	diff = auto
