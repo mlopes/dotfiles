@@ -7,7 +7,7 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
 " General fuzzy search capability
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/local/bin/.fzf', 'do': './install --all' }
 
 " Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'

@@ -1,1 +1,1 @@
-/home/mlopes/.fzf/shell/key-bindings.fish
+/home/mlopes/local/bin/.fzf/shell/key-bindings.fish
