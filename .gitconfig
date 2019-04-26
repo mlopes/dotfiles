@@ -38,3 +38,7 @@
 [include]
     path = .github
     path = .gituser
+[user]
+	signingkey = 14D40CA1E1A806A015C4A06B372EC33EB388121A
+[commit]
+	gpgsign = true
