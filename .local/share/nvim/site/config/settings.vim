@@ -43,7 +43,7 @@ if has('statusline')
     set statusline+=%w%h%m%r " Options
     set statusline+=%{fugitive#statusline()} " Git Hotness
     set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
+    "set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
     set statusline+=\ [%{&ff}/%Y] " filetype
     set statusline+=\ [%{getcwd()}] " current dir
