@@ -40,6 +40,7 @@ set -x SHELL /usr/bin/fish
 set PATH /home/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
+set PATH ~/.local/yarn/bin ~/.config/yarn/global/node_modules/.bin $PATH
 # set -xg TERM screen-256color
 
 alias emacs "emacs -nw"

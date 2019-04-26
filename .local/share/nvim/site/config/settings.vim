@@ -57,3 +57,25 @@ set wildignore+=*/.git/*,*.cache,*.swp,*.swo,**/cache/**,*.min.js
 set tags=tags;
 
 let g:deoplete#enable_at_startup = 1
+
+ " Configuration for coc.nvim
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Some server have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+" End of Configuration suggested for coc.nvim
+
+let g:airline#extensions#ale#enabled = 1
+
+au BufRead,BufNewFile *.sbt set filetype=scala

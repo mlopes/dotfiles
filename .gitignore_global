@@ -15,3 +15,5 @@ ensime.sbt
 .ensime_cache/
 project/.ensime
 .vscode
+.metals
+.bloop
