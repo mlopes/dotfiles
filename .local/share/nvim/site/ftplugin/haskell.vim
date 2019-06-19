@@ -6,7 +6,7 @@ let g:necoghc_use_stack = 1
 
 let g:haskell_tabular = 1
 
-setlocal omnifunc=necoghc#omnifunc
+" setlocal omnifunc=necoghc#omnifunc
 
 " Ignore files
 setlocal wildignore+=.cabal-sandbox

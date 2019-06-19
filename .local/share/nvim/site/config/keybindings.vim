@@ -35,9 +35,6 @@ nnoremap <Leader>= :cnext<CR>
 " Previous quick fix item
 nnoremap <Leader>- :cprev<CR>
 
-" PDV PhpDocumentor
-nnoremap <silent><leader>dd :call pdv#DocumentWithSnip()<CR>
-
 " Remap C-w C-w to C-w C-o, like in tmux
 nnoremap <C-w><C-o> <C-w><C-w>
 nnoremap <C-w>o <C-w><C-w>
@@ -81,7 +78,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>ac <Plug>(coc-codeaction)
 
 " Remap for do action format
-nnoremap <silent> F :call CocAction('format')<CR>
+nnoremap <leader> F :call CocAction('format')<CR>
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

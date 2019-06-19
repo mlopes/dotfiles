@@ -15,9 +15,6 @@ Plug 'tpope/vim-surround'
 " Aligning - TODO - Check if it's doing any usefull stuff
 Plug 'godlygeek/tabular'
 
-" Colour scheme
-Plug 'tomasr/molokai'
-
 " Ctrlp - quickly find files, tags and buffers using fuzzy search
 Plug 'kien/ctrlp.vim'
 
@@ -43,60 +40,15 @@ Plug 'airblade/vim-gitgutter'
 " Argument wrapping and unwrapping
 Plug 'FooSoft/vim-argwrap'
 
-" Bats support
-Plug 'vim-scripts/bats.vim'
-
 " Tmux focus events support
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-"" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
-
-" Haskell plugins
-
-Plug 'parsonsmatt/intero-neovim'
-
-Plug 'eagletmt/neco-ghc'
-Plug 'eagletmt/ghcmod-vim'
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-
-Plug 'ervandew/supertab'
-" Used by Haskell
-Plug 'Shougo/vimproc.vim'
-
 " Scala plugins
-" Plug 'natebosch/vim-lsc'
 Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
-
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
-
-" Completion as you type - being used for Haskell and PHP
-Plug 'roxma/nvim-completion-manager'
-" Auto-completion enhancements - being used for Hasekll
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" PHP plugins
-" requires phpactor
-" Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
-" Plug 'roxma/ncm-phpactor'
-Plug 'majutsushi/tagbar'
-" Refactoring
-" Plug 'adoy/vim-php-refactoring-toolbox'
-" PHPSpec integration
-Plug 'rafi/vim-phpspec'
-" PHP Documentation - hit K (shift-k) on any php function
-Plug 'mudpile45/vim-phpdoc'
-" Twig syntax highlighting
-Plug 'lumiliet/vim-twig'
-" Vdebug - Debug plugin - Being used for PHP
-Plug 'joonty/vdebug'
 
 Plug 'morhetz/gruvbox'
 
@@ -105,9 +57,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neomake/neomake'
 
-" Elm
-Plug 'carmonw/elm-vim'
-Plug 'pbogut/deoplete-elm'
+Plug 'majutsushi/tagbar'
 
 " Initialize plugin system
 call plug#end()

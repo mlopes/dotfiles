@@ -24,4 +24,4 @@ let php_sync_method = 0
 let php_folding=0
 let g:DisableAutoPHPFolding = 1
 
-setlocal omnifunc=phpactor#Complete
+" setlocal omnifunc=phpactor#Complete
