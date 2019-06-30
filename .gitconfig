@@ -3,8 +3,13 @@
 	amend = commit --amend --no-edit
 	please = push --force-with-lease
 	it = !git init && git commit -m “root” --allow-empty
-	shorty = status --short --branch
 	st = status --short --branch
+  up = pull --rebase --prune
+  tidy = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
+  remaster = !git fetch origin master:master && git rebase master
+  upush = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
+  plead = !git amend && git please
 [color]
 	branch = auto
 	diff = auto
@@ -33,3 +38,7 @@
 [include]
     path = .github
     path = .gituser
+[user]
+	signingkey = 14D40CA1E1A806A015C4A06B372EC33EB388121A
+[commit]
+	gpgsign = true

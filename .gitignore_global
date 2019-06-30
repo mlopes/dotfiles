@@ -11,3 +11,5 @@ ruleset.xml
 *.log
 .bundle
 .gems
+.metals
+.bloop
