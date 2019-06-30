@@ -21,4 +21,6 @@ augroup defaultgroup
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  " Configuration for vim-scala
+  au BufRead,BufNewFile *.sbt set filetype=scala
 augroup END

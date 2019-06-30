@@ -12,12 +12,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.local/bin/fzf', 'do': './install --all' }
 " Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'
 
-" Aligning - TODO - Check if it's doing any usefull stuff
-Plug 'godlygeek/tabular'
-
-" Colour scheme
-Plug 'tomasr/molokai'
-
 " Ctrlp - quickly find files, tags and buffers using fuzzy search
 Plug 'kien/ctrlp.vim'
 
@@ -78,25 +72,16 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'w0rp/ale'
 
 " Completion as you type - being used for Haskell and PHP
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+Plug 'fgrsnau/ncm2-aspell'
 " Auto-completion enhancements - being used for Hasekll
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" PHP plugins
-" requires phpactor
-" Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
-" Plug 'roxma/ncm-phpactor'
 Plug 'majutsushi/tagbar'
-" Refactoring
-" Plug 'adoy/vim-php-refactoring-toolbox'
-" PHPSpec integration
-Plug 'rafi/vim-phpspec'
-" PHP Documentation - hit K (shift-k) on any php function
-Plug 'mudpile45/vim-phpdoc'
-" Twig syntax highlighting
-Plug 'lumiliet/vim-twig'
-" Vdebug - Debug plugin - Being used for PHP
-Plug 'joonty/vdebug'
 
 Plug 'morhetz/gruvbox'
 

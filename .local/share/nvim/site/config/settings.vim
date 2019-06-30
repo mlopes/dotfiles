@@ -28,7 +28,7 @@ set incsearch
 " highlight search matches
 set hlsearch
 
-set completeopt=menuone,menu,longest
+set completeopt=noinsert,menuone,noselect
 
 set history=1000
 set nospell
@@ -79,3 +79,5 @@ set cmdheight=2
 let g:airline#extensions#ale#enabled = 1
 
 au BufRead,BufNewFile *.sbt set filetype=scala
+
+autocmd BufEnter * call ncm2#enable_for_buffer()

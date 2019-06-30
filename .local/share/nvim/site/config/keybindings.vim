@@ -35,9 +35,6 @@ nnoremap <Leader>= :cnext<CR>
 " Previous quick fix item
 nnoremap <Leader>- :cprev<CR>
 
-" PDV PhpDocumentor
-nnoremap <silent><leader>dd :call pdv#DocumentWithSnip()<CR>
-
 " Remap C-w C-w to C-w C-o, like in tmux
 nnoremap <C-w><C-o> <C-w><C-w>
 nnoremap <C-w>o <C-w><C-w>
@@ -56,16 +53,14 @@ else " no gui
   endif
 endif
 
-vnoremap a= :Tabularize /=<CR>
-vnoremap a; :Tabularize /::<CR>
-vnoremap a- :Tabularize /-><CR>
-
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
