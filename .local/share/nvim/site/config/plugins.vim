@@ -59,5 +59,7 @@ Plug 'neomake/neomake'
 
 Plug 'majutsushi/tagbar'
 
+Plug 'chrisbra/Colorizer'
+
 " Initialize plugin system
 call plug#end()
