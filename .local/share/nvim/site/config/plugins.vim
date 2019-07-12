@@ -61,5 +61,7 @@ Plug 'majutsushi/tagbar'
 
 Plug 'chrisbra/Colorizer'
 
+Plug 'luochen1990/rainbow'
+
 " Initialize plugin system
 call plug#end()

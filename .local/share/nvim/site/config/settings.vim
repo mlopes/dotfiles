@@ -2,7 +2,7 @@ set shell=/bin/bash
 set nocompatible               " be iMproved
 
 " enable 256 colors
-set t_Co=256
+" set t_Co=256
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -77,5 +77,7 @@ set cmdheight=2
 " End of Configuration suggested for coc.nvim
 
 let g:airline#extensions#ale#enabled = 1
+
+let g:rainbow_active = 1
 
 au BufRead,BufNewFile *.sbt set filetype=scala
