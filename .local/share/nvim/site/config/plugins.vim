@@ -44,8 +44,8 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Scala plugins
-Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'derekwyatt/vim-scala'
 
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
