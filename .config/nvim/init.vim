@@ -14,7 +14,8 @@ syntax on
 
 " Color scheme
 set background=dark
-color gruvbox
+" color gruvbox
+color farin
 
 hi! Normal ctermbg=NONE guibg=NONE
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1

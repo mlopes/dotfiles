@@ -50,7 +50,7 @@ Plug 'derekwyatt/vim-scala'
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -62,6 +62,12 @@ Plug 'majutsushi/tagbar'
 Plug 'chrisbra/Colorizer'
 
 Plug 'luochen1990/rainbow'
+
+" Plug 'YorickPeterse/happy_hacking.vim'
+
+" Plug 'ntk148v/vim-horizon'
+
+Plug 'mlopes/vim-farin'
 
 " Initialize plugin system
 call plug#end()
