@@ -80,4 +80,6 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:rainbow_active = 1
 
+let g:NERDTreeQuitOnOpen = 1
+
 au BufRead,BufNewFile *.sbt set filetype=scala
