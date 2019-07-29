@@ -98,6 +98,7 @@ myManageHook = composeAll
     , className =? "Skype"                  --> doShift "4:comms \xf075"
     , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
     , className =? "Whatsie"                --> doShift "4:comms \xf075"
+    , className =? "WALC"                   --> doShift "4:comms \xf075"
     , className =? "VirtualBox"             --> doShift "6:apps \xf080"
     , className =? "Gimp"                   --> doShift "6:apps \xf080"
     , resource  =? "desktop_window"         --> doIgnore
