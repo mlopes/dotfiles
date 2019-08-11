@@ -2,7 +2,7 @@ set shell=/bin/bash
 set nocompatible               " be iMproved
 
 " enable 256 colors
-set t_Co=256
+" set t_Co=256
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -28,7 +28,7 @@ set incsearch
 " highlight search matches
 set hlsearch
 
-set completeopt=noinsert,menuone,noselect
+set completeopt=menuone,menu,longest
 
 set history=1000
 set nospell
@@ -78,6 +78,8 @@ set cmdheight=2
 
 let g:airline#extensions#ale#enabled = 1
 
-au BufRead,BufNewFile *.sbt set filetype=scala
+let g:rainbow_active = 1
 
-autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:NERDTreeQuitOnOpen = 1
+
+au BufRead,BufNewFile *.sbt set filetype=scala

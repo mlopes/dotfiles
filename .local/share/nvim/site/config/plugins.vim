@@ -12,6 +12,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.local/bin/fzf', 'do': './install --all' }
 " Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'
 
+" Aligning - TODO - Check if it's doing any usefull stuff
+Plug 'godlygeek/tabular'
+
 " Ctrlp - quickly find files, tags and buffers using fuzzy search
 Plug 'kien/ctrlp.vim'
 
@@ -37,62 +40,38 @@ Plug 'airblade/vim-gitgutter'
 " Argument wrapping and unwrapping
 Plug 'FooSoft/vim-argwrap'
 
-" Bats support
-Plug 'vim-scripts/bats.vim'
-
 " Tmux focus events support
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-"" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
-
-" Haskell plugins
-
-Plug 'parsonsmatt/intero-neovim'
-
-Plug 'eagletmt/neco-ghc'
-Plug 'eagletmt/ghcmod-vim'
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-
-Plug 'ervandew/supertab'
-" Used by Haskell
-Plug 'Shougo/vimproc.vim'
-
 " Scala plugins
-" Plug 'natebosch/vim-lsc'
-Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'derekwyatt/vim-scala'
 
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'mpickering/hlint-refactor-vim'
 
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
 Plug 'w0rp/ale'
 
-" Completion as you type - being used for Haskell and PHP
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'fgrsnau/ncm2-aspell'
-" Auto-completion enhancements - being used for Hasekll
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-Plug 'majutsushi/tagbar'
-
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neomake/neomake'
 
-" Elm
-Plug 'carmonw/elm-vim'
-Plug 'pbogut/deoplete-elm'
+Plug 'majutsushi/tagbar'
+
+Plug 'chrisbra/Colorizer'
+
+Plug 'luochen1990/rainbow'
+
+" Plug 'YorickPeterse/happy_hacking.vim'
+
+" Plug 'ntk148v/vim-horizon'
+
+Plug 'mlopes/vim-farin'
 
 " Initialize plugin system
 call plug#end()
