@@ -48,11 +48,11 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'derekwyatt/vim-scala'
 
 Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
+" Plug 'alx741/vim-hindent'
 Plug 'mpickering/hlint-refactor-vim'
 
 " Syntaxe check and linting - Being used for PHP, Scala and Haskell
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 Plug 'gruvbox-community/gruvbox'
 

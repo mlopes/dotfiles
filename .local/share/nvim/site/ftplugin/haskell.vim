@@ -1,4 +1,4 @@
-let g:ale_linters.haskell = ['stack-build', 'ghc-mod', 'hlint', 'hdevtools']
+" let g:ale_linters.haskell = ['stack-build', 'ghc-mod', 'hlint', 'hdevtools']
 
 let g:haskellmode_completion_ghc = 0
 let g:necoghc_enable_detailed_browse = 1
