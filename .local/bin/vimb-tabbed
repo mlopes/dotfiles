@@ -1,2 +1,7 @@
-!# /bin/bash
-tabbed -d -n vimb -c vimb -e
+#! /usr/bin/env bash
+
+# this tabbedAlt executable is just a custom-compiled version of
+# tabbed with the META key set to Alt. For this to work, you'll
+# need to have some tabbed executable in your path with the name tabbedAlt.
+
+tabbedAlt -d -c vimb -e
