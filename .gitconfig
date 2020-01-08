@@ -10,6 +10,7 @@
   remaster = !git fetch origin master:master && git rebase master
   upush = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
   plead = !git amend && git please
+  branches = ! git for-each-ref --sort='-authordate:iso8601' --format='%(color:cyan)%(authorname)%09%(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)' refs/heads
 [color]
 	branch = auto
 	diff = auto
