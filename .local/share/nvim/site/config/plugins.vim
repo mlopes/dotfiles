@@ -7,7 +7,8 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
 " General fuzzy search capability
-Plug 'junegunn/fzf', { 'dir': '~/.local/bin/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Some surrounding characters trickery (not sure if should keep it)
 Plug 'tpope/vim-surround'
@@ -44,7 +45,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Scala plugins
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'derekwyatt/vim-scala'
 
 Plug 'neovimhaskell/haskell-vim'
@@ -60,6 +61,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neomake/neomake'
+
+Plug 'liuchengxu/vim-which-key'
 
 Plug 'majutsushi/tagbar'
 

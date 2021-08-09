@@ -14,7 +14,7 @@ nnoremap <Leader>f :NERDTreeFind <CR>
 nnoremap <Leader>t :TagbarOpenAutoClose <CR>
 
 " Fuzzy search open buffers
-nnoremap <C-B> :CtrlPBuffer <CR>
+nnoremap <C-B> :Buffers <CR>
 " Fuzzy search tags
 nnoremap <C-T> :CtrlPTag <CR>
 " Fuzzy search all project filenames
@@ -127,4 +127,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nmap <leader>qf <Plug>(coc-fix-current)
+
+nnoremap <silent> <leader> :<c-u>WhichKey  ','<CR>
 
