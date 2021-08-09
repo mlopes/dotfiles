@@ -18,3 +18,5 @@ project/metals.sbt
 .vscode
 .metals
 .bloop
+.nvimlog
+.scratch
