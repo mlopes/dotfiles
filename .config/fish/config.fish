@@ -44,6 +44,7 @@ set PATH ~/.local/yarn/bin ~/.config/yarn/global/node_modules/.bin $PATH
 # set -xg TERM screen-256color
 
 alias emacs "emacs -nw"
+alias update "sudo apt-get update; and sudo apt-get dist-upgrade; and sudo apt autoremove"
 
 source ~/.local/share/icons-in-terminal/icons.fish
 
