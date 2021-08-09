@@ -8,6 +8,7 @@ source $HOME/.local/share/nvim/site/config/settings.vim
 source $HOME/.local/share/nvim/site/config/variables.vim
 source $HOME/.local/share/nvim/site/config/keybindings.vim
 source $HOME/.local/share/nvim/site/config/autocmds.vim
+source $HOME/.local/share/nvim/site/config/clipregisters.vim
 
 " set syntax highlighting options.
 syntax on
