@@ -41,6 +41,8 @@ set PATH /home/mlopes/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 set PATH ~/.local/yarn/bin ~/.config/yarn/global/node_modules/.bin $PATH
+set PATH ~/.local/non-standard/tfenv/bin $PATH
+set PATH ~/.local/platform-tools $PATH
 # set -xg TERM screen-256color
 
 alias emacs "emacs -nw"
