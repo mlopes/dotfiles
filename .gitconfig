@@ -1,45 +1,32 @@
-[alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	amend = commit --amend --no-edit
-	please = push --force-with-lease
-	it = !git init && git commit -m “root” --allow-empty
-	st = status --short --branch
-  up = pull --rebase --prune
-  tidy = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
-  alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
-  remaster = !git fetch origin master:master && git rebase master
-  upush = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
-  plead = !git amend && git please
-  branches = ! git for-each-ref --sort='-authordate:iso8601' --format='%(color:cyan)%(authorname)%09%(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)' refs/heads
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
 [core]
-	excludesfile = /home/mlopes/.gitignore_global
+  excludesfile = /home/mlopes/.gitignore_global
 [diff]
-	mnemonicprefix = true
+  mnemonicprefix = true
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	trustExitCode = true
+  trustExitCode = true
 [mergetool "kdiff3"]
-	trustExitCode = false
+  trustExitCode = false
 [merge]
-	tool = extMerge
+  tool = extMerge
 [mergetool "extMerge"]
-		cmd = /usr/local/bin/extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  cmd = /usr/local/bin/extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 [achievement]
-	upload = true
+  upload = true
 [push]
-	default = simple
+  default = simple
 [include]
-    path = .github
-    path = .gituser
+  path = .gituser
+  path = .gitaliases
 [user]
-	signingkey = 14D40CA1E1A806A015C4A06B372EC33EB388121A
+  signingkey = 14D40CA1E1A806A015C4A06B372EC33EB388121A
 [commit]
-	gpgsign = true
+  gpgsign = true
