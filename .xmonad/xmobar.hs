@@ -20,7 +20,7 @@ Config {
     commands = [
         Run Locks,
         --Run Weather "EGLL" ["-t","<tempC>C <skyCondition>","-L","0","-H","25","-n","#ffca28","-h","#FFB6B0","-l","#96CBFE"] 36000,
-        Run Weather "EGLL" ["-t","<fn=1>\xf0c2</fn> <tempC>°<skyCondition> ","-L","10","-H","25","-n","#FE8C1F","-h","#FF6600","-l","#FFD77C"] 3600,
+        Run Weather "EGXT" ["-t","<fn=1>\xf0c2</fn> <tempC>°<skyCondition> ","-L","10","-H","25","-n","#FE8C1F","-h","#FF6600","-l","#FFD77C"] 3600,
         Run MultiCpu ["-t","<fn=1>\xf0e4</fn><total0> <vbar0><total1> <vbar1><total2> <vbar2><total3> <vbar3>","-L","30","-H","60","-h","#FF6600","-l","#FFD77C","-n","#FE8C1F","-w","3"] 10,
         Run Memory ["-t","<fn=1>\xf2db</fn> <usedratio>%","--High","80","--Low","10","--high","#FF6600","--low","#FFD77C","--normal","#FE8C1F"] 30,
         Run Swap ["-t","<fn=1>\xf019</fn> <usedratio>%","-H","1024","-L","512","-h","#FF6600","-l","#FFD77C","-n","#FE8C1F"] 60,
@@ -60,5 +60,5 @@ Config {
     sepChar = "%",
     alignSep = "}{",
     -- template = "%StdinReader% }{%locks% %multicpu% %memory% %swap% %wlp2s0wi% %default:Master% %battery% %date% %EGLL%"
-    template = "%StdinReader% }{%locks% %multicpu% %memory% %swap% %wlp2s0wi% %battery% %date% %EGLL%"
+    template = "%StdinReader% }{%locks% %multicpu% %memory% %swap% %wlp2s0wi% %battery% %date% %EGXT%"
 }
