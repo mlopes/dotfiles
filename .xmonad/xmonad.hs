@@ -46,7 +46,7 @@ import XMonad.Util.Run (runProcessWithInput)
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- myTerminal = "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -e fish -l -c 'tmuxinator terminal'"
-myTerminal = "/home/mlopes/.local/bin/kitty fish -l -c 'tmuxinator terminal'"
+myTerminal = "kitty fish -l -c 'tmuxinator terminal'"
 
 
 ------------------------------------------------------------------------
@@ -122,9 +122,13 @@ myManageHook = composeAll
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
+mySpacing bs = spacingRaw True (uniformBorder bs) True (uniformBorder bs) True
+  where
+    uniformBorder n = Border n n n n
+
 myLayout = avoidStruts (
-    (spacing 3 $ Tall 1 (3/100) (1/2)) |||
-    (spacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
+    (mySpacing 3 $ Tall 1 (3/100) (1/2)) |||
+    (mySpacing 3 $ Mirror (Tall 1 (3/100) (1/2))) |||
     --tabbed shrinkText (theme kavonAutumnTheme) |||
     tabbed shrinkText tabConfig |||
     Full) -- |||
@@ -203,7 +207,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. mod1Mask, xK_Return),
      -- spawn "/usr/bin/urxvt +ls -depth 32 -bg rgba:0000/0000/0000/9999 -name termvim -e fish -l -c 'tmux attach'")
      -- spawn "st -f \"DejaVu Sans Mono:size=10:antialias=true:hinting=true\" -n termvim -e fish -l -c 'tmuxinator dev'")
-     spawn "/home/mlopes/.local/bin/kitty --name termvim fish -l -c 'tmuxinator dev'")
+     spawn "kitty --name termvim fish -l -c 'tmuxinator dev'")
 
   , ((modMask .|. shiftMask, xK_m),
     (externalCommandInPopUp "mpc" ["current"]))
