@@ -1,7 +1,7 @@
 set -xg SHELL /usr/bin/fish
 
 if status --is-interactive
- eval (keychain --eval --agents ssh -Q --quiet id_rsa --nogui)
+ eval (keychain --eval --agents ssh -Q --quiet id_ed25519 id_rsa --nogui)
 end
 
 set __prompt_colour '#FFCA28'

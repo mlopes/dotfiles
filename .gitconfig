@@ -27,6 +27,8 @@
   path = .gituser
   path = .gitaliases
 [user]
-  signingkey = 14D40CA1E1A806A015C4A06B372EC33EB388121A
+  signingkey = 7CB8EEC61C6BD42E77B26F1AE6241CA87AFFA038
 [commit]
   gpgsign = true
+[gpg]
+  program = gpg
