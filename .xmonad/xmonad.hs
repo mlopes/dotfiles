@@ -101,6 +101,7 @@ myManageHook = composeAll
     , className =? "st-256color"            --> doShift "5:term \xf120"
     , className =? "kitty"                  --> doShift "5:term \xf120"
     , className =? "Gnome-terminal"         --> doShift "5:term \xf120"
+    , className =? "zoom"                   --> doShift "6:apps \xf080"
     , className =? "VirtualBox"             --> doShift "6:apps \xf080"
     , className =? "Gimp"                   --> doShift "6:apps \xf080"
     , className =? "DBeaver"                --> doShift "6:apps \xf080"
