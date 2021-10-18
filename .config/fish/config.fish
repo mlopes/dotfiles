@@ -45,6 +45,8 @@ set PATH ~/.local/non-standard/tfenv/bin $PATH
 set PATH ~/.local/platform-tools $PATH
 # set -xg TERM screen-256color
 
+set -x GPG_TTY (tty)
+
 alias emacs "emacs -nw"
 alias update "sudo apt-get update; and sudo apt-get dist-upgrade; and sudo apt autoremove"
 
