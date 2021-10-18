@@ -37,6 +37,8 @@ import XMonad.Layout.Spacing
 import qualified XMonad.Util.Dzen as Dzen
 
 import XMonad.Util.Run (runProcessWithInput)
+
+import Data.List (isInfixOf)
 ------------------------------------------------------------------------
 -- Terminal
 -- The preferred terminal program, which is used in a binding below and by
@@ -191,9 +193,11 @@ orangeColorizer = G.colorRangeFromClassName
         white = maxBound
 
 myXPConfig :: XPConfig
-myXPConfig = amberXPConfig{
-                            font="xft:DejaVu Sans Mono for Powerline:size=7"
-                            ,height=32}
+myXPConfig = amberXPConfig {
+                            font="xft:DejaVu Sans Mono for Powerline:size=10"
+                            ,height=50
+                            ,searchPredicate = isInfixOf -- TODO: fuzzy matching
+                           }
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -388,9 +392,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ++
 
   [
-    ((modMask .|. shiftMask, xK_g     ), windowPromptGoto myXPConfig
-                         { autoComplete = Just 500000 })
-  , ((modMask .|. shiftMask, xK_b     ), windowPromptBring myXPConfig)
+    ((modMask .|. shiftMask, xK_g     ), windowPrompt myXPConfig Goto allWindows)
+                        -- { autoComplete = Just 500000 })
+  , ((modMask .|. shiftMask, xK_b     ), windowPrompt myXPConfig Bring allWindows)
   ]
 
   ++
