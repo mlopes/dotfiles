@@ -51,7 +51,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Scala plugins
-Plug 'neoclide/coc.nvim', { 'branch': 'release'}
+"Plug 'neoclide/coc.nvim', { 'branch': 'release'}
 Plug 'derekwyatt/vim-scala'
 
 Plug 'neovimhaskell/haskell-vim'

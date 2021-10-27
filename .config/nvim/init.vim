@@ -10,6 +10,8 @@ source $HOME/.local/share/nvim/site/config/keybindings.vim
 source $HOME/.local/share/nvim/site/config/autocmds.vim
 source $HOME/.local/share/nvim/site/config/clipregisters.vim
 
+:lua require('init')
+
 " set syntax highlighting options.
 syntax on
 

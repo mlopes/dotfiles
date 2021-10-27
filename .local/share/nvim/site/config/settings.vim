@@ -83,3 +83,6 @@ let g:rainbow_active = 1
 let g:NERDTreeQuitOnOpen = 1
 
 au BufRead,BufNewFile *.sbt set filetype=scala
+
+" needed for nvim-metals (scala)
+set shortmess-=F
