@@ -74,6 +74,7 @@ require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
   }
+  use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
 end)
 
 
@@ -329,4 +330,10 @@ require'lspconfig'.rust_analyzer.setup({
 require('lspkind').init()
 
 require('gitsigns').setup()
+
+require'lualine'.setup {
+  extensions = {'quickfix', 'nvim-tree', 'fzf'},
+  sections = {lualine_c = {"require'lsp-status'.status()", "require'lsp_status'.progress()" }},
+  options = {disabled_filetypes = {'presenting_markdown'}},
+}
 

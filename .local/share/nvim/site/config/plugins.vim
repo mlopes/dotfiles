@@ -35,8 +35,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'henrik/vim-qargs'
 
 " Airline status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 
 " Git gutter
 Plug 'airblade/vim-gitgutter'
