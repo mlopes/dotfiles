@@ -14,9 +14,11 @@ ensime.sbt
 .ensime
 .ensime_cache/
 project/.ensime
-project/metals.sbt
+*/project/metals.sbt
+*/project/project
 .vscode
 .metals
 .bloop
 .nvimlog
 .scratch
+
