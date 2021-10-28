@@ -39,6 +39,8 @@ import qualified XMonad.Util.Dzen as Dzen
 import XMonad.Util.Run (runProcessWithInput)
 
 import Data.List (isInfixOf)
+
+import XMonad.Actions.ShowText
 ------------------------------------------------------------------------
 -- Terminal
 -- The preferred terminal program, which is used in a binding below and by
@@ -55,7 +57,8 @@ myTerminal = "kitty --title 'Terminal'"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:dev \xf126","2:ide \xf121","3:web \xf269","4:comms \xf075","5:term \xf120", "6:apps \xf080"] ++ map show [7..9]
+myWorkspaces = ["1:dev","2:ide","3:web","4:comms","5:term", "6:apps"] ++ map show [7..9]
+
 
 
 ------------------------------------------------------------------------
@@ -73,38 +76,38 @@ myWorkspaces = ["1:dev \xf126","2:ide \xf121","3:web \xf269","4:comms \xf075","5
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ resource  =? "termvim"                --> doShift "1:dev \xf126"
-    , resource  =? "termtelegram"           --> doShift "4:comms \xf075"
+    [ resource  =? "termvim"                --> doShift "1:dev"
+    , resource  =? "termtelegram"           --> doShift "4:comms"
     , resource  =? "cmusterm"               --> doShift "9"
-    , className =? "Sublime_text"           --> doShift "2:ide \xf121"
-    , className =? "Gvim"                   --> doShift "2:ide \xf121"
-    , className =? "jetbrains-pycharm"      --> doShift "2:ide \xf121"
-    , className =? "jetbrains-idea-ce"      --> doShift "2:ide \xf121"
-    , className =? "jetbrains-phpstorm"     --> doShift "2:ide \xf121"
-    , className =? "Emacs24"                --> doShift "2:ide \xf121"
-    , className =? "Chromium"               --> doShift "3:web \xf269"
-    , className =? "Google-chrome"          --> doShift "3:web \xf269"
-    , className =? "chromium-browser"       --> doShift "3:web \xf269"
-    , className =? "Chromium-browser"       --> doShift "3:web \xf269"
-    , className =? "tabbed"                 --> doShift "3:web \xf269"
-    , className =? "vimb"                   --> doShift "3:web \xf269"
-    , className =? "Vimb"                   --> doShift "3:web \xf269"
-    , className =? "Firefox"                --> doShift "3:web \xf269"
-    , className =? "Xchat"                  --> doShift "4:comms \xf075"
-    , className =? "HipChat"                --> doShift "4:comms \xf075"
-    , className =? "Slack"                  --> doShift "4:comms \xf075"
-    , className =? "Skype"                  --> doShift "4:comms \xf075"
-    , className =? "TelegramDesktop"        --> doShift "4:comms \xf075"
-    , className =? "Whatsie"                --> doShift "4:comms \xf075"
-    , className =? "walc"                   --> doShift "4:comms \xf075"
-    , className =? "URxvt"                  --> doShift "5:term \xf120"
-    , className =? "st-256color"            --> doShift "5:term \xf120"
-    , className =? "kitty"                  --> doShift "5:term \xf120"
-    , className =? "Gnome-terminal"         --> doShift "5:term \xf120"
-    , className =? "zoom"                   --> doShift "6:apps \xf080"
-    , className =? "VirtualBox"             --> doShift "6:apps \xf080"
-    , className =? "Gimp"                   --> doShift "6:apps \xf080"
-    , className =? "DBeaver"                --> doShift "6:apps \xf080"
+    , className =? "Sublime_text"           --> doShift "2:ide"
+    , className =? "Gvim"                   --> doShift "2:ide"
+    , className =? "jetbrains-pycharm"      --> doShift "2:ide"
+    , className =? "jetbrains-idea-ce"      --> doShift "2:ide"
+    , className =? "jetbrains-phpstorm"     --> doShift "2:ide"
+    , className =? "Emacs24"                --> doShift "2:ide"
+    , className =? "Chromium"               --> doShift "3:web"
+    , className =? "Google-chrome"          --> doShift "3:web"
+    , className =? "chromium-browser"       --> doShift "3:web"
+    , className =? "Chromium-browser"       --> doShift "3:web"
+    , className =? "tabbed"                 --> doShift "3:web"
+    , className =? "vimb"                   --> doShift "3:web"
+    , className =? "Vimb"                   --> doShift "3:web"
+    , className =? "Firefox"                --> doShift "3:web"
+    , className =? "Xchat"                  --> doShift "4:comms"
+    , className =? "HipChat"                --> doShift "4:comms"
+    , className =? "Slack"                  --> doShift "4:comms"
+    , className =? "Skype"                  --> doShift "4:comms"
+    , className =? "TelegramDesktop"        --> doShift "4:comms"
+    , className =? "Whatsie"                --> doShift "4:comms"
+    , className =? "walc"                   --> doShift "4:comms"
+    , className =? "URxvt"                  --> doShift "5:term"
+    , className =? "st-256color"            --> doShift "5:term"
+    , className =? "kitty"                  --> doShift "5:term"
+    , className =? "Gnome-terminal"         --> doShift "5:term"
+    , className =? "zoom"                   --> doShift "6:apps"
+    , className =? "VirtualBox"             --> doShift "6:apps"
+    , className =? "Gimp"                   --> doShift "6:apps"
+    , className =? "DBeaver"                --> doShift "6:apps"
     , className =? "Pavucontrol"            --> doShift "7"
     , resource  =? "desktop_window"         --> doIgnore
     , className =? "Galculator"             --> doFloat
@@ -478,17 +481,17 @@ startup = do
 --
 main = do
   -- xmproc <- spawnPipe "i3status | /usr/bin/xmobar ~/.xmonad/xmobar.hs"
-  xmproc <- spawnPipe "/usr/bin/xmobar -x 0 ~/.xmonad/xmobar.hs"
-  xmonad $ docks defaults {
-      logHook = dynamicLogWithPP $ xmobarPP {
-            ppOutput = hPutStrLn xmproc
-          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 75
-          , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
-          , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
-          , ppSep = " |  "}
-      , manageHook = manageDocks <+> myManageHook
-      , startupHook = myStartupHook
-      , handleEventHook = myEventHook
+  -- xmproc <- spawnPipe "/usr/bin/xmobar -x 0 ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "~/.config/polybar/launch.sh"
+  xmonad $ docks $ ewmh defaults {
+  --xmonad $ docks defaults {
+  --    logHook = dynamicLogWithPP $ xmobarPP {
+  --          ppOutput = hPutStrLn xmproc
+  --        , ppTitle = xmobarColor xmobarTitleColor "" . shorten 75
+  --        , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "#662200"
+ --         , ppVisible = xmobarColor xmobarCurrentWorkspaceColor "#221100"
+ --         , ppSep = " |  "}
+      manageHook = manageDocks <+> myManageHook
   }
 
 
@@ -520,5 +523,5 @@ defaults = def {
     startupHook        = myStartupHook,
 
     -- make fullscreen work in chromium
-    handleEventHook    = fullscreenEventHook
+    handleEventHook    = fullscreenEventHook <+> handleTimerEvent <+> myEventHook
 }
