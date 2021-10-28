@@ -25,9 +25,6 @@ Plug 'godlygeek/tabular'
 " Ctrlp - quickly find files, tags and buffers using fuzzy search
 Plug 'kien/ctrlp.vim'
 
-" Nerdtree file browser
-Plug 'scrooloose/nerdtree'
-
 " Easily comment - <Leader>cc
 Plug 'scrooloose/nerdcommenter'
 

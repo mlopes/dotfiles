@@ -3,12 +3,6 @@
 
 " Use "," as the <Leader> key
 let mapleader=","
-"
-" Toggle NERDTree file browser
-nnoremap <Leader>n :NERDTreeToggle <CR>
-
-" Open current file in NERDTree
-nnoremap <Leader>f :NERDTreeFind <CR>
 
 " Tagbar shows list of all methods and variables in class
 nnoremap <Leader>t :TagbarOpenAutoClose <CR>
