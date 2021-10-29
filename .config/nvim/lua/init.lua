@@ -75,6 +75,12 @@ require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons',
   }
   use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+
+  use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 end)
 
 
@@ -108,12 +114,23 @@ g['nvim_tree_width_allow_resize']  = 1 -- 0 by default, will not resize the tree
 g['nvim_tree_add_trailing'] = 1 -- 0 by default, append a trailing slash to folder names
 g['nvim_tree_group_empty'] = 1 --  0 by default, compact folders that only contain a single folder into one node in the file tree
 g['nvim_tree_disable_window_picker'] = 0 -- 0 by default, will disable the window picker.
-g['nvim_tree_special_files'] = { 'README.md', 'Makefile', 'MAKEFILE' } --  List of filenames that gets highlighted with NvimTreeSpecialFile
+g['nvim_tree_special_files'] = { 'README.md', 'Makefile', 'MAKEFILE', 'build.sbt' } --  List of filenames that gets highlighted with NvimTreeSpecialFile
 g['nvim_tree_show_icons'] = { git = 1, folders = 1, files = 1 }
 
 map('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>')
 map('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>')
 map('n', '<leader>tf', '<cmd>NvimTreeFindFile<CR>')
+
+
+map('n', '<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>')
+map('n', '<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>')
+map('n', '<leader>3', '<cmd>BufferLineGoToBuffer 3<CR>')
+map('n', '<leader>4', '<cmd>BufferLineGoToBuffer 4<CR>')
+map('n', '<leader>5', '<cmd>BufferLineGoToBuffer 5<CR>')
+map('n', '<leader>6', '<cmd>BufferLineGoToBuffer 6<CR>')
+map('n', '<leader>7', '<cmd>BufferLineGoToBuffer 7<CR>')
+map('n', '<leader>8', '<cmd>BufferLineGoToBuffer 8<CR>')
+map('n', '<leader>9', '<cmd>BufferLineGoToBuffer 9<CR>')
 
 -- global
 opt('o', 'completeopt', 'menuone,noinsert,noselect')
@@ -135,6 +152,25 @@ map('n', '<leader>a', '<cmd>lua require"metals".open_all_diagnostics()<CR>')
 map('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>') -- buffer diagnostics only
 map('n', '[c', '<cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>')
 map('n', ']c', '<cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>')
+
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
+  {silent = true, noremap = true}
+)
 
 local lspkind = require('lspkind')
 local cmp = require('cmp')
@@ -333,7 +369,129 @@ require('gitsigns').setup()
 
 require'lualine'.setup {
   extensions = {'quickfix', 'nvim-tree', 'fzf'},
-  sections = {lualine_c = {"require'lsp-status'.status()", "require'lsp_status'.progress()" }},
+  sections = {lualine_c = {"filename", "require'lsp-status'.status()", "require'lsp_status'.progress()" }},
   options = {disabled_filetypes = {'presenting_markdown'}},
+}
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = {  },  -- list of language that will be disabled
+  },
+  indent = {
+    enable = true
+  }
+}
+
+require('bufferline').setup {
+  options = {
+    view = "default";
+    numbers = "ordinal";
+    max_name_length = 18;
+    max_prefix_length = 15; -- prefix used when a buffer is de-duplicated
+    tab_size = 18;
+    diagnostics = "nvim_lsp";
+    diagnostics_indicator = function(count, level, diagnostics_dict)
+      return "("..count..")"
+    end;
+    -- NOTE: this will be called a lot so don't do any heavy processing here
+    custom_filter = function(buf_number)
+      -- filter out filetypes you don't want to see
+      if vim.bo[buf_number].filetype ~= "qf" then
+        return true
+      end
+      -- -- filter out by buffer name
+      -- if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+      --   return true
+      -- end
+      -- -- filter out based on arbitrary rules
+      -- -- e.g. filter out vim wiki buffer from tabline in your work repo
+      -- if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
+      --   return true
+      -- end
+    end;
+    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left"}};
+    show_buffer_icons = true; -- disable filetype icons for buffers
+    show_buffer_close_icons = false;
+    show_close_icon = false;
+    show_tab_indicators = true;
+    persist_buffer_sort = true; -- whether or not custom sorted buffers should persist
+    -- can also be a table containing 2 custom separators
+    -- [focused and unfocused]. eg: { '|', '|' }
+    separator_style = "slant";
+    enforce_regular_tabs = false;
+    always_show_bufferline = false;
+    -- sort_by = 'extension' | 'relative_directory' | 'directory' | function(buffer_a, buffer_b)
+    --   -- add custom logic
+    --   return buffer_a.modified > buffer_b.modified
+    -- end
+  }
+}
+
+require('gitsigns').setup {
+  signs = {
+    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+  },
+  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  keymaps = {
+    -- Default keymap options
+    noremap = true,
+
+    ['n ]g'] = { expr = true, "&diff ? ']g' : '<cmd>lua require\"gitsigns.actions\".next_hunk()<CR>'"},
+    ['n [g'] = { expr = true, "&diff ? '[g' : '<cmd>lua require\"gitsigns.actions\".prev_hunk()<CR>'"},
+
+    ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+    ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+    ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+    ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+    ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
+    ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
+    ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+    ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+    ['n <leader>hS'] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
+    ['n <leader>hU'] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
+
+    -- Text objects
+    ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
+    ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
+  },
+  watch_gitdir = {
+    interval = 1000,
+    follow_files = true
+  },
+  attach_to_untracked = true,
+  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+    delay = 1000,
+  },
+  current_line_blame_formatter_opts = {
+    relative_time = false
+  },
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  max_file_length = 40000,
+  preview_config = {
+    -- Options passed to nvim_open_win
+    border = 'single',
+    style = 'minimal',
+    relative = 'cursor',
+    row = 0,
+    col = 1
+  },
+  yadm = {
+    enable = false
+  },
 }
 
