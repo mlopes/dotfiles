@@ -9,8 +9,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 augroup defaultgroup
-  " Nerdtree: Close NERDTree if it is the last open buffer
-  autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
   autocmd FileType c,cpp,java,php,scala,haskell autocmd BufWritePre <buffer> %s/\s\+$//e
 
   au BufRead,BufNewFile *.sbt set filetype=scala
@@ -22,4 +20,5 @@ augroup defaultgroup
 "  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 "  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 augroup END
