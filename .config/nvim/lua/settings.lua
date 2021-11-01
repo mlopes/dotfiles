@@ -15,3 +15,10 @@ vim.cmd [[hi! link LspReferenceText CursorColumn]]
 vim.cmd [[hi! link LspReferenceRead CursorColumn]]
 vim.cmd [[hi! link LspReferenceWrite CursorColumn]]
 
+vim.cmd("syntax on")
+vim.opt.background = 'dark'
+vim.api.nvim_command("hi! Normal ctermbg=NONE guibg=NONE")
+vim.cmd('let NVIM_TUI_ENABLE_TRUE_COLOR=1')
+vim.o.termguicolors = true
+vim.cmd("colorscheme gruvbox")
+

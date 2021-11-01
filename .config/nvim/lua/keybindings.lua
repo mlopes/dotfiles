@@ -6,6 +6,8 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+vim.g.mapleader = "," -- Leader map
+
 map('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>')
 map('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>')
 map('n', '<leader>tf', '<cmd>NvimTreeFindFile<CR>')
