@@ -38,11 +38,19 @@ require('packer').startup(function(use)
 
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
-  use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {"folke/which-key.nvim"}
+
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Themes
   use 'savq/melange' -- Warm low contrast theme
   use 'gruvbox-community/gruvbox' -- High contrast widely supported colour theme
   use 'mlopes/vim-farin' -- My own warm low contrast theme
 end)
+
+require('telescope').load_extension('fzf')
 

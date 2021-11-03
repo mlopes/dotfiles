@@ -12,16 +12,6 @@ let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 " Required:
 call plug#begin(expand('~/.local/share/nvim/plugged'))
 
-" General fuzzy search capability
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-" Some surrounding characters trickery (not sure if should keep it)
-Plug 'tpope/vim-surround'
-
-" Easily comment - <Leader>cc
-Plug 'scrooloose/nerdcommenter'
-
 " Git support
 Plug 'tpope/vim-fugitive'
 
@@ -43,8 +33,6 @@ Plug 'mpickering/hlint-refactor-vim'
 
 
 Plug 'ryanoasis/vim-devicons'
-
-Plug 'liuchengxu/vim-which-key'
 
 Plug 'luochen1990/rainbow'
 
