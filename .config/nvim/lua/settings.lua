@@ -36,5 +36,5 @@ vim.opt.background = 'dark'
 vim.api.nvim_command("hi! Normal ctermbg=NONE guibg=NONE")
 vim.cmd('let NVIM_TUI_ENABLE_TRUE_COLOR=1')
 vim.opt.termguicolors = true
-vim.cmd("colorscheme gruvbox")
 
+vim.cmd("colorscheme melange")
