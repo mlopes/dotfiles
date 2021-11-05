@@ -8,11 +8,11 @@ end
 
 vim.g.mapleader = "," -- Leader map
 
-vim.api.nvim_set_keymap("n", "<C-B>", ":Telescope buffers<CR>",
+vim.api.nvim_set_keymap("n", "<C-B>", ":Telescope buffers path_display={'smart'}<CR>",
   { noremap = true }) -- Fuzzy search open buffers
-vim.api.nvim_set_keymap("n",  "<C-F>", ":Telescope find_files<CR>",
+vim.api.nvim_set_keymap("n",  "<C-F>", ":Telescope find_files path_display={'smart'}<CR>",
   { noremap = true }) -- Fuzzy search all project filenames
-vim.api.nvim_set_keymap("n",  "<leader>ff", ":Telescope live_grep<CR>",
+vim.api.nvim_set_keymap("n",  "<leader>ff", ":Telescope live_grep path_display={'smart'}<CR>",
   { noremap = true }) -- Fuzzy search in all project files
 
 vim.api.nvim_set_keymap("n", "<CR>",  ":noh<CR><CR>",
