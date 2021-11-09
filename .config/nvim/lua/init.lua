@@ -9,6 +9,7 @@ require('plugins.bufferline-conf')
 require('plugins.lspkind-conf')
 require('plugins.lualine-conf')
 require('plugins.nvim-treesitter-conf')
+require('plugins.telescope-conf')
 
 require('keybindings')
 require('autocmds')
