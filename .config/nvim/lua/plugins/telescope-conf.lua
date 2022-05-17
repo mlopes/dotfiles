@@ -17,5 +17,10 @@ require('telescope').setup{
       local folder =  truncate(path, tLength, nil, -1)
       return string.format("%s (%s)", fileName, folder)
     end
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true
+    }
   }
 }

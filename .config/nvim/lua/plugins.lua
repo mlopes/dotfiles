@@ -14,7 +14,8 @@ require('packer').startup(function(use)
   use 'steelsojka/pears.nvim'
 
   use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/vim-vsnip'}}}
-  use 'scalameta/nvim-metals'
+
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 
   use { 'neovim/nvim-lspconfig' }
   use { 'onsails/lspkind-nvim' }
@@ -32,6 +33,7 @@ require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
   }
+
   use { 'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
