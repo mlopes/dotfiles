@@ -1,12 +1,13 @@
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	amend = commit --amend --no-edit
-	please = push --force-with-lease
-	it = !git init && git commit -m “root” --allow-empty
-	st = status --short --branch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  amend = commit --amend --no-edit
+  please = push --force-with-lease
+  it = !git init && git commit -m “root” --allow-empty
+  st = status --short --branch
   up = pull --rebase --prune
-  tidy = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  tidy = "!f() { git branch --merged ${1-main} | grep -v " ${1-main}$" | xargs git branch -d; }; f"
   alias = !git config --get-regexp '^alias\\.' | cut -d. -f2- | sed 's/ / = /'
   remaster = !git fetch origin master:master && git rebase master
+  remain = !git fetch origin main:main && git rebase main
   upush = "!git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
   plead = !git amend && git please
