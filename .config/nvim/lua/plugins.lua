@@ -47,12 +47,14 @@ require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
 
   -- Themes
   use 'savq/melange' -- Warm low contrast theme
   use 'gruvbox-community/gruvbox' -- High contrast widely supported colour theme
   use 'mlopes/vim-farin' -- My own warm low contrast theme
+ 
 end)
 
 require('telescope').load_extension('fzf')
-

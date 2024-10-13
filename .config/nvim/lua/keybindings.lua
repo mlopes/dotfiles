@@ -25,7 +25,7 @@ vim.api.nvim_set_keymap("n", "<leader>wa", ":ArgWrap<CR>",
 
 map('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>')
 map('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>')
-map('n', '<leader>tf', '<cmd>NvimTreeFindFile<CR>')
+map('n', '<leader>tf', '<cmd>NvimTreeFindFileToggle<CR>')
 
 
 map('n', '<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>')
@@ -44,17 +44,24 @@ map('n', 'gi', '<cmd>lua require"telescope.builtin".lsp_implementations()<CR>')
 map('n', 'gr', '<cmd>lua require"telescope.builtin".lsp_references()<CR>')
 map('n', 'gs', '<cmd>lua require"telescope.builtin".lsp_document_symbols()<CR>')
 map('n', 'gws', '<cmd>lua require"telescope.builtin".lsp_dynamic_workspace_symbols()<CR>')
+map("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
+map("n", "<leader>cl", [[<cmd>lua vim.lsp.codelens.run()<CR>]])
+map("n", "<leader>sh", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map('n', 'gt', '<cmd>lua require"telescope.builtin".lsp_type_definitions()<CR>')
 map('n', '<leader>ca', '<cmd>lua require"telescope.builtin".lsp_code_actions(require("telescope.themes").get_cursor({ winblend = 10 }))<CR>')
 map('n', '<leader>a', '<cmd>lua require"telescope.builtin".lsp_workspace_diagnostics()<CR>')
-map('n', '<leader>d', ':Telescope lsp_document_diagnostics<CR>')
+-- map('n', '<leader>d', ':Telescope lsp_document_diagnostics<CR>')
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+map('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>')
 map('n', '<leader>ws', '<cmd>lua require"metals".hover_worksheet()<CR>')
-map('n', '[c', '<cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>')
-map('n', ']c', '<cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>')
+map('n', '[c', '<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { wrap = false, border = "single" }})<CR>')
+map('n', ']c', '<cmd>lua vim.diagnostic.goto_next({ popup_opts = { wrap = false, border = "single" }})<CR>')
+map("n", "<leader>aa", [[<cmd>lua vim.diagnostic.setqflist()<CR>]]) -- all workspace diagnostics
+map("n", "<leader>ae", [[<cmd>lua vim.diagnostic.setqflist({severity = "E"})<CR>]]) -- all workspace errors
+map("n", "<leader>aw", [[<cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>]]) -- all workspace warnings
+map("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>") -- buffer diagnostics only
 map('n', '<leader>pm', '<cmd>lua require"telescope".extensions.metals.commands()<CR>')
 
 

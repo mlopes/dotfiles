@@ -1,9 +1,5 @@
 set -xg SHELL /usr/bin/fish
 
-if status --is-interactive
- eval (keychain --eval --agents ssh -Q --quiet id_ed25519 id_rsa --nogui)
-end
-
 set __prompt_colour '#FFCA28'
 set __prompt_text_colour '#FAB511'
 set __prompt_date_colour '#FCD984'
@@ -22,13 +18,13 @@ set __fish_git_prompt_color_merging '#FAB511'
 set __fish_git_prompt_showcolorhints 1
 
 # Status Chars
-set __fish_git_prompt_char_dirtystate ' '
-set __fish_git_prompt_char_stagedstate ' '
-set __fish_git_prompt_char_stashstate ' '
-set __fish_git_prompt_char_upstream_ahead ' '
-set __fish_git_prompt_char_upstream_behind ''
-set __fish_git_prompt_char_untrackedfiles ' '
-set __fish_git_prompt_char_upstream_diverged ' '
+set __fish_git_prompt_char_dirtystate '○'
+set __fish_git_prompt_char_stagedstate '●'
+set __fish_git_prompt_char_stashstate ''
+set __fish_git_prompt_char_upstream_ahead '↑'
+set __fish_git_prompt_char_upstream_behind '↓'
+set __fish_git_prompt_char_untrackedfiles ''
+set __fish_git_prompt_char_upstream_diverged '≠'
 set __fish_git_prompt_char_upstream_equal ''
 
 #set PATH $HOME/.rbenv/bin $PATH
@@ -37,7 +33,7 @@ set __fish_git_prompt_char_upstream_equal ''
 
 set -x EDITOR vim
 set -x SHELL /usr/bin/fish
-set PATH /home/mlopes/.local/bin /usr/local/bin $PATH
+set PATH /home/marclope/.local/bin /usr/local/bin $PATH
 #set PATH $HOME/.rvm/bin $PATH
 set PATH ~/.xmonad/bin $PATH
 set PATH ~/.local/yarn/bin ~/.config/yarn/global/node_modules/.bin $PATH
@@ -45,12 +41,15 @@ set PATH ~/.local/non-standard/tfenv/bin $PATH
 set PATH ~/.local/platform-tools $PATH
 # set -xg TERM screen-256color
 
+set -x LC_TYPE en_GB.UTF-8
+
 set -x GPG_TTY (tty)
 
-alias emacs "emacs -nw"
-alias update "sudo apt-get update; and sudo apt-get dist-upgrade; and sudo apt autoremove"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-source ~/.local/share/icons-in-terminal/icons.fish
 
-kitty + complete setup fish | source
 
+
+# >>> coursier install directory >>>
+set -gx PATH "$PATH:/Users/marclope/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<

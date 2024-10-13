@@ -13,6 +13,8 @@ source $HOME/.local/share/nvim/site/config/clipregisters.vim
 
 :lua require('init')
 
+set rtp+=/opt/homebrew/opt/fzf
+
 if exists("g:loaded_webdevicons")
   call webdevicons#refresh()
 endif

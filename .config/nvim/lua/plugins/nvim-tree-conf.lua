@@ -1,19 +1,28 @@
 -- nvim tree
 vim.g['nvim_tree_auto_ignore_ft'] = {} -- [ 'startify', 'dashboard' ] -- empty by default, don't auto open tree on specific filetypes.
-vim.g['nvim_tree_git_hl'] = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-vim.g['nvim_tree_highlight_opened_files'] = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
-vim.g['nvim_tree_root_folder_modifier'] = ':~' -- This is the default. See :help filename-modifiers for more options
 vim.g['nvim_tree_width_allow_resize']  = 1 -- 0 by default, will not resize the tree when opening a file
-vim.g['nvim_tree_add_trailing'] = 1 -- 0 by default, append a trailing slash to folder names
-vim.g['nvim_tree_group_empty'] = 1 --  0 by default, compact folders that only contain a single folder into one node in the file tree
-vim.g['nvim_tree_special_files'] = { 'README.md', 'Makefile', 'MAKEFILE', 'build.sbt' } --  List of filenames that gets highlighted with NvimTreeSpecialFile
-vim.g['nvim_tree_show_icons'] = { git = 1, folders = 1, files = 1 }
+
+local function open_nvim_tree(data)
+
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  -- change to the directory
+  vim.cmd.cd(data.file)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 require'nvim-tree'.setup {
   disable_netrw       = true, -- disables netrw completely
   hijack_netrw        = true, -- hijack netrw window on startup
-  open_on_setup       = false, -- open the tree when running this setup function
-  ignore_ft_on_setup  = {}, -- will not open on setup if the filetype is in this list
   open_on_tab         = false, -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
   hijack_cursor = false, -- hijack the cursor in the tree to put it at the start of the filename
   update_cwd    = true, -- updates the root directory of the tree on `DirChanged` (when you run `:cd` usually)
@@ -54,7 +63,20 @@ require'nvim-tree'.setup {
   renderer = {
     indent_markers = {
       enable = true
-    }
+    },
+    highlight_opened_files = "icon",
+    root_folder_modifier = ':~', -- This is the default. See :help filename-modifiers for more options
+    add_trailing = true,
+    highlight_git = true,
+    special_files = { 'README.md', 'Makefile', 'MAKEFILE', 'build.sbt' }, --  List of filenames that gets highlighted with NvimTreeSpecialFile
+    icons = { 
+      show = {
+        git = true,
+        folder = true,
+        file = true
+      }
+    },
+    group_empty = true --  false by default, compact folders that only contain a single folder into one node in the file tree
   },
   update_focused_file = {
     enable      = false, -- enables the feature
@@ -69,14 +91,7 @@ require'nvim-tree'.setup {
   }, -- configuration options for the system open command (`s` in the tree by default)
   view = {
     width            = 30, -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
-    height           = 30, -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
-    hide_root_folder = false, -- Hide the root path of the current folder on top of the tree 
-    side             = 'left', -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
-    mappings = {
-      custom_only = false, -- custom only false will merge the list with the default mappings
-                           -- if true, it will only use your list to set the mappings
-      list        = {} -- list of mappings to set on the tree manually
-    }
+    side             = 'left' -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
   }
 }
 

@@ -3,4 +3,4 @@ vim.cmd [[autocmd!]]
 vim.cmd [[autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
 vim.cmd [[autocmd FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]]
 vim.cmd [[augroup end]]
-
+vim.cmd [[autocmd BufWritePre *.scala,*.sc,*.sbt :lua vim.lsp.buf.format()]]
